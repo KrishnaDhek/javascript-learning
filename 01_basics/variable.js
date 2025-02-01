@@ -60,6 +60,7 @@ console.log(address);
     const keyword is used to define constant, those variable whose value can not be changed
 
     "const" must be initialized at the time of declaration.e.g. const job;
+   
 */
 
 const motherName = "Vinita";
@@ -68,3 +69,8 @@ console.log(motherName);
 // motherName = "Vinny"; //TypeError: Assignment to constant variable.
 // console.log(motherName);
 
+// const" does **not** make objects or arrays immutable. Only the variable binding is constant.
+const arr = [2, 56, 1, 9];
+console.log(arr);//[ 2, 56, 1, 9 ]
+arr.push(0);
+console.log(arr);//[ 2, 56, 1, 9, 0 ]
