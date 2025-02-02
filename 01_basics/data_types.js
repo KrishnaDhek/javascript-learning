@@ -2,8 +2,8 @@
 
 /**
  * JS supports 2 types of data type
- * a. Premitive Data Types-> String, number, null, undefined, symbol, boolean, BigInt
- * b. Refrence Data Types-> Array, Object
+ * a. Premitive Data Types-> String, number, null, undefined, symbol, boolean, BigInt. Theya re stored in stack.
+ * b. Refrence Data Types-> Array, Object, functions. They are stored in heap and accessed by reference.
  */
 
 // Premitive Data Types
@@ -62,10 +62,10 @@ console.log(check, typeof check);//Symbol(check) symbol
 
 
 /**
- * Array are reference type in js
- * They are used to store hetrogeneous data
- * Unlike other languages JS array are not guaranted to be stored in contiguous memory
- * Js array are special objects, indexed numerically
+ * Array are reference type in js.
+ * They are used to store hetrogeneous data.
+ * Unlike other languages JS array are not guaranted to be stored in contiguous memory.
+ * Js array are special objects, indexed numerically.
  */
 
 const arrayItems = [3, 23, 5, 6];
@@ -74,9 +74,9 @@ console.log(arrayItems, typeof arrayItems); //[ 3, 23, 5, 6 ] object
 
 
 /**
- * Objects are reference type
- * They store data in key-value pairs
- * Object are mutable i.e can be changed
+ * Objects are reference type.
+ * They store data in key-value pairs.
+ * Object are mutable i.e can be changed.
  * Unlike primitive data types, objects are stored in memory by reference.
  */
 
@@ -92,3 +92,24 @@ console.log(data, typeof data); //{ name: 'Jhone', age: 30, profession: 'Enginee
 data.age = 42;
 data.profession = 'Teacher';
 console.log(data); //{ name: 'Jhone', age: 42, profession: 'Teacher' }
+
+
+//Functions
+/**
+ * Functions in js are objects.
+ * Functions are called first class citizens as they can be assigned to a variable, passed as argument, a function can return a function.
+ * Function can add a property like object.
+ * In JS if a function does not return anything then it returns undefined.
+ */
+
+function funC() {
+    //  console.log('Hello');
+    return 'Hello';
+}
+
+// console.log(funC(), typeof funC); //undefined function
+console.log(funC(), typeof funC); //Hello, function
+console.log(funC); //[Function: funC]
+
+funC.lang = 'Hindi';
+console.log(funC.lang); //Hindi
