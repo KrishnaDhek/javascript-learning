@@ -9,26 +9,26 @@
 // Premitive Data Types
 
 let userName = "John Doe"; 
-console.log(typeof (userName));  //string
+console.log(typeof userName);  //string
 
 let contact = 9987434;
-console.log(typeof (contact)); //number
+console.log(typeof contact); //number
 
 
 //Implicit conversion
 let implicitConverstionExample = 'Tim';
 let result = 10 + implicitConverstionExample
 console.log(result);// 10Tim 
-console.log(typeof(result)); //string
+console.log(typeof result); //string
 
 let email;
-console.log(typeof (email)); //undefined
+console.log(typeof email); //undefined
 
 const active = true ;
-console.log(typeof (active)); //boolean
+console.log(typeof active); //boolean
 
 let number = BigInt (6766676766767676);
-console.log(typeof (number)); //BigInt
+console.log(typeof number); //BigInt
 
 
 //Booleans can be used to evalute condition 
@@ -44,4 +44,8 @@ else {
 
 let isWorking = null;
 console.log(isWorking); //null
-console.log(typeof (isWorking)); //object, its to maintain the compatibility with the old version
+console.log(typeof isWorking); //object, its to maintain the compatibility with the old version
+
+
+let check = Symbol('check');
+console.log(check, typeof check);//Symbol(check) symbol
