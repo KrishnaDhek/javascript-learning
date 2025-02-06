@@ -20,6 +20,6 @@ let lengthOfLongestSubstring = function(s) {
 };
 
 
-let str = "abcdabcbb";
+let str = "abcabcbb";
 console.log("Length of Longest Substring is: "+lengthOfLongestSubstring(str));
 
