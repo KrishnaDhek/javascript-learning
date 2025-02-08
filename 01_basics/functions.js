@@ -11,3 +11,16 @@ let result = (a) => {
 }
 
 console.log(result(5));
+
+//Factorial
+
+let fact = (n)=>{
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    else {
+        return n * fact(n - 1);
+    }
+}
+
+console.log("Factorial of the given number is: "+fact(5));
