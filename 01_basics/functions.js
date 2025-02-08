@@ -23,4 +23,14 @@ let fact = (n)=>{
     }
 }
 
-console.log("Factorial of the given number is: "+fact(5));
+console.log("Factorial of the given number is: " + fact(5));
+
+
+// Immediately Invoked Functions
+
+let sqaure = (function (a) {
+    return a * a;
+})(12);
+
+console.log(sqaure);
+
