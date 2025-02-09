@@ -26,7 +26,7 @@ let fact = (n)=>{
 console.log("Factorial of the given number is: " + fact(5));
 
 
-// Immediately Invoked Functions
+//Immediately Invoked Function Expression
 
 let sqaure = (function (a) {
     return a * a;
