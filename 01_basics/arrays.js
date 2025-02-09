@@ -32,3 +32,8 @@ console.log(typeof students);
 students.forEach(function (student) {
     console.log(student.name);
 });
+
+const classArray = students.map(function (student) {
+    return student.name;
+});
+console.log(classArray);
