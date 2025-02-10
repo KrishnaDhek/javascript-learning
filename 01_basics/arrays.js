@@ -36,4 +36,4 @@ students.forEach(function (student) {
 const classArray = students.map(function (student) {
     return student.name;
 });
-console.log(classArray);
+console.log(classArray)
