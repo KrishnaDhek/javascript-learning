@@ -194,9 +194,17 @@
 // };
 
 
-foo();
-console.log(foo);
+// foo();
+// console.log(foo);
 
-function foo() {
-  console.log('Function executed');
-}
+// function foo() {
+//   console.log('Function executed');
+// }
+
+
+console.log(bar); //undefined
+bar(); //Type error
+
+var bar = function () {
+  console.log('Function Expression Executed');
+};
