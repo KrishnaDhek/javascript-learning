@@ -202,9 +202,17 @@
 // }
 
 
-console.log(bar); //undefined
-bar(); //Type error
+// console.log(bar); //undefined
+// bar(); //Type error
 
-var bar = function () {
-  console.log('Function Expression Executed');
+// var bar = function () {
+//   console.log('Function Expression Executed');
+// };
+
+
+console.log(foo);
+console.log(typeof foo);
+
+var foo = function () {
+  console.log('Hello from foo');
 };
