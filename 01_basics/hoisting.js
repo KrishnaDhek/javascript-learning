@@ -216,3 +216,11 @@ console.log(typeof foo);
 var foo = function () {
   console.log('Hello from foo');
 };
+
+
+console.log(foo);
+console.log(typeof foo);
+
+var foo = function () {
+  console.log('Hello from foo');
+};
