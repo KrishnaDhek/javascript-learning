@@ -226,10 +226,38 @@
 // };
 
 
-console.log(foo);
-console.log(typeof foo);
+// console.log(foo);
+// console.log(typeof foo);
 
-let foo = function () {
-  console.log('Hello from foo');
-};
+// let foo = function () {
+//   console.log('Hello from foo');
+// };
+
+
+
+/**
+ * The function func(a) is hoisted, so calling it is not an issue.
+However, const a is in the TDZ at the time of calling func(a), causing a ReferenceError.
+Execution stops immediately before reaching the function body.
+ */
+// func(a);//reference error 
+// const a = 10;
+
+// function func(a) {
+//     let ans = a * a;
+//     console.log(ans);
+// }
+
+/**
+ * Fix, move the function call below the variable assignment
+ */
+
+
+// const a = 10;
+// func(a); //100
+
+// function func(a) {
+//   let ans = a * a;
+//   console.log(ans);
+// }
 
