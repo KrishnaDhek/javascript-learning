@@ -261,3 +261,10 @@ Execution stops immediately before reaching the function body.
 //   console.log(ans);
 // }
 
+
+
+ const a = (a) => {
+    console.log(a);
+
+}
+a(2);
