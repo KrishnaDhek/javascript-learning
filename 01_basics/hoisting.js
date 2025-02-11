@@ -186,9 +186,17 @@
 //   console.log('Function executed');
 // }
 
-console.log(foo);
-foo();
+// console.log(foo);
+// foo();
 
-var foo = function () {
+// var foo = function () {
+//   console.log('Function executed');
+// };
+
+
+foo();
+console.log(foo);
+
+function foo() {
   console.log('Function executed');
-};
+}
