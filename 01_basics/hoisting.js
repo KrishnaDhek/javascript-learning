@@ -263,11 +263,11 @@ Execution stops immediately before reaching the function body.
 
 
 
-//  const a = (a) => {
-//     console.log(a);
+ const a = (a) => {
+    console.log(a);
 
-// }
-// a(2);
+}
+a(2);
 
 console.log(a);//Reference Error, in TDZ and stops here 
 (function () {
