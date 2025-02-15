@@ -253,13 +253,13 @@ Execution stops immediately before reaching the function body.
  */
 
 
-const a = 10;
-func(a); //100
+// const a = 10;
+// func(a); //100
 
-function func(a) {
-  let ans = a * a;
-  console.log(ans);
-}
+// function func(a) {
+//   let ans = a * a;
+//   console.log(ans);
+// }
 
 
 
