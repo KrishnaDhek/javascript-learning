@@ -75,7 +75,7 @@ function outer() {
   let x = 50;
 
   function inner() {
-    console.log(x);
+    console.log(x);//50, local scope
   }
 
   inner();
