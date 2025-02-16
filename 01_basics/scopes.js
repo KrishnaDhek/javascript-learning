@@ -91,3 +91,12 @@ function example() {
 }
 
 example();
+
+
+if (true) {
+  var y = 10; //does not have block scope.
+  let b = 20; //is block-scoped.
+}
+
+console.log(y);//10
+console.log(b);//Reference Error
