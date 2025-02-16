@@ -82,3 +82,12 @@ function outer() {
 }
 
 outer();
+
+
+function example() {
+  console.log(y);
+  var y = 30;
+  console.log(y);
+}
+
+example();
