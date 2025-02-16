@@ -66,3 +66,19 @@ function test() {
 }
 
 test();
+
+
+
+let x = 100;
+
+function outer() {
+  let x = 50;
+
+  function inner() {
+    console.log(x);
+  }
+
+  inner();
+}
+
+outer();
