@@ -100,3 +100,19 @@ if (true) {
 
 console.log(y);//10
 console.log(b);//Reference Error
+
+
+function outer() {
+    var num = 42;  // `num` is declared and assigned 42
+
+    function inner() {
+        console.log(num);  //Looks for `num` in its scope chain
+    }
+
+    num = 100;  //  `num` is reassigned before `inner` is returned
+
+    return inner;
+}
+
+const fn = outer(); //  `fn` now holds the `inner` function
+fn(); // ⏩ Executes `inner()`
