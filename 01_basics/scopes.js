@@ -85,9 +85,9 @@ outer();
 
 
 function example() {
-  console.log(y);
+  console.log(y);//undefined
   var y = 30;
-  console.log(y);
+  console.log(y);//30
 }
 
 example();
