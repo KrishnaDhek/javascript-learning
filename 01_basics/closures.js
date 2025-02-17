@@ -101,9 +101,9 @@ function outer() {
   return inner;
 }
 
-const fn = outer();
+const fun = outer();
 x = 15; //does not effect the closure
-fn(); //11
+fun(); //11
 
 
 
@@ -210,9 +210,9 @@ function outer() {
   return increment;
 }
 
-const counter1 = outer();
-console.log(counter1());
-console.log(counter1());
+const counter = outer();
+console.log(counter());
+console.log(counter());
 
 
 
