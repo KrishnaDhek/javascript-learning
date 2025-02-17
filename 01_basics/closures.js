@@ -159,3 +159,39 @@ function outer() {
 }
 
 outer();
+
+
+
+function outer() {
+  let count = 0;
+
+  function increment() {
+    count++;
+    console.log(count);
+  }
+
+  return increment;
+}
+
+const counter = outer();
+counter();
+counter();
+
+
+
+
+let a = 10;
+
+function outer() {
+  let a = 20;
+
+  function inner() {
+    let a = 30;
+    console.log(a);
+  }
+
+  inner();
+}
+
+outer();
+console.log(a);
