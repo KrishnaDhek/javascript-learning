@@ -132,3 +132,14 @@ function counter() {
 const countFn = counter();
 console.log(countFn());
 console.log(countFn());
+
+
+let x = 10;
+
+function example() {
+  x = 20;
+  console.log(x);
+}
+
+example();
+console.log(x);
