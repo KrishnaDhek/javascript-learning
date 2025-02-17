@@ -232,3 +232,13 @@ function test() {
 }
 
 test()
+
+
+function x() {
+    function y() {
+        console.log(a);
+    }
+    let a = 20;
+    return y;
+}
+ x()();
