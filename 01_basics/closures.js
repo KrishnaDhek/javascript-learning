@@ -120,3 +120,15 @@ console.log(multiplyBy2(5)); // 10
 console.log(multiplyBy3(5)); // 15
 
 
+function counter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    return count;
+  };
+}
+
+const countFn = counter();
+console.log(countFn());
+console.log(countFn());
