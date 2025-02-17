@@ -143,3 +143,19 @@ function example() {
 
 example();
 console.log(x);
+
+
+
+function outer() {
+  let a = 1;
+
+  function inner() {
+    let a = 2;
+    console.log(a);
+  }
+
+  inner();
+  console.log(a);
+}
+
+outer();
