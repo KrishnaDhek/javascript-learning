@@ -195,3 +195,40 @@ function outer() {
 
 outer();
 console.log(a);
+
+
+
+
+function outer() {
+  let count = 0;
+
+  function increment() {
+    count++;
+    return count;
+  }
+
+  return increment;
+}
+
+const counter1 = outer();
+console.log(counter1());
+console.log(counter1());
+
+
+
+//Closures and settimeout
+
+
+function test() {
+  for (var i = 1; i <= 5; i++) {
+    function revised(i) {
+      setTimeout(function () {
+        console.log(i);
+      }, i * 1000);
+    }
+    revised(i);
+  }
+  console.log('Testing....'); //Asynchronous nature of setTimeout means it doesn’t block the following code. it got printed immediately as the for loop completed the execution verfy fast before the settimeout function run
+}
+
+test()
