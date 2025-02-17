@@ -106,3 +106,17 @@ x = 15; //does not effect the closure
 fn(); //11
 
 
+
+function createMultiplier(factor) {
+    return function (number) {
+        return number * factor;
+    };
+}
+
+const multiplyBy2 = createMultiplier(2);
+const multiplyBy3 = createMultiplier(3);
+
+console.log(multiplyBy2(5)); // 10
+console.log(multiplyBy3(5)); // 15
+
+
