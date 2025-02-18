@@ -36,9 +36,20 @@
 
 
 
-function test() {
-    console.log(a);
-    var a = 20;
-    console.log(a);
+// function test() {
+//     console.log(a);
+//     var a = 20;
+//     console.log(a);
+// }
+// test();
+
+
+//Advanced Functions
+
+//Name Function-A function which has a name and can be called using that name, they can be called before declaration, as function name are hoisted
+funName();//due to hosting
+
+function funName() {
+    console.log("hello, this is an name function");
 }
-test();
+
