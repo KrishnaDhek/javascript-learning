@@ -108,6 +108,16 @@ console.log(result(4, 2));//8
 
 // (() => console.log("this is also an IIFE, but using arrow function declaration"))();
 
+const finalMsg=(function (fun) {
+    message = 'Hello, Krishna';
+   return fun(message);
+})(function (message) {
+   
+    return `${message} -Welcome!`;
+});
+console.log(finalMsg);
+
+
 
 
 //Arrow Function- A concise way of writing functions, using the fat arrow "=>"
