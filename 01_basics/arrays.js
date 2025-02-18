@@ -80,6 +80,8 @@ for (let course of courses) {
   console.log(course);
 }
 
+console.log("Contains the course true/false? " + courses.includes('Python')); //O(n)
+console.log('Contains the course true/false? ' + courses.includes('JS'));
 
 
 //forEach method
