@@ -90,12 +90,22 @@ console.log(result(4, 2));//8
 // console.log(verification(check,10));
 
 
-function demo(fun, n) {
-    return `Hello, ${fun(n)}`;
-}
+// function demo(fun, n) {
+//     return `Hello, ${fun(n)}`;
+// }
 
-function nameUser(n) {
-    return n;
-}
+// function nameUser(n) {
+//     return n;
+// }
 
-console.log(demo(nameUser,20));
+// console.log(demo(nameUser,20));
+
+
+// Immediatley Invoked Function Expression -are those functions that are executed immediately 
+(function () {
+    console.log("This is an example for IIFE");
+})();
+
+(() => console.log("this is also an IIFE, but using arrow function declaration"))();
+
+
