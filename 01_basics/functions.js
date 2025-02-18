@@ -108,14 +108,21 @@ console.log(result(4, 2));//8
 
 // (() => console.log("this is also an IIFE, but using arrow function declaration"))();
 
-const finalMsg=(function (fun) {
-    message = 'Hello, Krishna';
-   return fun(message);
-})(function (message) {
+// const finalMsg=(function (fun) {
+//     message = 'Hello, Krishna';
+//    return fun(message);
+// })(function (message) {
    
-    return `${message} -Welcome!`;
-});
-console.log(finalMsg);
+//     return `${message} -Welcome!`;
+// });
+// console.log(finalMsg);
+
+
+// (function (x) {
+//     return (function (y) {
+//         console.log(x);
+//     })(2);
+// })(1);
 
 
 
