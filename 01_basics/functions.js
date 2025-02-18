@@ -102,10 +102,18 @@ console.log(result(4, 2));//8
 
 
 // Immediatley Invoked Function Expression -are those functions that are executed immediately 
-(function () {
-    console.log("This is an example for IIFE");
-})();
+// (function () {
+//     console.log("This is an example for IIFE");
+// })();
 
-(() => console.log("this is also an IIFE, but using arrow function declaration"))();
+// (() => console.log("this is also an IIFE, but using arrow function declaration"))();
 
 
+
+//Arrow Function- A concise way of writing functions, using the fat arrow "=>"
+
+// var ans = (a, b) => {
+//     return a*b
+// };
+
+// console.log(ans(12,4));
