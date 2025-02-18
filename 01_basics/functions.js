@@ -53,3 +53,39 @@ function funName() {
     console.log("hello, this is an name function");
 }
 
+
+//Anonymous Function- A function with out a name, often assigned to a variable
+// console.log(result(4, 2)); //ReferenceError: Cannot access 'result' before initialization, because anonymouse functions are not hosited 
+let result = function (param1, param2) {
+    return param1 * param2;
+}
+console.log(result(4, 2));//8
+
+//High-Order Functions- In Js a functions can be passed as argument to another functions, also a function can return another functions, such functions are called as hight-order functions
+
+// function operation(fun, param1, param2) {
+//     return fun(param1, param2);
+// }
+
+// function multi(param1, param2) {
+//     return param1 * param2;
+// }
+
+// console.log(operation(multi,10,5));
+
+function verification(fun, param) {
+    return fun(param);
+}
+
+function check(param) {
+    if (param >= 18) {
+        return `Persons age is ${param}, therefore valid`;
+    }
+    else {
+        return `Persons age is ${param}, therefore not valid`;
+        
+    }
+}
+
+console.log(verification(check,10));
+
