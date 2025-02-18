@@ -73,19 +73,29 @@ console.log(result(4, 2));//8
 
 // console.log(operation(multi,10,5));
 
-function verification(fun, param) {
-    return fun(param);
-}
+// function verification(fun, param) {
+//     return fun(param);
+// }
 
-function check(param) {
-    if (param >= 18) {
-        return `Persons age is ${param}, therefore valid`;
-    }
-    else {
-        return `Persons age is ${param}, therefore not valid`;
+// function check(param) {
+//     if (param >= 18) {
+//         return `Persons age is ${param}, therefore valid`;
+//     }
+//     else {
+//         return `Persons age is ${param}, therefore not valid`;
         
-    }
+//     }
+// }
+
+// console.log(verification(check,10));
+
+
+function demo(fun, n) {
+    return `Hello, ${fun(n)}`;
 }
 
-console.log(verification(check,10));
+function nameUser(n) {
+    return n;
+}
 
+console.log(demo(nameUser,20));
