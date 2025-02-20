@@ -85,5 +85,5 @@ console.log('Contains the course true/false? ' + courses.includes('JS'));
 
 
 //forEach method
-courses.forEach(course => console.log(course));
+courses.forEach(course => console.log(course))
 
