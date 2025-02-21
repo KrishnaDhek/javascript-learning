@@ -111,3 +111,8 @@ console.log(elements);
 
 let newElements = elements.slice(1,3);
 console.log(newElements);
+
+console.log(elements.reverse());
+var items= newElements.join(",")
+var result = items.split(",");
+console.log(result);
