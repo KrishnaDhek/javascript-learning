@@ -98,5 +98,6 @@ for(let item of courses){
 
 console.log(courses.indexOf('js'));
 console.log(courses);
-console.log(delete courses[2]);
+// console.log(delete courses[2]);
+courses.splice(0,1)
 console.log(courses);
