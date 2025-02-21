@@ -95,3 +95,5 @@ console.log(courses.unshift("Ruby"));//will return new length
 for(let item of courses){
   console.log(item);
 }
+
+console.log(courses.indexOf('js'));
