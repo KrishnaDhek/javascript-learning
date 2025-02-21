@@ -74,33 +74,40 @@
 
 
 
-const courses = ['Java', 'JS', 'C', 'C++', 'PHP'];
+// const courses = ['Java', 'JS', 'C', 'C++', 'PHP'];
 
-for (let course of courses) {
-  console.log(course);
-}
+// for (let course of courses) {
+//   console.log(course);
+// }
 
-console.log("Contains the course true/false? " + courses.includes('Python')); //O(n)
-console.log('Contains the course true/false? ' + courses.includes('JS'));
+// console.log("Contains the course true/false? " + courses.includes('Python')); //O(n)
+// console.log('Contains the course true/false? ' + courses.includes('JS'));
 
 
-//forEach method
-courses.forEach(course => console.log(course));
+// //forEach method
+// courses.forEach(course => console.log(course));
 
-courses.splice(2, 0, 'Python');
-console.log(courses);
-console.log('Contains the course true/false? ' + courses.includes('Python'));
-
-console.log(courses.unshift("Ruby"));//will return new length 
-for(let item of courses){
-  console.log(item);
-}
-
-// console.log(courses.indexOf('js'));
+// courses.splice(2, 0, 'Python');
 // console.log(courses);
-// // console.log(delete courses[2]);
-// courses.splice(0,1)
+// console.log('Contains the course true/false? ' + courses.includes('Python'));
+
+// console.log(courses.unshift("Ruby"));//will return new length 
+// for(let item of courses){
+//   console.log(item);
+// }
+
+// // console.log(courses.indexOf('js'));
+// // console.log(courses);
+// // // console.log(delete courses[2]);
+// // courses.splice(0,1)
+// // console.log(courses);
 // console.log(courses);
-console.log(courses);
-let result = courses.slice(2);
-console.log(result);
+// let result = courses.slice(2);
+// console.log(result);
+
+
+const elements = ['A', 'B', 'C', 'D', 'E', 'F'];
+console.log(elements);
+
+let newElements = elements.slice(1,3);
+console.log(newElements);
