@@ -90,3 +90,8 @@ courses.forEach(course => console.log(course));
 courses.splice(2, 0, 'Python');
 console.log(courses);
 console.log('Contains the course true/false? ' + courses.includes('Python'));
+
+console.log(courses.unshift("Ruby"));//will return new length 
+for(let item of courses){
+  console.log(item);
+}
