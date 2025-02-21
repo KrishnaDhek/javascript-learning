@@ -116,3 +116,15 @@ console.log(elements.reverse());
 var items= newElements.join(",")
 var result = items.split(",");
 console.log(result);
+
+const nums = [2, 3, 4, 5];
+// var numSquare = nums.map(num => num * num);
+// console.log("Sqaure of each number present in the number array is: " + numSquare);
+
+var numbSqaure = nums.map(funSquare);
+function funSquare(num) {
+  return num ** 2;
+}
+
+console.log(numbSqaure);
+
