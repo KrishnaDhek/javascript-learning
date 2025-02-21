@@ -86,3 +86,7 @@ console.log('Contains the course true/false? ' + courses.includes('JS'));
 
 //forEach method
 courses.forEach(course => console.log(course));
+
+courses.splice(2, 0, 'Python');
+console.log(courses);
+console.log('Contains the course true/false? ' + courses.includes('Python'));
