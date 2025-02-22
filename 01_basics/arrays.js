@@ -38,39 +38,39 @@
 // // });
 // // console.log(classArray)
 
-// const arr = ['krishna', 20, true,'time', 2025];
-// // console.log(arr[0]);
-//  console.log("length of array: "+arr.length);
+const arr = ['krishna', 20, true,'time', 2025];
+// console.log(arr[0]);
+ console.log("length of array: "+arr.length);
 
-// // for (let i = 0; i < arr.length; i++){
-// //   console.log(arr[i]);
-// // }
-// let i=0
-// // while (i<arr.length) {
-// //   console.log(arr[i]);
-// //   i++;
-// // }
+// for (let i = 0; i < arr.length; i++){
+//   console.log(arr[i]);
+// }
+let i=0
+// while (i<arr.length) {
+//   console.log(arr[i]);
+//   i++;
+// }
 
-// // arr.push('work');
-// // console.log('length of array: ' + arr.length);
-// // while (i < arr.length) {
-// //   console.log(arr[i]);
-// //   i++;
-// // }
-
-
-// arr.unshift(29);
-// console.log("length of array: " + arr.length);
-
+// arr.push('work');
+// console.log('length of array: ' + arr.length);
 // while (i < arr.length) {
 //   console.log(arr[i]);
 //   i++;
 // }
 
-// console.log("Removed item is: " + arr.shift());
-// console.log('length of array: ' + arr.length);
-// console.log('Removed item is: ' + arr.shift());
-// console.log('length of array: ' + arr.length);
+
+arr.unshift(29);
+console.log("length of array: " + arr.length);
+
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
+
+console.log("Removed item is: " + arr.shift());
+console.log('length of array: ' + arr.length);
+console.log('Removed item is: ' + arr.shift());
+console.log('length of array: ' + arr.length);
 
 
 
