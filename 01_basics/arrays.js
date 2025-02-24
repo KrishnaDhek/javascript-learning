@@ -35,6 +35,12 @@ function check(element) {
 }
 
 
+const privilege = ['admin', 'member', 'super-admin'];
+
+const privilageType = privilege.some(privilege => privilege === 'admin');
+console.log(privilageType);
+
+
 // // console.log(typeof students);
 
 
