@@ -26,6 +26,15 @@ const students = [
   }
 ];
 
+ console.log(typeof students);
+
+ students.forEach(function (student) {
+    console.log(student.name);
+});
+
+const classArray = students.map(function (student) {     return student.name;
+}); console.log(classArray)
+
 const newArr = ['tim', 'josh', 'john', 'lee'];
 let portion = newArr.slice(1, 3);
 console.log(portion);
@@ -41,17 +50,7 @@ const privilageType = privilege.some(privilege => privilege === 'admin');
 console.log(privilageType);
 
 
-// // console.log(typeof students);
-
-
-// // students.forEach(function (student) {
-// //     console.log(student.name);
-// // });
-
-// // const classArray = students.map(function (student) {
-// //     return student.name;
-// // });
-// // console.log(classArray)
+/
 
 const arr = ['krishna', 20, true,'time', 2025];
 // console.log(arr[0]);
