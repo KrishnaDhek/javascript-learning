@@ -1,8 +1,10 @@
-// // // const items = ['mango', 'orange', 'apple'];
 
-// // // items.forEach(function (item) {
-// // //    console.log(item); 
-// // // });
+const items = ['mango', 'orange', 'apple'];
+
+ items.forEach(function (item) {
+      console.log(item); 
+  
+  });
 
 
 const students = [
@@ -65,12 +67,12 @@ let i=0
 //   i++;
 // }
 
-// arr.push('work');
-// console.log('length of array: ' + arr.length);
-// while (i < arr.length) {
-//   console.log(arr[i]);
-//   i++;
-// }
+arr.push('work');
+console.log('length of array: ' + arr.length);
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
 
 
 arr.unshift(29);
