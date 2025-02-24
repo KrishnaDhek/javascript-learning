@@ -29,6 +29,12 @@ const students = [
 const newArr = ['tim', 'josh', 'john', 'lee'];
 let portion = newArr.slice(1, 3);
 console.log(portion);
+console.log(newArr.some(check));
+function check(element) {
+  return element == 'krish';
+}
+
+
 // // console.log(typeof students);
 
 
