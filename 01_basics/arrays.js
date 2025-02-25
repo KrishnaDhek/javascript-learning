@@ -1,10 +1,10 @@
 
-const items = ['mango', 'orange', 'apple'];
+// const items = ['mango', 'orange', 'apple'];
 
- items.forEach(function (item) {
-      console.log(item); 
-  
-  });
+//  items.forEach(function (item) {
+//       console.log(item); 
+
+//   });
 
 
 const students = [
