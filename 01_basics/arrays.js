@@ -144,3 +144,8 @@ function funSquare(num) {
 
 console.log(numbSqaure);
 
+
+
+const numbers = [1, 2, 3];
+const squared = numbers.map(num => num ** 2);
+console.log(squared); // [1, 4, 9]
