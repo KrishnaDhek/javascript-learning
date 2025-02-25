@@ -7,26 +7,26 @@
 //   });
 
 
-const students = [
-  {
-    id: 1,
-    name: 'Ram',
-    class: 2,
-    age: 7,
-  },
-  {
-    id: 2,
-    name: 'Shyam',
-    class: 3,
-    age: 8,
-  },
-  {
-    id: 3,
-    name: 'Riya',
-    class: 4,
-    age: 10,
-  }
-];
+// const students = [
+//   {
+//     id: 1,
+//     name: 'Ram',
+//     class: 2,
+//     age: 7,
+//   },
+//   {
+//     id: 2,
+//     name: 'Shyam',
+//     class: 3,
+//     age: 8,
+//   },
+//   {
+//     id: 3,
+//     name: 'Riya',
+//     class: 4,
+//     age: 10,
+//   }
+// ];
 
  console.log(typeof students);
 
