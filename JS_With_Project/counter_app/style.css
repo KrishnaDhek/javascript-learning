@@ -55,6 +55,11 @@ body {
     z-index: 1;
 }
 
+#counter {
+    font-size:60px ;
+    text-align: center;
+    font-weight: bold;
+}
 .item-count {
     color: rgb(11, 2, 2);
     font-size: 34px;
