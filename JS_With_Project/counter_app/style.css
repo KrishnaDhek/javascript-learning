@@ -79,3 +79,14 @@ button {
     color: white;
     border-radius: 10px;
 }
+#resetBtn {
+    background-color: black;
+    opacity: 0.8;
+    cursor: pointer;
+    font-size: 24px; 
+    color: #ffffff; /* Same color as buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
