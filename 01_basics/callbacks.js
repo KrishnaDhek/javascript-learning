@@ -13,7 +13,6 @@ function second(callbackThird) {
 let third = function () {
     console.log('this is third call back function');
 }
-
 first(second);
 
 
