@@ -35,6 +35,11 @@ item.style.background = 'black';
 //all matching element 
 const itemsList = document.querySelectorAll('.title');
 console.log(itemsList);
+itemsList.forEach(item => {
+    item.style.color = 'purple'; // Change text color
+    item.style.fontSize = '40px'; // Increase font size
+    item.textContent = 'Updated Title';
+});
 
 
 // Select input and form
