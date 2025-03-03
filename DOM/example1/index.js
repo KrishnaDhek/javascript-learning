@@ -36,4 +36,3 @@ item.style.background = 'black';
 const input = document.getElementById('input-bar'); 
 const form = document.querySelector('.form-data');
 const itemList = document.getElementById('items'); // The <ul> where new items will be added
-
