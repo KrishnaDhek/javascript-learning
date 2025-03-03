@@ -31,7 +31,6 @@ console.log(item.textContent);
 item.style.color = 'white';
 item.style.background = 'black';
 
-
 // Select input and form
 const input = document.getElementById('input-bar'); 
 const form = document.querySelector('.form-data');
