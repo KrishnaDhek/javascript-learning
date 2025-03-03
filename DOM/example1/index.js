@@ -31,7 +31,14 @@ console.log(item.textContent);
 item.style.color = 'white';
 item.style.background = 'black';
 
+
+//all matching element 
+const itemsList = document.querySelectorAll('.title');
+console.log(itemsList);
+
+
 // Select input and form
 const input = document.getElementById('input-bar'); 
 const form = document.querySelector('.form-data');
 const itemList = document.getElementById('items'); // The <ul> where new items will be added
+
