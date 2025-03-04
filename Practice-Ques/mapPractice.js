@@ -67,3 +67,8 @@ const pricesWithTax = [110, 220, 330, 440];
 const priceBeforeTax = pricesWithTax.map((price) => Math.round(price/1.1));
 console.log(priceBeforeTax);
 
+// Use map() to return an array of ages from an array of birth years, assuming the current year is 2025.
+
+const birthYears = [1990, 1985, 2000, 2010];
+const age = birthYears.map(year => 2025 - year);
+console.log(age);
