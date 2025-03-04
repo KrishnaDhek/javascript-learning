@@ -52,3 +52,11 @@ const students = [
 
 const str = students.map(student => `${student.name} scored ${student.score}`);
 console.log(str);
+
+
+//Use map() to return an array where true means even and false means odd for this array
+
+const items = [10, 15, 22, 29, 30];
+const booleanItems = items.map(item => item % 2 === 0);
+
+console.log(booleanItems);
