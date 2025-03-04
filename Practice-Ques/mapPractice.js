@@ -139,3 +139,16 @@ const products = [
 
 const itemDetails = products.map(product => `${product.name}-$${product.price}`);
 console.log(itemDetails);
+
+
+//Format an array of numbers into currency format ($1,000.00 style)
+
+const prices = [1000, 2500.5, 300, 49999.99];
+const currencyAppended = prices.map(
+  (price) =>
+    `$${price.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`
+);
+console.log(currencyAppended);
