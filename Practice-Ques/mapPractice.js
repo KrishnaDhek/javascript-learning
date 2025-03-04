@@ -166,3 +166,11 @@ const fullNames = [
 const lastName = fullNames.map(name => name.split(" ").pop());
 console.log(lastName);
 
+
+
+//Reverse each word in an array of strings.
+
+const arrWords = ['hello', 'world', 'JavaScript', 'developer'];
+
+const reversedArr = arrWords.map(item => item.split("").reverse().join(""));
+console.log(reversedArr);
