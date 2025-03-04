@@ -33,3 +33,10 @@ const words = ['apple', 'banana', 'cherry', 'date'];
 const wordLength = words.map(word => word.length);
 console.log(wordLength);
 
+
+//Convert an array of prices in USD to INR (1 USD = 83 INR).
+
+const pricesUSD = [10, 20, 50, 100];
+
+const pricesINR = pricesUSD.map(price => price * 83);
+console.log(pricesINR);
