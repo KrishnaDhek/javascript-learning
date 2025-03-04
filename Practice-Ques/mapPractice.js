@@ -19,3 +19,10 @@ const fahrenheitTemp = celsiusTemps.map(value =>
     value = (value * 9 / 5) + 32
 );
 console.log(fahrenheitTemp);
+
+//You have an array of numbers. Convert each number to a string using map().
+const nums = [1, 2, 3, 4, 5];
+
+// const numToString = nums.map(num => `${num}`);
+const numToString = nums.map((num) => num.toString());
+console.log(numToString);
