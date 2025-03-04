@@ -152,3 +152,17 @@ const currencyAppended = prices.map(
     })}`
 );
 console.log(currencyAppended);
+
+
+//Given an array of full names, return an array containing only the last names.
+
+const fullNames = [
+  'Alice Johnson',
+  'Bob Smith',
+  'John Michael Doe',
+  'David Williams',
+  'Emma Charlotte Brown',
+];
+const lastName = fullNames.map(name => name.split(" ").pop());
+console.log(lastName);
+
