@@ -40,3 +40,15 @@ const pricesUSD = [10, 20, 50, 100];
 
 const pricesINR = pricesUSD.map(price => price * 83);
 console.log(pricesINR);
+
+
+//You have an array of objects representing students and their scores:
+const students = [
+  { name: 'Alice', score: 85 },
+  { name: 'Bob', score: 92 },
+  { name: 'Charlie', score: 78 },
+  { name: 'David', score: 95 },
+];
+
+const str = students.map(student => `${student.name} scored ${student.score}`);
+console.log(str);
