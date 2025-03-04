@@ -26,3 +26,10 @@ const nums = [1, 2, 3, 4, 5];
 // const numToString = nums.map(num => `${num}`);
 const numToString = nums.map((num) => num.toString());
 console.log(numToString);
+
+
+//You are given an array of words. Use map() to return an array containing the length of each word.
+const words = ['apple', 'banana', 'cherry', 'date'];
+const wordLength = words.map(word => word.length);
+console.log(wordLength);
+
