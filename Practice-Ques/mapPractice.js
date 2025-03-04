@@ -83,3 +83,34 @@ const urls = [
 
 const domain = urls.map((url) => url.replace(/^https?:\/\//, ''));
 console.log(domain);
+
+
+
+//Convert an array of student objects into an array of student grades (A/B/C/D/F) based on scores
+const studentDetails = [
+  { name: 'Alice', score: 92 },
+  { name: 'Bob', score: 76 },
+  { name: 'Charlie', score: 85 },
+  { name: 'David', score: 60 },
+  { name: 'Eve', score: 45 },
+];
+
+const studentGrades = studentDetails.map(scores => {
+    let grade;
+    if (scores.score >= 90) {
+      grade = 'A';
+    } else if (scores.score >= 80 ) {
+      grade = 'B';
+    } else if (scores.score >= 70 ) {
+      grade = 'C';
+    } else if (scores.score >= 60) {
+      grade = 'D';
+    }
+    else {
+        grade = 'F';
+    }
+
+    return grade;
+})
+
+console.log(studentGrades);
