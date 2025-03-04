@@ -10,3 +10,12 @@ console.log(newArray);
 const names = ['alice', 'bob', 'charlie', 'dave'];
 const newArrayNames = names.map(name => name.charAt(0).toUpperCase()+name.slice(1).toLowerCase());
 console.log(newArrayNames);
+
+
+//You have an array of temperatures in Celsius. Convert them to Fahrenheit
+const celsiusTemps = [0, 10, 20, 30, 40];
+
+const fahrenheitTemp = celsiusTemps.map(value => 
+    value = (value * 9 / 5) + 32
+);
+console.log(fahrenheitTemp);
