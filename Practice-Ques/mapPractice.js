@@ -72,3 +72,14 @@ console.log(priceBeforeTax);
 const birthYears = [1990, 1985, 2000, 2010];
 const age = birthYears.map(year => 2025 - year);
 console.log(age);
+
+
+//Use map() to extract only the domain names (remove https:// or http://) from an array of URLs.
+const urls = [
+  'https://google.com',
+  'http://facebook.com',
+  'https://twitter.com',
+];
+
+const domain = urls.map((url) => url.replace(/^https?:\/\//, ''));
+console.log(domain);
