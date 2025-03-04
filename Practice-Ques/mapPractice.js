@@ -60,3 +60,10 @@ const items = [10, 15, 22, 29, 30];
 const booleanItems = items.map(item => item % 2 === 0);
 
 console.log(booleanItems);
+
+//Use map() to return an array of product prices before tax (tax rate = 10%)
+
+const pricesWithTax = [110, 220, 330, 440];
+const priceBeforeTax = pricesWithTax.map((price) => Math.round(price/1.1));
+console.log(priceBeforeTax);
+
