@@ -114,3 +114,28 @@ const studentGrades = studentDetails.map(scores => {
 })
 
 console.log(studentGrades);
+
+
+//Transform an array of users into an array of usernames in lowercase, prefixed with @.
+const users = [
+  { id: 1, username: 'AliceW' },
+  { id: 2, username: 'Bob123' },
+  { id: 3, username: 'CharlieX' },
+];
+
+const usernames = users.map(user => `@${user.username.toLowerCase()}`);
+console.log(usernames);
+
+
+
+//Convert an array of objects representing products into an array of strings formatted as: "Product Name - $Price"
+
+const products = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Phone', price: 800 },
+  { name: 'Tablet', price: 600 },
+];
+
+
+const itemDetails = products.map(product => `${product.name}-$${product.price}`);
+console.log(itemDetails);
