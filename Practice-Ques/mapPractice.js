@@ -175,3 +175,5 @@ const arrWords = ['hello', 'world', 'JavaScript', 'developer'];
 const reversedArr = arrWords.map(item => item.split("").reverse().join(""));
 console.log(reversedArr);
 
+// Capitalize the first letter of each word in a sentence.
+
