@@ -177,3 +177,11 @@ console.log(reversedArr);
 
 // Capitalize the first letter of each word in a sentence.
 
+const sentence = 'hello world, welcome to javascript!';
+
+const capitalizedSentence = sentence
+  .split(' ')
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
+console.log(capitalizedSentence);
