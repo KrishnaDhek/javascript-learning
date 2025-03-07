@@ -83,3 +83,76 @@ const arr = [1, true, 'Krishna', 22, 'test', 34];
 
 // let matched = arr.some((item) => item === 45);
 // console.log(matched);
+
+
+ //Array destructuring
+// const colors = ['red', 'blue', 'green', 'yellow'];
+// const [firstColor, secondColor] = colors;
+// console.log(firstColor,secondColor);
+
+
+// const numbers = [10, 20, 30, 40, 50];
+// const [firstNum, ...remainingNums] = numbers;
+// console.log(firstNum,remainingNums);
+
+
+// const user = ['Krishna Dhek', 28, 'Frontend Developer', 'India'];
+// const [name, age, role] = user;
+// console.log(name,age,role);
+
+// const coordinates = [12.34, 56.78, [90.12, 45.67]];
+// const [lat, long, [alt1, alt2]] = coordinates;
+// console.log(lat,long,alt1,alt2);
+
+// const fullName = ['John', 'Doe'];
+// const [first, middle = "Unknown", last="Unknown"] = fullName;
+// console.log(first,middle,last);
+
+// const product = ['Laptop', 50000, 'Electronics'];
+// let[name, price, category] = product;
+// [name, price, category] = [category, price, name];
+// console.log(name,price,category);
+
+// const rgb = [255, 128];
+// const [red, green, blue = 0] = rgb;
+// console.log(red,green,blue);
+
+
+// const book = ['JavaScript Guide'];
+// const [title, author = 'Unknown Author', year = 2024] = book;
+// console.log(title,author,year);
+
+
+// const scores = [98, 87, 76, 65, 54, 43];
+// const [topScore, ...remainingScores] = scores;
+// console.log(topScore,remainingScores);
+
+
+
+// let breakfast = ['Pancakes', 'Omelette'];
+// let dinner = ['Pizza', 'Pasta'];
+// // [breakfast, dinner] = [dinner, breakfast];// reference are swapped i.e., breakfast now points to dinner and vise-versa
+// [breakfast,dinner] =[[...dinner],[...breakfast]]
+// console.log(breakfast, dinner);
+// breakfast.push("burger");
+// console.log(breakfast);
+// console.log(dinner);
+
+// let breakfast = ['Pancakes', 'Omelette'];
+// let lunch = ['Burger', 'Fries'];
+// let dinner = ['Pizza', 'Pasta'];
+
+// [breakfast, lunch, dinner] = [lunch, dinner, breakfast]; //swaps the references
+// console.log(breakfast);
+// console.log(lunch);
+// console.log(dinner);
+
+
+// [breakfast, lunch, dinner] = [[...lunch], [...dinner], [...breakfast]]; //swaps the values
+// console.log(breakfast);
+// console.log(lunch);
+// console.log(dinner);
+// breakfast.push("salad");
+// console.log(breakfast);
+// console.log(lunch);
+// console.log(dinner);
