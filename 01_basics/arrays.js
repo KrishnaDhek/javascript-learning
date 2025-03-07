@@ -1,156 +1,85 @@
+const arr = [1, true, 'Krishna', 22, 'test', 34];
+// console.log(arr);
 
- const items = ['mango', 'orange', 'apple'];
+//array methods
 
-  items.forEach(function (item) {
-       console.log(item); 
-
-   });
-
-
- const students = [
-   {
-     id: 1,
-     name: 'Ram',
-     class: 2,
-     age: 7,
-   },
-   {
-     id: 2,
-     name: 'Shyam',
-     class: 3,
-     age: 8,
-   },
-   {
-     id: 3,
-     name: 'Riya',
-     class: 4,
-     age: 10,
-   }
- ];
-
- console.log(typeof students);
-
- students.forEach(function (student) {
-    console.log(student.name);
-});
-
-const classArray = students.map(function (student) {     return student.name;
-}); console.log(classArray)
-
-const newArr = ['tim', 'josh', 'john', 'lee'];
-let portion = newArr.slice(1, 3);
-console.log(portion);
-console.log(newArr.some(check));
-function check(element) {
-  return element == 'krish';
-}
+//push-inserts at last, return the new length of the array
+// let item = arr.push("Dhek");
+// console.log(item);
+// console.log(arr);
 
 
-const privilege = ['admin', 'member', 'super-admin'];
+//unshift- inserts at the first, returns the new length of the array
+// let item = arr.unshift("test");
+// console.log(item);
+// console.log(arr);
 
-const privilageType = privilege.some(privilege => privilege === 'admin');
-console.log(privilageType);
-
-
-
-
-const arr = ['krishna', 20, true,'time', 2025];
- console.log(arr[0]);
-  console.log("length of array: "+arr.length);
-
- for (let i = 0; i < arr.length; i++){
-   console.log(arr[i]);
- }
-let i=0
- while (i<arr.length) {
-   console.log(arr[i]);
-   i++;
- }
-
- arr.push('work');
- console.log('length of array: ' + arr.length);
- while (i < arr.length) {
-   console.log(arr[i]);
-   i++;
- }
+//pop- deletes an item from the last, returns the deleted item
+// let deletedItem = arr.pop();
+// console.log(deletedItem);
+// console.log(arr);
 
 
- arr.unshift(29);
- console.log("length of array: " + arr.length);
-
- while (i < arr.length) {
-   console.log(arr[i]);
-   i++;
- }
-
- console.log("Removed item is: " + arr.shift());
- console.log('length of array: ' + arr.length);
-// console.log('Removed item is: ' + arr.shift());
-// console.log('length of array: ' + arr.length);
+//shift- delets an item from the front, returns the deleted item
+// let deletedItem = arr.shift();
+// console.log(deletedItem);
+// console.log(arr);
 
 
-
- const courses = ['Java', 'JS', 'C', 'C++', 'PHP'];
-
- for (let course of courses) {
-   console.log(course);
- }
-
-console.log("Contains the course true/false? " + courses.includes('Python')); //O(n)
-console.log('Contains the course true/false? ' + courses.includes('JS'));
+//reverse - reverse the array
+// let reversedArray = arr.reverse();
+// console.log(reversedArray);
 
 
-//forEach method
-courses.forEach(course => console.log(course));
+//sort-sorts in ascending order based on Unicode character code values by default.
+// let sortedArr = arr.sort();
+// console.log(sortedArr);
 
-courses.splice(2, 0, 'Python');
-console.log(courses);
-console.log('Contains the course true/false? ' + courses.includes('Python'));
+//write custom sort for numbers ascending order
 
-console.log(courses.unshift("Ruby"));//will return new length 
-for(let item of courses){
-  console.log(item);
-}
-
-console.log(courses.indexOf('js'));
-console.log(courses);
-console.log(delete courses[2]);
-courses.splice(0,1)
-console.log(courses);
-console.log(courses);
-let result = courses.slice(2);
-console.log(result);
+// const compare = (a, b) => { return a - b; }
+// const num = [50, 2, 456, 9, 88, 0];
+// console.log(num.sort(compare));
 
 
-const elements = ['A', 'B', 'C', 'D', 'E', 'F'];
-console.log(elements);
+//write custom sort for numbers descending order
+// const compare = (a, b) => { return b - a; }
+// const num = [50, 2, 456, 9, 88, 0];
+// console.log(num.sort(compare));
 
-let newElements = elements.slice(1,3);
-console.log(newElements);
+//delete- delete arr[index] removes the item but leaves an empty (undefined) space.
+// delete arr[1];
+// console.log(arr);
 
-console.log(elements.reverse());
-var items= newElements.join(",")
-var result = items.split(",");
-console.log(result);
+//splice- deletes, inserts item in arry provided the index, item to be deleted, an the insereting item,Returns an array of deleted elements.
+// const deltedItems = arr.splice(1, 1, 'check', 28);
+// console.log(deltedItems);
 
-const nums = [2, 3, 4, 5];
-var numSquare = nums.map(num => num **2);
-console.log("Sqaure of each number present in the number array is: " + numSquare);
-
-var numbSqaure = nums.map(funSquare);
-function funSquare(num) {
-  return num ** 2;
-}
-
-console.log(numbSqaure);
+// arr.splice(2, 1, 'age');
+// console.log(arr);
 
 
+//slice- extracts a portion of array, the first argument is inclusice and the second is exclusive, returns a new array
+// let portion = arr.slice(1, 5);
+// console.log(portion);
 
-const numbers = [1, 2, 3];
-const squared = numbers.map(num => num ** 2);
-console.log(squared); // [1, 4, 9]
 
+//for of iterates over values, works on array, map , string
+// for (item of arr) {
+//   console.log(item);//array elements
+// }
+//for in iterates over keys
+// for (item in arr) {
+//   console.log(item);//will return the index
+// }
 
-const names = ["John", "Alice", "Bob"];
-names.sort(); 
-console.log(names); // ["Alice", "Bob", "John"]
+//foreach - forEach() executes a callback on each item but always returns undefined.
+// arr.forEach(element => {
+//   console.log(element);
+//   return;
+// });
+
+//some- to find and check value , returns true if at least one value matched
+
+// let matched = arr.some((item) => item === 45);
+// console.log(matched);
