@@ -163,3 +163,10 @@ function multiply(...nums) {
 
 console.log(multiply(2, 3, 4)); // 24
 console.log(multiply(5, 6));    // 30
+
+function sumAll(...nums) {
+  return nums.reduce((acc,nums)=>acc+nums,0)
+}
+console.log(sumAll(10, 20, 30)); // 60
+console.log(sumAll(5, 15, 25, 35, 45)); // 125
+console.log(sumAll()); // 0
