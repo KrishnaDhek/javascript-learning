@@ -170,3 +170,11 @@ function sumAll(...nums) {
 console.log(sumAll(10, 20, 30)); // 60
 console.log(sumAll(5, 15, 25, 35, 45)); // 125
 console.log(sumAll()); // 0
+
+
+const evenNumbers = [2, 4, 6, 8];
+const oddNumbers = [1, 3, 5, 7];
+
+
+const mergedArray = [...evenNumbers, ...oddNumbers];
+console.log(mergedArray);
