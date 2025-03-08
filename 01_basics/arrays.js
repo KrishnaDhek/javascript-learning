@@ -189,7 +189,15 @@ let arra = [];
 mergeArrays([1, 2, 3], [3, 4], [4, 5, 6]);
 console.log(arra);
 
+// function removeDup(arr) {
+//   return arr.filter((val, index, self) => self.indexOf(val) === index);
+// }
+// console.log(removeDup(arra));
+
+
+
 function removeDup(arr) {
-  return arr.filter((val, index, self) => self.indexOf(val) === index);
+  return [...new Set(arr)];
 }
-console.log(removeDup(arra));;
+
+console.log(removeDup(arra)); // [1, 2, 3, 4, 5, 6]
