@@ -179,9 +179,17 @@ const oddNumbers = [1, 3, 5, 7];
 const mergedArray = [...evenNumbers, ...oddNumbers];
 console.log(mergedArray);
 
-function mergeArrays(...a) {
-  return a.flat();
-}
+let arra = [];
+ function mergeArrays(...a) {
+   arra = a.flat();
+   return arra;
+ }
 
-console.log(mergeArrays([1, 2], [3, 4], [5, 6])); 
-// Expected Output: [1, 2, 3, 4, 5, 6]
+
+mergeArrays([1, 2, 3], [3, 4], [4, 5, 6]);
+console.log(arra);
+
+function removeDup(arr) {
+  return arr.filter((val, index, self) => self.indexOf(val) === index);
+}
+console.log(removeDup(arra));;
