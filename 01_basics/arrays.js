@@ -156,3 +156,10 @@ const arr = [1, true, 'Krishna', 22, 'test', 34];
 // console.log(breakfast);
 // console.log(lunch);
 // console.log(dinner);
+
+function multiply(...nums) {
+  return nums.reduce((product, num) => product * num, 1);
+}
+
+console.log(multiply(2, 3, 4)); // 24
+console.log(multiply(5, 6));    // 30
