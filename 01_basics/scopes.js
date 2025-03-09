@@ -128,3 +128,74 @@ for (var i = 0; i < 5; i++) {
   inner(i);
   
 }
+
+
+// let a = 50;
+// var b = 40;
+// {
+//   console.log(b);
+//   // console.log(a);
+//   let a = 200;
+//   var b = 90;
+//   function call() {
+//    console.log(b);
+
+//     console.log(a);
+//     let b = 55;
+//     var a = 65;
+//     console.log(b);
+//     console.log(a);
+
+//   }
+//   call();
+//   console.log(a);
+//   console.log(b);
+// }
+// console.log(a);
+// console.log(b);
+  
+// {
+
+// console.log(a);
+// console.log(b);
+// }
+
+
+
+// function a(x, y, z) {
+//   if (x > y) {
+//     var x = 60;
+//     let y = 50;
+//     const z = 60;
+//     console.log(x,y,z);
+//   }
+//   console.log(x,y,z);
+// }
+// a(12, 4, 5)
+
+
+function random(x,y,z)
+{
+  console.log(x);//10
+  console.log(y);//20
+  z(x, y);
+  x = 100;
+  y = 200;
+  return z;
+} 
+
+function random2(p,q)
+{
+  console.log(p, q);//10,20
+  random3();
+} 
+function random3(a)
+{
+  console.log(a);
+} 
+let a = 10;
+let b = 20;
+let c = random2;
+
+const d = random(a,b,c);
+d(a,b,random3)
