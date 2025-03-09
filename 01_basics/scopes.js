@@ -198,4 +198,6 @@ let b = 20;
 let c = random2;
 
 const d = random(a,b,c);
-d(a,b,random3)
+d(a, b, random3)
+
+
