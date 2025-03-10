@@ -51,3 +51,15 @@ function calculate(a, b) {
 }
 
 console.log(caller(calculate));
+
+function processData(num, callBack) {
+    setTimeout(function () {
+     callBack(num*num);
+    }, 2000);
+}
+
+function callBack(num) {
+    console.log(num);
+}
+
+processData(5, callBack);
