@@ -81,3 +81,35 @@ function test() {
 }
 
 test();
+
+function calculateResult(num, callBack) {
+    return callBack(num);
+}
+
+const checkEvenOdd = (num) => { 
+    if (num % 2 == 0) {
+        return `${num} is Even!`
+    }
+    else {
+        return `${num} is Odd!`;
+    }
+ }
+
+console.log(calculateResult(7, checkEvenOdd));
+
+
+function processUser(user, getFullName) {
+    return getFullName(user);
+}
+let getFullName = (user) => {
+    let fullName = "";
+    for (key in user) {
+        if (key === 'firstName' || key === 'lastName') {
+            fullName += user[key] +" ";
+        }
+    }
+    return fullName;
+}
+const user = { firstName: 'Krishna', lastName: 'Dhek', age: 28 };
+
+console.log(processUser(user, getFullName));
