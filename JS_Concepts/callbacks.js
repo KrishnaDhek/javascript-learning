@@ -195,3 +195,21 @@ const students = [
 ];
 
 console.log(processStudents(students, yourCallbackFunction));
+
+
+
+
+
+function fetchData(callBack) {
+  console.log('Fetching data...');
+  setTimeout(() => {
+    callBack('Data received');
+  }, 2000);
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+fetchData(handleData);
+console.log('End of script');
