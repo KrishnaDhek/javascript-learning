@@ -165,19 +165,6 @@ const applyDiscount = (products) => products.map((p) => {
 console.log(modifyProducts(products, applyDiscount));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const processOrders = (orders, callBack) => callBack(orders);
 
 
