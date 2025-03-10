@@ -75,3 +75,5 @@ function processUser(userId) {
     console.log(`User data for ID: ${userId}`);
 } 
 fetchUserData(101, processUser);
+
+
