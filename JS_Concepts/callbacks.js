@@ -163,3 +163,31 @@ const applyDiscount = (products) => products.map((p) => {
 
 
 console.log(modifyProducts(products, applyDiscount));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const processOrders = (orders, callBack) => callBack(orders);
+
+
+const filterExpensiveOrders = (order) => order.filter((order) => (order.price * order.quantity) > 1000);
+
+const orders = [
+  { id: 1, item: 'Phone', price: 20000, quantity: 1 },
+  { id: 2, item: 'Charger', price: 500, quantity: 2 },
+  { id: 3, item: 'Headphones', price: 800, quantity: 2 },
+  { id: 4, item: 'Laptop', price: 60000, quantity: 1 },
+];
+console.log(
+processOrders(orders, filterExpensiveOrders));
