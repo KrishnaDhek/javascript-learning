@@ -262,3 +262,23 @@ function handleData(data) {
 
 fetchData(handleData);
 console.log('End of script');
+
+
+
+
+
+
+function delayedMessage(message, delay, callBack) {
+  setTimeout(() => {
+    console.log(message);
+    callBack();
+  }, delay);
+}
+
+console.log('Start');
+
+delayedMessage('Hello, Krishna!', 3000, () => {
+  console.log('Callback executed');
+});
+
+console.log('End');
