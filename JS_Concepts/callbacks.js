@@ -15,7 +15,6 @@
 // }
 // first(second);
 
-
 // //Callback function are a way to achieve the asynchronous behaviour of javascript
 
 // function calculateTime(operation) {
@@ -30,50 +29,55 @@
 
 // calculateTime(operation);
 
-
-
-
-function caller( callBack) {
-    let a = 20;
-    var b = 200;
-    console.log(a, b);
-    return callBack(a, b);
+function caller(callBack) {
+  let a = 20;
+  var b = 200;
+  console.log(a, b);
+  return callBack(a, b);
 }
 
 function calculate(a, b) {
-    if (a < b) {
-        return a * b;
-    }
-
-    else {
-        return a / b;
-    }
+  if (a < b) {
+    return a * b;
+  } else {
+    return a / b;
+  }
 }
 
 console.log(caller(calculate));
 
 function processData(num, callBack) {
-    setTimeout(function () {
-     callBack(num*num);
-    }, 2000);
+  setTimeout(function () {
+    callBack(num * num);
+  }, 2000);
 }
 
 function callBack(num) {
-    console.log(num);
+  console.log(num);
 }
 
 processData(5, callBack);
 
-
 function fetchUserData(userId, callBack) {
-    setTimeout(function () {
-        callBack(userId);
-    },3000)
+  setTimeout(function () {
+    callBack(userId);
+  }, 3000);
 }
 
 function processUser(userId) {
-    console.log(`User data for ID: ${userId}`);
-} 
+  console.log(`User data for ID: ${userId}`);
+}
 fetchUserData(101, processUser);
 
+function test() {
+  for (var i = 1; i <= 5; i++) {
+    function revised(i) {
+      setTimeout(function () {
+        console.log(i);
+      }, i * 1000);
+    }
+    revised(i);
+  }
+}
 
+test();
