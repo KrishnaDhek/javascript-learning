@@ -127,3 +127,20 @@ const keepEvenNumbers = (num) => num.filter( n=> n%2==0)
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 console.log(filterNumbers(numbers, keepEvenNumbers));
+
+
+function processProducts(products, callBack) {
+    return callBack(products);
+}
+
+
+const expensiveProducts = (products) => products.filter((n) => n.price > 500);
+
+const products = [
+  { name: 'Laptop', price: 70000 },
+  { name: 'Mouse', price: 300 },
+  { name: 'Keyboard', price: 800 },
+  { name: 'Monitor', price: 5000 },
+];
+
+console.log(processProducts(products, expensiveProducts));
