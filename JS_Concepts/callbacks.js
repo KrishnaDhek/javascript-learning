@@ -113,3 +113,17 @@ let getFullName = (user) => {
 const user = { firstName: 'Krishna', lastName: 'Dhek', age: 28 };
 
 console.log(processUser(user, getFullName));
+
+
+
+
+function filterNumbers(num, callBack) {
+    return callBack(num);
+}
+
+const keepEvenNumbers = (num) => num.filter( n=> n%2==0)
+
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(filterNumbers(numbers, keepEvenNumbers));
