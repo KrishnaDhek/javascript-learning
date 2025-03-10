@@ -144,3 +144,22 @@ const products = [
 ];
 
 console.log(processProducts(products, expensiveProducts));
+
+
+
+function modifyProducts(products, callBack) {
+    return callBack(products);
+}
+
+const applyDiscount = (products) => products.map((p) => {
+    if (p.price > 1000) {
+        return { ...p, price: p.price - (p.price * 10) / 100 };
+
+    }
+
+    return p;
+
+})
+
+
+console.log(modifyProducts(products, applyDiscount));
