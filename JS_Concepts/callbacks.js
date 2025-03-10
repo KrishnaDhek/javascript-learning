@@ -282,3 +282,40 @@ delayedMessage('Hello, Krishna!', 3000, () => {
 });
 
 console.log('End');
+
+
+
+function fetchData(callBack) {
+  console.log('Fetching data...');
+  setTimeout(() => {
+    console.log('Data retrieved');
+    callBack();
+  }, 2000);
+}
+
+console.log('Start');
+
+fetchData(() => {
+  console.log('Processing data...');
+});
+
+console.log('End');
+
+
+
+
+function fetchDetails(callBack) {
+  console.log('Fetching details...');
+  setTimeout(() => {
+    console.log('Details retrieved');
+    callBack();
+  }, 0);
+}
+
+console.log('Start');
+
+fetchDetails(() => {
+  console.log('Processing details...');
+});
+
+console.log('End');
