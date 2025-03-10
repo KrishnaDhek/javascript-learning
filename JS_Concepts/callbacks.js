@@ -63,3 +63,15 @@ function callBack(num) {
 }
 
 processData(5, callBack);
+
+
+function fetchUserData(userId, callBack) {
+    setTimeout(function () {
+        callBack(userId);
+    },3000)
+}
+
+function processUser(userId) {
+    console.log(`User data for ID: ${userId}`);
+} 
+fetchUserData(101, processUser);
