@@ -33,3 +33,21 @@
 
 
 
+function caller( callBack) {
+    let a = 20;
+    var b = 200;
+    console.log(a, b);
+    return callBack(a, b);
+}
+
+function calculate(a, b) {
+    if (a < b) {
+        return a * b;
+    }
+
+    else {
+        return a / b;
+    }
+}
+
+console.log(caller(calculate));
