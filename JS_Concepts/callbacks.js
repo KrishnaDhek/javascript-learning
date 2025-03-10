@@ -213,3 +213,35 @@ function handleData(data) {
 
 fetchData(handleData);
 console.log('End of script');
+
+
+
+
+
+function compute(num, callBack) {
+  console.log('Computing...'); //2
+  return callBack(num);
+}
+
+const addFive = (n) => n + 5;
+
+setTimeout(() => console.log(compute(10, addFive)), 0);//3
+
+console.log('Task done'); //1
+
+
+
+
+function executeTask(taskName, callBack) {
+  console.log(`Starting ${taskName}...`);
+  setTimeout(() => {
+    callBack(`${taskName} completed`);
+  }, 1000);
+}
+
+function logResult(result) {
+  console.log(result);
+}
+
+executeTask('Download', logResult);
+console.log('Waiting...');
