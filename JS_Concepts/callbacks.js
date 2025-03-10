@@ -245,3 +245,20 @@ function logResult(result) {
 
 executeTask('Download', logResult);
 console.log('Waiting...');
+
+
+
+function fetchData(callBack) {
+  console.log('Fetching data...');
+  setTimeout(() => {
+    callBack('Data received');
+    console.log('Processing data...');
+  }, 2000);
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+fetchData(handleData);
+console.log('End of script');
