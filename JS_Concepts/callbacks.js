@@ -178,3 +178,20 @@ const orders = [
 ];
 console.log(
 processOrders(orders, filterExpensiveOrders));
+
+
+
+
+const processStudents = (students, callBack) =>  callBack(students);
+
+const yourCallbackFunction = (students) => students.filter((s) => s.marks > 80);
+
+
+const students = [
+  { name: 'Alice', marks: 75 },
+  { name: 'Bob', marks: 90 },
+  { name: 'Charlie', marks: 82 },
+  { name: 'David', marks: 60 },
+];
+
+console.log(processStudents(students, yourCallbackFunction));
