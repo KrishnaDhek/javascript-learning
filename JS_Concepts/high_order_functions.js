@@ -27,3 +27,12 @@ function countFrequency(words) {
     return acc;},{}
  )
 }
+
+
+//reduce method practice questions
+//Multiply All Numbers
+const numbers = [2, 3, 4]; 
+const numMul = numbers.reduce(function (acc, num) {
+   return num * acc;
+},1)
+console.log(numMul);
