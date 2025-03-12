@@ -156,3 +156,20 @@ const total = transactions.reduce((acc, tran) => {
 }, {})
 
 console.log(total);
+
+
+//Find the Longest Word in an Array
+
+const wordsInArray = ["elephant", "dog", "hippopotamus", "cat", "zebra"];
+
+function longestWord(words) {
+   
+   return words.reduce((acc, word) => {
+      if (word.length > acc.length) {
+         acc = word;
+      }
+      return acc;
+ }," " )
+}
+
+console.log(longestWord(wordsInArray));
