@@ -173,3 +173,20 @@ function longestWord(words) {
 }
 
 console.log(longestWord(wordsInArray));
+
+
+
+//Find the sum of all even numbers in an array using reduce()
+
+
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const evenSum = number.reduce((acc, num) => {
+   if (num % 2 == 0) {
+      acc += num;
+   }
+   return acc;
+   
+ }, 0)
+
+console.log(evenSum);
