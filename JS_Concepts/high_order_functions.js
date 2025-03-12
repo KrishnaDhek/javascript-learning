@@ -36,3 +36,16 @@ const numMul = numbers.reduce(function (acc, num) {
    return num * acc;
 },1)
 console.log(numMul);
+
+
+
+//Reverse an Array using
+const arr = [1, 2, 3, 4, 5]; 
+
+const reversedArr = arr.reduce((acc, a) => {
+   // acc.unshift(a);
+   // return acc
+
+   return [a, ...acc]
+}, [])
+console.log(reversedArr);
