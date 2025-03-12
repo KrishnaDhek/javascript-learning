@@ -130,3 +130,29 @@ const groupedUsers = usersDetail.reduce((acc, user) => {
 }, {})
 
 console.log(groupedUsers);
+
+
+//You have an array of transactions where each transaction has a category and an amount. Your task is to calculate the total amount spent in each category.
+
+
+const transactions = [
+  { category: 'Food', amount: 15 },
+  { category: 'Transport', amount: 10 },
+  { category: 'Food', amount: 25 },
+  { category: 'Entertainment', amount: 30 },
+  { category: 'Transport', amount: 5 },
+];
+
+
+const total = transactions.reduce((acc, tran) => {
+   if (acc[tran.category]) {
+      acc[tran.category] += tran.amount;
+   }
+   else {
+      acc[tran.category] = tran.amount;
+   }
+
+   return acc;
+}, {})
+
+console.log(total);
