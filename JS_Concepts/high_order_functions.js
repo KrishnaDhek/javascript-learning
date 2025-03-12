@@ -107,3 +107,25 @@ const userAge = users.reduce((acc, x) => {
    return acc;
 }, {});
 console.log(userAge);
+
+
+
+const usersDetail = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 25 },
+  { name: 'David', age: 30 },
+];
+
+
+const groupedUsers = usersDetail.reduce((acc, user) => {
+   if (acc[user.age]) {
+      acc[user.age].push(user.name);
+   }
+   else {
+      acc[user.age] = [user.name];
+   }
+   return acc;
+}, {})
+
+console.log(groupedUsers);
