@@ -190,3 +190,24 @@ const evenSum = number.reduce((acc, num) => {
  }, 0)
 
 console.log(evenSum);
+
+
+
+//Given an array of numbers, return an object containing the count of even and odd numbers.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sumEvenOdd = numbers.reduce((acc, num) => {
+   if (num % 2 == 0) {
+      acc.even += num;
+      
+   }
+   else if(num%2!=0) {
+      acc.odd += num;
+      
+   }
+
+return acc;
+},{even: 0, odd: 0})
+
+console.log(sumEvenOdd);
