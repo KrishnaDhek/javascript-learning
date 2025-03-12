@@ -120,10 +120,11 @@ const usersDetail = [
 
 const groupedUsers = usersDetail.reduce((acc, user) => {
    if (acc[user.age]) {
-      acc[user.age].push(user.name);
+      acc[user.age].count +=1;
+      acc[user.age].user.push(user.name);
    }
    else {
-      acc[user.age] = [user.name];
+      acc[user.age] = {count:1, user: [user.name]};
    }
    return acc;
 }, {})
