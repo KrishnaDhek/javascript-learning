@@ -211,3 +211,25 @@ return acc;
 },{even: 0, odd: 0})
 
 console.log(sumEvenOdd);
+
+
+
+
+//You have an array of strings. Use .reduce() to create an object where the keys are the first letters of each word, and the values are arrays of words that start with that letter.
+
+const words = ['apple', 'banana', 'apricot', 'blueberry', 'cherry', 'avocado'];
+   
+const startLetter = words.reduce((acc, w) => {
+
+   let fLetter = w.charAt(0);
+
+   if (acc[fLetter]) {
+      acc[fLetter].push(w);
+   }
+   else {
+      acc[fLetter] = [w];
+   }
+   return acc;
+},{})
+
+console.log(startLetter);
