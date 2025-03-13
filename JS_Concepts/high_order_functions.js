@@ -270,3 +270,19 @@ const lengthOfWords = words.reduce((acc, word) => {
 }, {})
 
 console.log(lengthOfWords);
+
+
+
+const words = ['apple', 'grape', 'banana', 'cherry', 'date', 'orange'];
+
+const lastLetter = words.reduce((acc, word) => {
+   let last = word.charAt(word.length - 1);
+   if (acc[last]) {
+      acc[last].push(word);
+   }
+   else {
+      acc[last] = [word];
+   }
+   return acc;
+}, {})
+console.log(lastLetter);
