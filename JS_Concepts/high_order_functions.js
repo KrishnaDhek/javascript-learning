@@ -251,3 +251,22 @@ const numberType = function (numbers) {
 }
 
 console.log(numberType(numbers));
+
+
+
+
+const words = ['apple', 'banana', 'cherry', 'date', 'egg', 'fig', 'grape'];
+
+const lengthOfWords = words.reduce((acc, word) => {
+   let len = word.length;
+
+   if (acc[len]) {
+      acc[len].push(word);
+   } 
+   else {
+      acc[len] = [word];
+   }
+   return acc;
+}, {})
+
+console.log(lengthOfWords);
