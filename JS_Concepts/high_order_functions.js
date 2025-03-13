@@ -294,12 +294,14 @@ const numbers = [12, 7, 5, 8, 9, 14, 3, 11, 6];
 const group = numbers.reduce((acc, num) => {
 
    if (num % 2 == 0) {
-      acc.even++;
+      acc.even.count++;
+      acc.even.number.push(num);
    }
    else {
-      acc.odd++;
+      acc.odd.count++;
+      acc.odd.number.push(num);
    }
    return acc;
    
-}, { even: 0, odd: 0 });
+}, { even: { count: 0, number: []}, odd: {count: 0, number:[]} });
 console.log(group);
