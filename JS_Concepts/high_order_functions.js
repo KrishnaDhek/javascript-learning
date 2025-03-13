@@ -286,3 +286,20 @@ const lastLetter = words.reduce((acc, word) => {
    return acc;
 }, {})
 console.log(lastLetter);
+
+
+
+const numbers = [12, 7, 5, 8, 9, 14, 3, 11, 6];
+
+const group = numbers.reduce((acc, num) => {
+
+   if (num % 2 == 0) {
+      acc.even.push(num);
+   }
+   else {
+      acc.odd.push(num);
+   }
+   return acc;
+   
+}, { even: [], odd: [] });
+console.log(group);
