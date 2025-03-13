@@ -233,3 +233,21 @@ const startLetter = words.reduce((acc, w) => {
 },{})
 
 console.log(startLetter);
+
+
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numberType = function (numbers) {
+   return numbers.reduce((acc, num) => {
+      if (num % 2 == 0) {
+         acc.even.push(num);
+      }
+      else {
+         acc.odd.push(num);
+      }
+
+      return acc;
+   },{even: [], odd: []})
+}
+
+console.log(numberType(numbers));
