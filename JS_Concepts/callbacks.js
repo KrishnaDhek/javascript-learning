@@ -281,7 +281,7 @@
 
 // console.log('End');
 
-//CallBack Hell Exmaple 
+//CallBack Hell Exmaple
 //Pyramid of Doom
 
 let stocks = {
@@ -323,8 +323,67 @@ let production = (stocks) => {
         }, 1000);
       }, 1000);
     }, 2000);
-  },0);
-  
+  }, 0);
 };
 
 order(stocks, production);
+
+let products = {
+  vegetables: [
+    'potato',
+    'tomato',
+    'onion',
+    'pepper',
+    'garlic',
+    'gingert',
+    'cabbage',
+    'pumkin',
+  ],
+  fruits: ['apple', 'mango', 'banana'],
+  dairy: ['milk', 'curd', 'bread', 'egg'],
+  nonVeg: ['meat', 'chicken', 'fish'],
+};
+
+const orderList = (products, shopping) => {
+  setTimeout(() => {
+    console.log('Order Received');
+    shopping(products);
+  }, 2000);
+};
+
+const shopping = (products) => {
+  let veg = [
+    products.vegetables[0],
+    products.vegetables[3],
+    products.vegetables[4],
+  ];
+
+  let fruit = [products.fruits[0]];
+  let dairy = [products.dairy[0], products.dairy[1], products.dairy[3]];
+  let nonVeg = [products.nonVeg[1], products.nonVeg[2]];
+  setTimeout(() => {
+    console.log('Shopping Started');
+    setTimeout(() => {
+      console.log(
+        `the cart has items: ${[...veg, ...fruit, ...dairy, ...nonVeg].join(', ')}`);
+      setTimeout(() => {
+        console.log('Billing started');
+        setTimeout(() => {
+          console.log('Looking for delivery Partner');
+          setTimeout(() => {
+            console.log('delivery partner assigned');
+            setTimeout(() => {
+              console.log('order out for delivery');
+              setTimeout(() => {
+                console.log('Order Deliverd!');
+              }, 1000);
+            }, 4000);
+          }, 2000);
+        }, 5000);
+      }, 2000);
+    }, 3000);
+  }, 0);
+};
+
+
+orderList(products,shopping)
