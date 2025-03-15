@@ -4,5 +4,3 @@ let stocks = {
   Holder: ['cone', 'cup'],
   Topping: ['sprinkle', 'raw-fruit'],
 };
-
-
