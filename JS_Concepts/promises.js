@@ -333,6 +333,33 @@ fetchUserDataAndPosts(1).then(data => console.log(data));
 // })
 
 
+// const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
+//   (response) => {
+//     if (!response.ok) {
+//       throw new Error(`Http Error ${response.status} `);
+//     }
+//     return response.json();
+//   }
+// );
+// const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
+//   (response) => {
+//     if (!response.ok) {
+//       throw new Error(`Http Error ${response.status}`);
+//     }
+//     return response.json();
+//   }
+// );
+
+// Promise.allSettled([promise1, promise2])
+//   .then((result) => console.log(result))
+//   .catch((error) => {
+//     console.log('Error: ', error.message);
+//   });
+
+
+
+
+
 
 const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
   (response) => {
@@ -351,8 +378,11 @@ const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
   }
 );
 
-Promise.allSettled([promise1, promise2])
+Promise.race([promise1, promise2])
   .then((result) => console.log(result))
   .catch((error) => {
     console.log('Error: ', error.message);
   });
+
+
+
