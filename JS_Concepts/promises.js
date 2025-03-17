@@ -207,3 +207,34 @@ Promise.allSettled(blogPost.map(fetchPostData))
   console.log("Task Completed");
 })
 
+
+
+
+//Create a function getData that returns a Promise. The Promise should resolve after 2 seconds with a message
+// "Data fetched successfully."
+
+function getData(message) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (message === "") {
+        reject(new Error(`Invalid data`));
+      } else {
+        resolve(message);
+      }
+    }, 2000);
+  })
+}
+
+getData("Data fetched successfully")
+  .then(function (message){
+  console.log(message);
+  })
+  .catch((error) => {
+  console.log("Error:",error.message);
+  })
+
+
+/**
+ * Write an asynchronous function fetchData that uses the Fetch API to retrieve data from a given URL and returns
+the parsed JSON response.
+ */
