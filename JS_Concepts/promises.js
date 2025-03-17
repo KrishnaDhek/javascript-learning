@@ -238,3 +238,27 @@ getData("Data fetched successfully")
  * Write an asynchronous function fetchData that uses the Fetch API to retrieve data from a given URL and returns
 the parsed JSON response.
  */
+
+async function fetchData(url) {
+  try {
+    if (!url) throw new Error("Invalid URl");
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Http Error: ${response.status} `)
+    
+    const data = await response.json();
+    return data;
+
+  }
+  catch (error) {
+    throw error;
+  }
+}
+
+fetchData("https://jsonplaceholder.typicode.com/todos/1")
+.then((data) => {
+  console.log("Fetched data: ", data);
+})
+  .catch((error) => {
+  console.log(error.message);
+})
