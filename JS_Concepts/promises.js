@@ -313,48 +313,48 @@ fetchUserDataAndPosts(1).then(data => console.log(data));
 
 //Promise APIs
 
-// const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(response => {
-//   if (!response.ok) {
-//       throw new Error(`Http Error ${response.status} `)
-//     }
-//   return response.json()
-// });
-// const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(response => {
-//   if (!response.ok) {
-//     throw new Error(`Http Error ${response.status}`)
-//   }
-//   return response.json()
-// })
+const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(response => {
+  if (!response.ok) {
+      throw new Error(`Http Error ${response.status} `)
+    }
+  return response.json()
+});
+const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(response => {
+  if (!response.ok) {
+    throw new Error(`Http Error ${response.status}`)
+  }
+  return response.json()
+})
 
-// Promise.all([promise1, promise2])
-//   .then(result => console.log(result))
-//   .catch((error)=>{
-//   console.log("Error: ", error.message);
-// })
+Promise.all([promise1, promise2])
+  .then(result => console.log(result))
+  .catch((error)=>{
+  console.log("Error: ", error.message);
+})
 
 
-// const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
-//   (response) => {
-//     if (!response.ok) {
-//       throw new Error(`Http Error ${response.status} `);
-//     }
-//     return response.json();
-//   }
-// );
-// const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
-//   (response) => {
-//     if (!response.ok) {
-//       throw new Error(`Http Error ${response.status}`);
-//     }
-//     return response.json();
-//   }
-// );
+const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status} `);
+    }
+    return response.json();
+  }
+);
+const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status}`);
+    }
+    return response.json();
+  }
+);
 
-// Promise.allSettled([promise1, promise2])
-//   .then((result) => console.log(result))
-//   .catch((error) => {
-//     console.log('Error: ', error.message);
-//   });
+Promise.allSettled([promise1, promise2])
+  .then((result) => console.log(result))
+  .catch((error) => {
+    console.log('Error: ', error.message);
+  });
 
 
 
