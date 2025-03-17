@@ -386,3 +386,32 @@ Promise.race([promise1, promise2])
 
 
 
+
+
+const promise1 = fetch('https://jsonplaceholder.typicode.com/users/-10').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status} `);
+    }
+    return response.json();
+  }
+);
+const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status}`);
+    }
+    return response.json();
+  }
+);
+
+Promise.any([promise1, promise2])
+  .then((result) => console.log(result))
+  .catch((error) => {
+    console.log('Error: ', error.message);
+    console.log('Full Errors:', error.errors);
+  });
+
+
+
+
