@@ -261,4 +261,50 @@ fetchData("https://jsonplaceholder.typicode.com/todos/1")
 })
   .catch((error) => {
   console.log(error.message);
-})
+  })
+
+
+
+/**
+ * Create a function fetchUserDataAndPosts that takes a user ID and fetches the user details and their posts
+using separate API calls. Use promise chaining to ensure the posts are retrieved only after the user details are
+fetched. Return an object with user details and posts.
+ */
+
+function fetchUserData(userId) {
+  return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+  .then(
+    (response) => {
+      if (!response.ok) {
+        throw new Error('failed to fetch user data ');
+      }
+      return response.json();
+    }
+  );
+}
+
+function fetchUserPost(userId) {
+  return fetch(
+    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error('failed to fetch user data');
+    }
+    return response.json();
+  });
+}
+
+function fetchUserDataAndPosts(userId) {
+  return fetchUserDataa(userId)
+    .then(user => {
+      return fetchUserPost(userId)
+        .then(posts => {
+          return { user, posts };
+      })
+    })
+    .catch((error) => {
+    console.log(error.message);
+  })
+}
+
+fetchUserDataAndPosts(1).then(data => console.log(data));
