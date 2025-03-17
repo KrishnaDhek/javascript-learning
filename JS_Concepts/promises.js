@@ -154,7 +154,7 @@ function fetchUserData(user) {
 
 Promise.allSettled(user.map(fetchUserData))
   .then(result => {
-    result.forEach(result => {
+    result.forEach((result) => {
       if (result.status === "fulfilled") {
       console.log("Valid user: ",result.value);
       } else {
@@ -164,4 +164,46 @@ Promise.allSettled(user.map(fetchUserData))
   })
   .finally(() => {
   console.log("Task Completed");
+  })
+
+/**
+ * Write a function fetchPostData(postId) that simulates fetching a blog post from a server.
+
+If postId is less than or equal to 0, reject with "Invalid postId" after 1 second.
+Otherwise, resolve with an object like { postId, title: "Post Title", content: "Post Content" }.
+Use .then(), .catch(), and .finally() to handle the response.
+ */
+
+const blogPost = [
+  { postId: 1, title: 'Post title1', content: 'post content1' },
+  { postId: 2, title: 'Post title2', content: 'post content2' },
+  { postId: -3, title: 'Post title3', content: 'post content3' },
+];
+
+function fetchPostData(post) {
+  return new Promise((resolve, reject) => {
+   setTimeout(() => {
+     if (post.postId <= 0) {
+       const error = new Error(`Invalid postId ${post.postId}`);
+       reject(error);
+     } else {
+       resolve(post);
+     }
+   }, 1000);
+  })
+}
+
+Promise.allSettled(blogPost.map(fetchPostData))
+  .then((results) => {
+    results.forEach((result) => {
+      if (result.status === "fulfilled") {
+      console.log(result.value);
+      } else {
+        console.log("error:", result.reason.message);
+    }
+  })
+  })
+  .finally(() => {
+  console.log("Task Completed");
 })
+
