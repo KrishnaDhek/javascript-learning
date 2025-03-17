@@ -80,8 +80,8 @@ let selectedTopping = (stocks) => {
 }
 
 
-order(stocks)
-  .then(production)
+order(stocks)//returns a promise
+  .then(production)//promise chaining
   .then(selectFruit)
   .then(selectedFlavour)
   .then(startMachine)
