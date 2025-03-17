@@ -5,7 +5,7 @@ let stocks = {
   Topping: ['sprinkle', 'raw-fruit'],
 };
 
-let shopOpen = true;
+let shopOpen = false;
 let order = (stocks) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -92,4 +92,35 @@ order(stocks)//returns a promise
   })
   .finally(() => {
     console.log("process completed");
+  })
+
+
+
+//Create a function delayedMessage that returns a Promise. This Promise should resolve with "Hello, Krishna!" after 2 seconds. Once resolved, log the message to the console using .then().
+  
+function delayedMessage(message) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (message) {
+        resolve(message);
+      }
+      else {
+        const error = new Error("message is empty")
+        reject(error);
+      }
+      
+    }, 2000);
+  })
+
+}
+
+delayedMessage("")
+  .then(function (message) {
+    console.log(message);
+  })
+  .catch((error) => {
+  console.log("Error: ",error.message);
+  })
+  .finally(() => {
+    console.log("Task Completed");
   })
