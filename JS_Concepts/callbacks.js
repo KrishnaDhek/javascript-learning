@@ -386,4 +386,18 @@ const shopping = (products) => {
 };
 
 
-orderList(products,shopping)
+orderList(products, shopping)
+
+
+//Implement a function multiplyWithCallback that takes an array of numbers and a callback function. The function should multiply each element of the array by 2 and pass the result to the callback.
+
+function multiplyWithCallback(nums, callBack) {
+  let result = nums.map((nums) => nums*2 )
+  callBack(result);
+}
+
+function callBack(result) {
+  console.log(result);
+}
+
+multiplyWithCallback([2,3,4,5],callBack)
