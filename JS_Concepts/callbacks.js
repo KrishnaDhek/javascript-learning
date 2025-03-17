@@ -400,4 +400,4 @@ function callBack(result) {
   console.log(result);
 }
 
-multiplyWithCallback([2,3,4,5],callBack)
+multiplyWithCallback([2, 3, 4, 5], callBack)
