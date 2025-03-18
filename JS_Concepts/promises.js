@@ -412,3 +412,25 @@ Promise.any([promise1, promise2])
     console.log('Full Errors:', error.errors);
   });
 
+async function fetchUserData(url) {
+  try {
+    const response =await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status} `)
+    }
+    const data = await response.json();
+    return data;
+  }
+  catch(error) {
+    throw new Error(error.message || "Network Error")
+  }
+}
+
+
+  fetchUserData('https://jsonplaceholder.typicode.com/users/1')
+    .then((data) => console.log('User Data:', data))
+    .catch((error) => console.log('Error:', error.message));
+
+  fetchUserData('https://jsonplaceholder.typicode.com/invalid-url')
+    .then((data) => console.log('User Data:', data))
+    .catch((error) => console.log('Error:', error.message));
