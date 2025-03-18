@@ -412,9 +412,3 @@ Promise.any([promise1, promise2])
     console.log('Full Errors:', error.errors);
   });
 
-
-
-
-
-
-  
