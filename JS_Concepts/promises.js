@@ -434,3 +434,68 @@ async function fetchUserData(url) {
   fetchUserData('https://jsonplaceholder.typicode.com/invalid-url')
     .then((data) => console.log('User Data:', data))
     .catch((error) => console.log('Error:', error.message));
+
+
+
+const pr1 = new Promise((resolve, reject)=>{
+  setTimeout(() => {
+    resolve("P1 is successful");
+  }, 3000);
+})
+
+const pr2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    // resolve("P2 is successful");
+    reject("P2 is failed")
+  }, 1000);
+})
+
+const pr3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("P3 is successful")
+  }, 2000);
+})
+
+// The Promise.all() method takes an array of promises and returns an array of their resolved values if all promises are fulfilled. 
+// However, it is a "fail-fast" method, meaning that if any promise is rejected, it immediately rejects with that error, 
+// without waiting for the remaining promises to settle.
+Promise.all([pr1, pr2, pr3])
+  .then((result => {
+  console.log(result);
+  }))
+  .catch((error)=>{
+  console.error("Error: ",error);
+  })
+
+
+  
+function fetchUserAndPosts(userId) {
+  const p1 = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(
+    (response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch user details: ${response.status}`);
+      }
+      return response.json(); // Parse JSON
+    }
+  );
+
+  const p2 = fetch(
+    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch user posts: ${response.status}`);
+    }
+    return response.json(); // Parse JSON
+  });
+
+  return Promise.all([p1, p2])
+    .then(([user, posts]) => {
+      return { user, posts }; // Return both user and posts in an object
+    })
+    .catch((error) => {
+      console.error('Error:', error.message);
+    });
+}
+
+// Call the function and log the result
+fetchUserAndPosts(1).then((data) => console.log(data));
