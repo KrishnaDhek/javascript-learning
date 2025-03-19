@@ -468,7 +468,6 @@ Promise.all([pr1, pr2, pr3])
   })
 
 
-  
 function fetchUserAndPosts(userId) {
   const p1 = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(
     (response) => {
