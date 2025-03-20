@@ -590,3 +590,51 @@ function fetchDataInParallel() {
 }
 
 fetchDataInParallel();
+
+//Handle Multiple Promises with Promise.all()
+
+const products = [
+  {
+    name: 'Laptop',
+    price: 230000,
+    delay: 1000,
+  },
+  {
+    name: 'Phone',
+    price: 13000,
+    delay: 2000,
+  },
+  {
+    name: 'Tablet',
+    price: 2000,
+    delay: 3000
+  },
+];
+
+function fetchPrice(product) {
+  return new Promise((resolve, reject) => {
+    if (product.delay <= 0) {
+
+      reject(new Error('Invalid dealy'));
+      
+    } else {
+      setTimeout(() => {
+        resolve({ name: product.name, price: product.price });
+      }, product.delay);
+    }
+  })
+}
+
+function fetchDataInParallel() {
+  const promises = products.map(fetchPrice)
+
+  Promise.allSettled(promises)
+    .then((result) => {
+    console.log(result);
+    })
+    .catch((error) => {
+    console.log("Error: ",error);
+  })
+}
+
+fetchDataInParallel();
