@@ -230,3 +230,15 @@ function processArray(arr) {
 }
 
 console.log(processArray([2,3,4,5]));
+
+
+//.some(), .every(), and .find()
+
+function checkArray(arr) {
+  const evenNumbers = arr.some(num => num%2===0)
+  const positiveNumber = arr.every((num) => num >=0);
+  const findNumber = arr.find((num)=> num>10);
+  return { even: evenNumbers, positive: positiveNumber, find: findNumber };
+}
+
+console.log(checkArray([13,2,4,53,5,68,10]));
