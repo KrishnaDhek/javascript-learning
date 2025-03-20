@@ -864,4 +864,86 @@ userLogs(u, 1000)
   })
   .finally(() => {
     console.timeEnd("Time");
-})
+  })
+
+
+
+
+
+
+function userLogs(user, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({ name: user.name, status: 'Logged-In' });
+      }, delay);
+    }
+  });
+}
+
+function fetchCart(user, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({
+          name: user.name,
+          orderId: 101,
+          item: ['Phone', 'Pants', 'Tops'],
+        });
+      }, delay);
+    }
+  });
+}
+
+function processPayment(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({ orderId: orderId, paymentStatus: 'Paid' });
+      }, delay);
+    }
+  });
+}
+
+function shipOrder(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({ orderId: orderId, trackingnumber: 20202 });
+      }, delay);
+    }
+  });
+}
+
+
+async function placeOrder() {
+  try {
+    console.time("Time");
+    const user = { name: "krishna" };
+
+    const loginDetails = await userLogs(user, 1000);
+    console.log(loginDetails);
+    const cartDetails = await fetchCart(loginDetails, 1500);
+    console.log(cartDetails);
+    const payment = await processPayment(cartDetails.orderId, 1000);
+    console.log(payment);
+    const shippingDetails = await shipOrder(payment.orderId, 1500);
+    console.log(shippingDetails);
+  }
+  catch(error) {
+    console.log("Error: ",error.message);
+  }
+  finally{
+    console.timeEnd("Time");
+  }
+}
+
+placeOrder();
