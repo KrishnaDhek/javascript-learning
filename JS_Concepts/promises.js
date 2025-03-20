@@ -556,4 +556,37 @@ doubleAfterDelay(2, 1000)
   })
   .finally(() => {
   console.timeEnd("Total Time");// the lable should be same as in the console.time()
-})
+  })
+
+
+//Parallel Execution with Promise.all
+
+function doubleAfterDelay(value, delay) {
+  return new Promise((resolve, reject) => {
+
+
+    if (delay > 0) {
+      setTimeout(() => {
+        resolve(value * 2);
+      }, delay);
+    } else {
+      reject(new Error("Invalid delay value"))
+    }
+  });
+}
+
+function fetchDataInParallel() {
+  const p1 = doubleAfterDelay(2, 1000);
+  const p2 = doubleAfterDelay(3, 2000);
+  const p3 = doubleAfterDelay(4, -3000);
+
+  Promise.all([p1, p2, p3])
+    .then((result) => {
+    console.log(result);
+    })
+    .catch((err) => {
+    console.log("Error: ",err.message);
+  })
+}
+
+fetchDataInParallel();
