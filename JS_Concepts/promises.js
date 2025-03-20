@@ -537,19 +537,23 @@ function doubleAfterDelay(value, delay) {
     }
   })
 }
+console.time('Total Time');
 
 doubleAfterDelay(2, 1000)
   .then((result) => {
-    console.log(result);
+    console.log("First promise settled @ 1s and doubled values is : "+result);
     return doubleAfterDelay(result,2000)
   })
   .then((result) => {
-    console.log(result);
-    // return doubleAfterDelay(result,3000)
+    console.log('Seconf promise settled @ 3s and doubled values is : ' + result);
+    return doubleAfterDelay(result,3000)
   })
   .then((result) => {
-    console.log(result);
+    console.log('Final promise settled @ 6s and doubled values is : ' + result);
   })
   .catch((error) => {
   console.log(error);
+  })
+  .finally(() => {
+  console.timeEnd("Total Time");// the lable should be same as in the console.time()
 })
