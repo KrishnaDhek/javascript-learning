@@ -219,3 +219,14 @@ function arrayOp() {
 console.log(arrayOp());
 
 
+
+//Using .map(), .filter(), .reduce()
+
+function processArray(arr) {
+    const newArr = arr.map(a => a * 2);
+    const filteredArray = newArr.filter(num => num > 5 );
+    const sum = filteredArray.reduce((acc, num) => acc + num, 0);
+    return { doubledArray: newArr, filteredArray: filteredArray, sum: sum };
+}
+
+console.log(processArray([2,3,4,5]));
