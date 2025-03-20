@@ -917,7 +917,7 @@ function shipOrder(orderId, delay) {
       reject(new Error('Time Out'));
     } else {
       setTimeout(() => {
-        resolve({ orderId: orderId, trackingnumber: 20202 });
+        resolve({ orderId: orderId, trackingNumber: 20202 });
       }, delay);
     }
   });
@@ -949,7 +949,7 @@ async function placeOrder() {
     console.log(cartDetails);
     const stock = await checkStock(cartDetails, 2000);
     console.log(stock);
-    const payment = await processPayment(cartDetails.orderId, 1000);
+    const payment = await processPayment(stock.orderId, 1000);
     console.log(payment);
     const shippingDetails = await shipOrder(payment.orderId, 1500);
     console.log(shippingDetails);
