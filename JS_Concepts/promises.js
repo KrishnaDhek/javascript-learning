@@ -924,6 +924,20 @@ function shipOrder(orderId, delay) {
 }
 
 
+function checkStock(cart, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else if(cart.item.length>0){
+      setTimeout(() => {
+        resolve({ orderId: cart.orderId, stockStatus: "In Stock" });
+      }, delay);
+    } else {
+      reject(new Error("Out of Stock"))
+    }
+  });
+}
+
 async function placeOrder() {
   try {
     console.time("Time");
@@ -933,6 +947,8 @@ async function placeOrder() {
     console.log(loginDetails);
     const cartDetails = await fetchCart(loginDetails, 1500);
     console.log(cartDetails);
+    const stock = await checkStock(cartDetails, 2000);
+    console.log(stock);
     const payment = await processPayment(cartDetails.orderId, 1000);
     console.log(payment);
     const shippingDetails = await shipOrder(payment.orderId, 1500);
