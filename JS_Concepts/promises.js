@@ -723,4 +723,67 @@ fetchOrder(1, 1500)
   })
   .finally(() => {
     console.timeEnd("Time");
-})
+  })
+
+
+
+//You need to simulate a food delivery tracking system using Promises and Promise chaining.
+
+
+function fetchOrderDetails(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject("Invalid Delay");
+    } else {
+      setTimeout(() => {
+        resolve({orderId: orderId, item:"Pizza", status:"Order Placed"})
+      }, delay);
+    }
+  })
+}
+
+function fetchDeliveryStatus(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject('Invalid Delay');
+    } else {
+      setTimeout(() => {
+        resolve({ orderId: orderId, status: 'Out for Delivery' });
+      }, delay);
+    }
+  });
+}
+
+
+function fetchDeliveryCompletion(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject('Invalid Delay');
+    } else {
+      setTimeout(() => {
+        resolve({ orderId: orderId, status: 'Delivered' });
+      }, delay);
+    }
+  });
+}
+
+console.time("Time");
+
+fetchOrderDetails(555, 1000)
+  .then((result) => {
+    console.log(result);
+    return fetchDeliveryStatus(result.orderId, 2000);
+  })
+  .then((result) => {
+    console.log(result);
+    return fetchDeliveryCompletion(result.orderId, 1500);
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log("Error: ",error.message);
+  })
+  .finally(() => {
+    console.timeEnd("Time")
+  })
