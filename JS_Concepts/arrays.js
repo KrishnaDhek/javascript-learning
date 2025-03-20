@@ -202,3 +202,20 @@
 // }
 
 // console.log(removeDup(arra)); // [1, 2, 3, 4, 5, 6]
+
+
+
+//Basic Array Operations
+
+function arrayOp() {
+    const arr = [1, 2, 3, 4, 5];
+    arr.push(6);
+    arr.unshift(0);
+    arr.pop();
+    let index = arr.indexOf(3);
+
+    return { modifiedArray: arr, indexOfThee: index}
+}
+console.log(arrayOp());
+
+
