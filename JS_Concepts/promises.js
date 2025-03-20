@@ -682,3 +682,45 @@ fetchUser(1, 1000)
   .finally(() => {
   console.timeEnd("Time");
 })
+
+
+// simulate fetching order details for a user and then fetching the payment status of that order.
+function fetchOrder(userID, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject(new Error("Invalid Delay"));
+    } else {
+      setTimeout(() => {
+        resolve({userId: userID, orderID: 101, item:"Laptop" })
+      }, delay);
+    }
+  })
+}
+
+function fetchPaymentDetails(orderID, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject(new Error("Invalid Delay"));
+    } else {
+      setTimeout(() => {
+        resolve({ orderID: orderID, status: "Paid" });
+      }, delay);
+    }
+  })
+}
+
+console.time("Time");
+fetchOrder(1, 1500)
+  .then((result) => {
+    console.log(result);
+    return fetchPaymentDetails(result.orderID, 2000);
+  })
+  .then((result) => {
+  console.log(result);
+  })
+  .catch((error) => {
+  console.log("Error: ",error.message);
+  })
+  .finally(() => {
+    console.timeEnd("Time");
+})
