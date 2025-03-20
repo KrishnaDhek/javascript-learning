@@ -522,4 +522,34 @@ simplePromise(2000)
   })
   .catch((error) => {
   console.log("Error: ",error.message);
+  })
+
+
+//Chaining Promises
+function doubleAfterDelay(value, delay) {
+  return new Promise((resolve, reject) => {
+    if (typeof value !=="number") {
+      reject("Invalid Input");
+    } else {
+      setTimeout(() => {
+        resolve(value * 2);
+      }, delay);
+    }
+  })
+}
+
+doubleAfterDelay(2, 1000)
+  .then((result) => {
+    console.log(result);
+    return doubleAfterDelay(result,2000)
+  })
+  .then((result) => {
+    console.log(result);
+    // return doubleAfterDelay(result,3000)
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+  console.log(error);
 })
