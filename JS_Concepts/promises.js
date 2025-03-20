@@ -787,3 +787,81 @@ fetchOrderDetails(555, 1000)
   .finally(() => {
     console.timeEnd("Time")
   })
+
+//Simulate an online shopping process using Promises and Promise chaining.
+
+function userLogs(user,delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error("Time Out"))
+    } else {
+      setTimeout(() => {
+        resolve({ name: user.name, status: 'Logged-In' });
+      }, delay);
+    }
+  })
+}
+
+function fetchCart(user, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({ name: user.name, orderId:101, item: ["Phone", "Pants","Tops"] });
+      }, delay);
+    }
+  });
+}
+
+
+function processPayment(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({orderId: orderId, paymentStatus:"Paid",});
+      }, delay);
+    }
+  });
+}
+
+function shipOrder(orderId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay > 2000) {
+      reject(new Error('Time Out'));
+    } else {
+      setTimeout(() => {
+        resolve({ orderId: orderId, trackingnumber: 20202 });
+      }, delay);
+    }
+  });
+}
+
+
+const u = { name: "krishna" };
+
+console.time("Time");
+userLogs(u, 1000)
+  .then((result) => {
+    console.log(result);
+    return fetchCart({name: result.name}, 2000);
+  })
+  .then((result) => {
+    console.log(result);
+    return processPayment(result.orderId, 1500);
+})
+  .then((result) => {
+    console.log(result);
+    return shipOrder(result.orderId, 1000);
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+  console.log("Error: ",error.message);
+  })
+  .finally(() => {
+    console.timeEnd("Time");
+})
