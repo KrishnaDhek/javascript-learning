@@ -241,4 +241,14 @@ function checkArray(arr) {
   return { even: evenNumbers, positive: positiveNumber, find: findNumber };
 }
 
-console.log(checkArray([13,2,4,53,5,68,10]));
+console.log(checkArray([13, 2, 4, 53, 5, 68, 10]));
+
+
+//sort(), reverse(), and slice()
+function modifyArray(arr) {
+  const sortedArray = arr.sort((a,b) => a-b);
+  const reversedArray = [...sortedArray].reverse();
+  const topThree = reversedArray.slice(0,3);
+  return { sorted: sortedArray, reverse: reversedArray, top: topThree };
+}
+console.log(modifyArray([13, 2, 4, 53, 5, 68, 10]));
