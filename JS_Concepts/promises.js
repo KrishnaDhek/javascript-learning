@@ -642,3 +642,43 @@ fetchUserData(1, 1000)
   .finally(() => {
     console.timeEnd('Time');
   });
+
+//fetch user information and then fetch their recent activity in a promise chain:
+function fetchUser(userId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject(new Error(`Invalid delay`));
+    } else {
+      setTimeout(() => {
+        resolve({userId:  userId, name: 'User' + userId });
+      }, delay);
+    }
+  })
+}
+
+function fetchUserActivity(userId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject(new Error(`Invalid delay`));
+    } else {
+      setTimeout(() => {
+        resolve({ userId, activity: 'Posted a comment' });
+      }, delay);
+    }
+  });
+}
+console.time("Time");
+fetchUser(1, 1000)
+  .then((result) => {
+    console.log(result);
+    return fetchUserActivity(result.userId, 2000);
+  })
+  .then((result) => {
+  console.log(result);
+  })
+  .catch((error) => {
+  console.log("Error: ",error.message);
+  })
+  .finally(() => {
+  console.timeEnd("Time");
+})
