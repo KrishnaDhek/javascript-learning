@@ -498,3 +498,28 @@ function fetchUserAndPosts(userId) {
 
 // Call the function and log the result
 fetchUserAndPosts(1).then((data) => console.log(data));
+
+
+
+//Creating a Basic Promise
+
+function simplePromise(delay) {
+  return new Promise((resolve, reject)=>{
+    if (delay > 2000) {
+     reject(new Error("Promise rejected"))
+    }
+    else {
+      setTimeout(() => {
+        resolve("Promise resolved");
+      }, delay);
+    }
+  })
+}
+
+simplePromise(2000)
+  .then((result) => {
+  console.log(result);
+  })
+  .catch((error) => {
+  console.log("Error: ",error.message);
+})
