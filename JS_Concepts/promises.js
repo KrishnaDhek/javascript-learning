@@ -137,7 +137,7 @@ const user = [
   {
     userId: 32,
     userName: 'Vinita',
-  }
+  },
 ];
 function fetchUserData(user) {
   return new Promise((resolve, reject) => {
@@ -153,18 +153,18 @@ function fetchUserData(user) {
 }
 
 Promise.allSettled(user.map(fetchUserData))
-  .then(result => {
+  .then((result) => {
     result.forEach((result) => {
-      if (result.status === "fulfilled") {
-      console.log("Valid user: ",result.value);
+      if (result.status === 'fulfilled') {
+        console.log('Valid user: ', result.value);
       } else {
-        console.log("Error:", result.reason.message);
-    }
-  })
+        console.log('Error:', result.reason.message);
+      }
+    });
   })
   .finally(() => {
-  console.log("Task Completed");
-  })
+    console.log('Task Completed');
+  });
 
 /**
  * Write a function fetchPostData(postId) that simulates fetching a blog post from a server.
@@ -182,33 +182,30 @@ const blogPost = [
 
 function fetchPostData(post) {
   return new Promise((resolve, reject) => {
-   setTimeout(() => {
-     if (post.postId <= 0) {
-       const error = new Error(`Invalid postId ${post.postId}`);
-       reject(error);
-     } else {
-       resolve(post);
-     }
-   }, 1000);
-  })
+    setTimeout(() => {
+      if (post.postId <= 0) {
+        const error = new Error(`Invalid postId ${post.postId}`);
+        reject(error);
+      } else {
+        resolve(post);
+      }
+    }, 1000);
+  });
 }
 
 Promise.allSettled(blogPost.map(fetchPostData))
   .then((results) => {
     results.forEach((result) => {
-      if (result.status === "fulfilled") {
-      console.log(result.value);
+      if (result.status === 'fulfilled') {
+        console.log(result.value);
       } else {
-        console.log("error:", result.reason.message);
-    }
-  })
+        console.log('error:', result.reason.message);
+      }
+    });
   })
   .finally(() => {
-  console.log("Task Completed");
-})
-
-
-
+    console.log('Task Completed');
+  });
 
 //Create a function getData that returns a Promise. The Promise should resolve after 2 seconds with a message
 // "Data fetched successfully."
@@ -216,23 +213,22 @@ Promise.allSettled(blogPost.map(fetchPostData))
 function getData(message) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (message === "") {
+      if (message === '') {
         reject(new Error(`Invalid data`));
       } else {
         resolve(message);
       }
     }, 2000);
-  })
+  });
 }
 
-getData("Data fetched successfully")
-  .then(function (message){
-  console.log(message);
+getData('Data fetched successfully')
+  .then(function (message) {
+    console.log(message);
   })
   .catch((error) => {
-  console.log("Error:",error.message);
-  })
-
+    console.log('Error:', error.message);
+  });
 
 /**
  * Write an asynchronous function fetchData that uses the Fetch API to retrieve data from a given URL and returns
@@ -241,29 +237,25 @@ the parsed JSON response.
 
 async function fetchData(url) {
   try {
-    if (!url) throw new Error("Invalid URl");
+    if (!url) throw new Error('Invalid URl');
 
     const response = await fetch(url);
-    if (!response.ok) throw new Error(`Http Error: ${response.status} `)
-    
+    if (!response.ok) throw new Error(`Http Error: ${response.status} `);
+
     const data = await response.json();
     return data;
-
-  }
-  catch (error) {
+  } catch (error) {
     throw error;
   }
 }
 
-fetchData("https://jsonplaceholder.typicode.com/todos/1")
-.then((data) => {
-  console.log("Fetched data: ", data);
-})
-  .catch((error) => {
-  console.log(error.message);
+fetchData('https://jsonplaceholder.typicode.com/todos/1')
+  .then((data) => {
+    console.log('Fetched data: ', data);
   })
-
-
+  .catch((error) => {
+    console.log(error.message);
+  });
 
 /**
  * Create a function fetchUserDataAndPosts that takes a user ID and fetches the user details and their posts
@@ -272,8 +264,7 @@ fetched. Return an object with user details and posts.
  */
 
 function fetchUserData(userId) {
-  return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-  .then(
+  return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(
     (response) => {
       if (!response.ok) {
         throw new Error('failed to fetch user data ');
@@ -296,42 +287,42 @@ function fetchUserPost(userId) {
 
 function fetchUserDataAndPosts(userId) {
   return fetchUserDataa(userId)
-    .then(user => {
-      return fetchUserPost(userId)
-        .then(posts => {
-          return { user, posts };
-      })
+    .then((user) => {
+      return fetchUserPost(userId).then((posts) => {
+        return { user, posts };
+      });
     })
     .catch((error) => {
-    console.log(error.message);
-  })
+      console.log(error.message);
+    });
 }
 
-fetchUserDataAndPosts(1).then(data => console.log(data));
-
-
+fetchUserDataAndPosts(1).then((data) => console.log(data));
 
 //Promise APIs
 
-const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(response => {
-  if (!response.ok) {
-      throw new Error(`Http Error ${response.status} `)
+const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status} `);
     }
-  return response.json()
-});
-const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(response => {
-  if (!response.ok) {
-    throw new Error(`Http Error ${response.status}`)
+    return response.json();
   }
-  return response.json()
-})
+);
+const promise2 = fetch('https://jsonplaceholder.typicode.com/users/@').then(
+  (response) => {
+    if (!response.ok) {
+      throw new Error(`Http Error ${response.status}`);
+    }
+    return response.json();
+  }
+);
 
 Promise.all([promise1, promise2])
-  .then(result => console.log(result))
-  .catch((error)=>{
-  console.log("Error: ", error.message);
-})
-
+  .then((result) => console.log(result))
+  .catch((error) => {
+    console.log('Error: ', error.message);
+  });
 
 const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
   (response) => {
@@ -356,11 +347,6 @@ Promise.allSettled([promise1, promise2])
     console.log('Error: ', error.message);
   });
 
-
-
-
-
-
 const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1').then(
   (response) => {
     if (!response.ok) {
@@ -383,10 +369,6 @@ Promise.race([promise1, promise2])
   .catch((error) => {
     console.log('Error: ', error.message);
   });
-
-
-
-
 
 const promise1 = fetch('https://jsonplaceholder.typicode.com/users/-10').then(
   (response) => {
@@ -414,59 +396,54 @@ Promise.any([promise1, promise2])
 
 async function fetchUserData(url) {
   try {
-    const response =await fetch(url);
+    const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Http Error ${response.status} `)
+      throw new Error(`Http Error ${response.status} `);
     }
     const data = await response.json();
     return data;
-  }
-  catch(error) {
-    throw new Error(error.message || "Network Error")
+  } catch (error) {
+    throw new Error(error.message || 'Network Error');
   }
 }
 
+fetchUserData('https://jsonplaceholder.typicode.com/users/1')
+  .then((data) => console.log('User Data:', data))
+  .catch((error) => console.log('Error:', error.message));
 
-  fetchUserData('https://jsonplaceholder.typicode.com/users/1')
-    .then((data) => console.log('User Data:', data))
-    .catch((error) => console.log('Error:', error.message));
+fetchUserData('https://jsonplaceholder.typicode.com/invalid-url')
+  .then((data) => console.log('User Data:', data))
+  .catch((error) => console.log('Error:', error.message));
 
-  fetchUserData('https://jsonplaceholder.typicode.com/invalid-url')
-    .then((data) => console.log('User Data:', data))
-    .catch((error) => console.log('Error:', error.message));
-
-
-
-const pr1 = new Promise((resolve, reject)=>{
+const pr1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("P1 is successful");
+    resolve('P1 is successful');
   }, 3000);
-})
+});
 
 const pr2 = new Promise((resolve, reject) => {
   setTimeout(() => {
     // resolve("P2 is successful");
-    reject("P2 is failed")
+    reject('P2 is failed');
   }, 1000);
-})
+});
 
 const pr3 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("P3 is successful")
+    resolve('P3 is successful');
   }, 2000);
-})
+});
 
-// The Promise.all() method takes an array of promises and returns an array of their resolved values if all promises are fulfilled. 
-// However, it is a "fail-fast" method, meaning that if any promise is rejected, it immediately rejects with that error, 
+// The Promise.all() method takes an array of promises and returns an array of their resolved values if all promises are fulfilled.
+// However, it is a "fail-fast" method, meaning that if any promise is rejected, it immediately rejects with that error,
 // without waiting for the remaining promises to settle.
 Promise.all([pr1, pr2, pr3])
-  .then((result => {
-  console.log(result);
-  }))
-  .catch((error)=>{
-  console.error("Error: ",error);
+  .then((result) => {
+    console.log(result);
   })
-
+  .catch((error) => {
+    console.error('Error: ', error);
+  });
 
 function fetchUserAndPosts(userId) {
   const p1 = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(
@@ -499,78 +476,73 @@ function fetchUserAndPosts(userId) {
 // Call the function and log the result
 fetchUserAndPosts(1).then((data) => console.log(data));
 
-
-
 //Creating a Basic Promise
 
 function simplePromise(delay) {
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve, reject) => {
     if (delay > 2000) {
-     reject(new Error("Promise rejected"))
-    }
-    else {
+      reject(new Error('Promise rejected'));
+    } else {
       setTimeout(() => {
-        resolve("Promise resolved");
+        resolve('Promise resolved');
       }, delay);
     }
-  })
+  });
 }
 
 simplePromise(2000)
   .then((result) => {
-  console.log(result);
+    console.log(result);
   })
   .catch((error) => {
-  console.log("Error: ",error.message);
-  })
-
+    console.log('Error: ', error.message);
+  });
 
 //Chaining Promises
 function doubleAfterDelay(value, delay) {
   return new Promise((resolve, reject) => {
-    if (typeof value !=="number") {
-      reject("Invalid Input");
+    if (typeof value !== 'number') {
+      reject('Invalid Input');
     } else {
       setTimeout(() => {
         resolve(value * 2);
       }, delay);
     }
-  })
+  });
 }
 console.time('Total Time');
 
 doubleAfterDelay(2, 1000)
   .then((result) => {
-    console.log("First promise settled @ 1s and doubled values is : "+result);
-    return doubleAfterDelay(result,2000)
+    console.log('First promise settled @ 1s and doubled values is : ' + result);
+    return doubleAfterDelay(result, 2000);
   })
   .then((result) => {
-    console.log('Seconf promise settled @ 3s and doubled values is : ' + result);
-    return doubleAfterDelay(result,3000)
+    console.log(
+      'Seconf promise settled @ 3s and doubled values is : ' + result
+    );
+    return doubleAfterDelay(result, 3000);
   })
   .then((result) => {
     console.log('Final promise settled @ 6s and doubled values is : ' + result);
   })
   .catch((error) => {
-  console.log(error);
+    console.log(error);
   })
   .finally(() => {
-  console.timeEnd("Total Time");// the lable should be same as in the console.time()
-  })
-
+    console.timeEnd('Total Time'); // the lable should be same as in the console.time()
+  });
 
 //Parallel Execution with Promise.all
 
 function doubleAfterDelay(value, delay) {
   return new Promise((resolve, reject) => {
-
-
     if (delay > 0) {
       setTimeout(() => {
         resolve(value * 2);
       }, delay);
     } else {
-      reject(new Error("Invalid delay value"))
+      reject(new Error('Invalid delay value'));
     }
   });
 }
@@ -582,11 +554,11 @@ function fetchDataInParallel() {
 
   Promise.all([p1, p2, p3])
     .then((result) => {
-    console.log(result);
+      console.log(result);
     })
     .catch((err) => {
-    console.log("Error: ",err.message);
-  })
+      console.log('Error: ', err.message);
+    });
 }
 
 fetchDataInParallel();
@@ -607,34 +579,66 @@ const products = [
   {
     name: 'Tablet',
     price: 2000,
-    delay: 3000
+    delay: 3000,
   },
 ];
 
 function fetchPrice(product) {
   return new Promise((resolve, reject) => {
     if (product.delay <= 0) {
-
       reject(new Error('Invalid dealy'));
-      
     } else {
       setTimeout(() => {
         resolve({ name: product.name, price: product.price });
       }, product.delay);
     }
-  })
+  });
 }
 
 function fetchDataInParallel() {
-  const promises = products.map(fetchPrice)
+  const promises = products.map(fetchPrice);
 
   Promise.allSettled(promises)
     .then((result) => {
-    console.log(result);
+      console.log(result);
     })
     .catch((error) => {
-    console.log("Error: ",error);
-  })
+      console.log('Error: ', error);
+    });
 }
 
 fetchDataInParallel();
+
+//Simulating an API Call
+
+function fetchUserData(userId, delay) {
+  return new Promise((resolve, reject) => {
+    if (delay <= 0) {
+      reject(new Error(`Invalid delay ${delay}`));
+    } else {
+      setTimeout(() => {
+        resolve({ userId: userId, name: 'User' + userId });
+      }, delay);
+    }
+  });
+}
+
+console.time('Time');
+fetchUserData(1, 1000)
+  .then((result) => {
+    console.log('Fetched data: ', result);
+    return fetchUserData(2, 2000);
+  })
+  .then((result) => {
+    console.log('Fetched data: ', result);
+    return fetchUserData(3, 3000);
+  })
+  .then((result) => {
+    console.log('Fetched data: ', result);
+  })
+  .catch((error) => {
+    console.log('Error : ', error.message);
+  })
+  .finally(() => {
+    console.timeEnd('Time');
+  });
