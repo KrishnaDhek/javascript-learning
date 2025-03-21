@@ -279,3 +279,11 @@ function sumNumbers(...num) {
 }
 console.log(sumNumbers(1, 2, 3, 4, 5));
 
+
+
+//Array Destructuring
+function getFirstAndLast(nums) {
+  const [first, , , , last] = nums;
+  return { first: first, last: last };
+}
+console.log(getFirstAndLast([10, 20, 30, 40, 50]));
