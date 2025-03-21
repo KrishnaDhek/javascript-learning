@@ -252,3 +252,14 @@ function modifyArray(arr) {
   return { sorted: sortedArray, reverse: reversedArray, top: topThree };
 }
 console.log(modifyArray([13, 2, 4, 53, 5, 68, 10]));
+
+
+//.splice(), .concat(), .flat()
+
+function funArray(arr1, arr2) {
+    arr1.splice(2, 2);
+    const conArr = arr1.concat(arr2);
+    const flatArr = conArr.flat();
+  return { concatenated: conArr, flatArray: flatArr };
+}
+console.log(funArray([13, 2, 4, 53, 5, 68, 10], [ 1,6,0,15, 98, 100]));
