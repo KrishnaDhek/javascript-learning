@@ -262,4 +262,13 @@ function funArray(arr1, arr2) {
     const flatArr = conArr.flat();
   return { concatenated: conArr, flatArray: flatArr };
 }
-console.log(funArray([13, 2, 4, 53, 5, 68, 10], [ 1,6,0,15, 98, 100]));
+console.log(funArray([13, 2, 4, 53, 5, 68, 10], [1, 6, 0, 15, 98, 100]));
+
+//Spread Operator (...)
+function mergeArrays(arr1, arr2, arr3) {
+    const mergedArr = [...arr1, ...arr2, ...arr3];
+    const unqiueArr = [...new Set(mergedArr)];
+    return unqiueArr;
+   
+}
+console.log(mergeArrays([1, 2, 3], [3, 4, 5], [5, 6, 7]));
