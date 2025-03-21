@@ -288,3 +288,18 @@ function getFirstAndLast(nums) {
   return { first: first, last: last };
 }
 console.log(getFirstAndLast([10, 20, 30, 40, 50]));
+
+
+
+//reverse
+function reverseArray(arr) {
+  let newArr = [];
+  for (let i = arr.length - 1; i >= 0; i--){
+    newArr.push(arr[i]);
+  }
+  return newArr
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
+console.log(reverseArray([10, 20, 30]));    // [30, 20, 10]
+
