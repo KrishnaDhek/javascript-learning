@@ -283,7 +283,8 @@ console.log(sumNumbers(1, 2, 3, 4, 5));
 
 //Array Destructuring
 function getFirstAndLast(nums) {
-  const [first, , , , last] = nums;
+  const [first, ...rest] = nums;
+  const last = rest.length>0? rest.at(-1):first;
   return { first: first, last: last };
 }
 console.log(getFirstAndLast([10, 20, 30, 40, 50]));
