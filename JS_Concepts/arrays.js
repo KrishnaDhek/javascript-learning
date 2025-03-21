@@ -272,3 +272,9 @@ function mergeArrays(arr1, arr2, arr3) {
    
 }
 console.log(mergeArrays([1, 2, 3], [3, 4, 5], [5, 6, 7]));
+
+
+function sumNumbers(...num) {
+    return num.reduce((acc, val) => acc + val, 0);
+}
+console.log(sumNumbers(1, 2, 3, 4, 5));
