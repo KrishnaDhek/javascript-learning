@@ -343,3 +343,22 @@ function funSwapItem(arr) {
 }
 const arr = [10, 20, 30, 40, 50];
 console.log(funSwapItem(arr));
+
+
+/**
+ * Use array destructuring with the rest operator (...) to split an array into:
+
+The first element
+
+The last element
+
+An array of all the middle elements
+ */
+function operation(arr) {
+  const [first, ...middle] = arr;
+  const last = middle.pop();
+  return { first, last, middle };
+}
+
+const arr = [5, 10, 15, 20, 25];
+console.log(operation(arr));
