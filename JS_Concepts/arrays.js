@@ -345,7 +345,7 @@ const arr = [10, 20, 30, 40, 50];
 console.log(funSwapItem(arr));
 
 
-/**
+/** 1.
  * Use array destructuring with the rest operator (...) to split an array into:
 
 The first element
@@ -362,3 +362,21 @@ function operation(arr) {
 
 const arr = [5, 10, 15, 20, 25];
 console.log(operation(arr));
+
+
+
+/** 2.
+ * The first element
+
+  The second element
+
+  An array containing the remaining elements
+ */
+
+function operation1(arr) {
+  const [first, second, ...rest] = arr;
+  return { first, second,rest}
+  
+}
+const arr = [1, 2, 3, 4, 5, 6];
+console.log(operation1(arr));
