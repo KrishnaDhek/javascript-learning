@@ -338,7 +338,7 @@ console.log(funSwap(arr));
 //Swap the second and fourth elements of an array using destructuring.
 
 function funSwapItem(arr) {
-  [arr[1], arr[arr.length - 2]] = [arr[arr.length - 2], arr[1]];
+  [arr[1], arr[3]] = [arr[3], arr[1]];
   return arr;
 }
 const arr = [10, 20, 30, 40, 50];
