@@ -380,3 +380,24 @@ function operation1(arr) {
 }
 const arr = [1, 2, 3, 4, 5, 6];
 console.log(operation1(arr));
+
+
+
+/**
+  Write a function that takes two arrays as arguments and:
+
+  Uses the spread operator (...) to merge them into a single array.
+
+  Extracts the first element, the last element, and the remaining elements using array destructuring.
+*/
+
+function operation2(arr1, arr2) {
+  const newArr = [...arr1, ...arr2];
+  const [first, ...middle] = newArr;
+  const last = middle.pop();
+  return {first, last, middle}
+}
+
+const arr1 = [10, 20, 30];
+const arr2 = [40, 50, 60];
+console.log(operation2(arr1,arr2));
