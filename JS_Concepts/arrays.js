@@ -327,8 +327,8 @@ const arr = [10, 20, 30, 40, 50];
 console.log(extractVal(arr));
 
 
-//Swap the first and last elements of an array using array destructuring.
 
+//Swap the first and last elements of an array using array destructuring.
 function funSwap(arr) {
   [arr[0], arr[arr.length-1]] = [arr[arr.length-1],arr[0]];
   return arr;
