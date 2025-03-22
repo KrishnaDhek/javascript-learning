@@ -315,3 +315,13 @@ console.log(reverseArray([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
 console.log(reverseArray([10, 20, 30]));    // [30, 20, 10]
 
 
+//Extract the first two elements of an array and collect the rest into a separate array using destructuring.
+
+function extractVal (arr) {
+  const [first, second, ...rest] = arr;
+  return {first,second,rest}
+
+}
+
+const arr = [10, 20, 30, 40, 50];
+console.log(extractVal(arr));
