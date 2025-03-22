@@ -313,3 +313,5 @@ function reverseArray(arr) {
 
 console.log(reverseArray([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
 console.log(reverseArray([10, 20, 30]));    // [30, 20, 10]
+
+
