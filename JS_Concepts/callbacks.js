@@ -401,3 +401,15 @@ function callBack(result) {
 }
 
 multiplyWithCallback([2, 3, 4, 5], callBack)
+
+
+
+let x = 5;
+let y = ++x + x++ + --x + x--;
+console.log(y, x);
+
+
+let a = 5;
+let b = a++ + ++a;
+let c = b-- - --a + ++b;
+console.log(a, b, c);
