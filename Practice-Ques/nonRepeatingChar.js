@@ -19,3 +19,5 @@ function firstUniqueChar(str) {
 
   return null;
 }
+
+
