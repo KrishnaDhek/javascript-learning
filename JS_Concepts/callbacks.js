@@ -402,27 +402,3 @@ function callBack(result) {
 
 multiplyWithCallback([2, 3, 4, 5], callBack)
 
-
-
-let x = 5;
-let y = ++x + x++ + --x + x--;
-console.log(y, x);
-
-
-let a = 5;
-let b = a++ + ++a;
-let c = b-- - --a + ++b;
-console.log(a, b, c);
-
-
-
-
-let obj = { a: 1, b: 2, c: 3 };
-for (let key in obj) {
-  console.log(key, obj[key]);
-}
-
-
-for (let i = 1; i <= 5; i++) {
-  setTimeout(() => console.log(i), 1000);
-}
