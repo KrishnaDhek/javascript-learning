@@ -24,3 +24,26 @@ async function test() {
 }
 
 test();
+
+
+//Practice Questions
+
+//1.Convert a Promise-based function to async/await
+
+async function getNumber() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(42), 1000);
+  });
+}
+
+
+async function operation(){
+    try {
+        const value = await getNumber();
+        console.log(value);
+    } catch(error){
+        console.log(error);
+    }
+}
+
+operation();
