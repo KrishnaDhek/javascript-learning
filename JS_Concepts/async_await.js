@@ -47,3 +47,31 @@ async function operation(){
 }
 
 operation();
+
+
+
+//2.Fetch Data Using async/await
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status ${response.status}` )
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("Error: ", error.message);
+    }
+}
+
+
+async function operation(url) {
+    try {
+        const data = await fetchData(url);
+        console.log(data);
+    } catch (error) {
+        console.log("Error: ",error.message);
+    }
+}
+
+operation('https://jsonplaceholder.typicode.com/todos/1');
