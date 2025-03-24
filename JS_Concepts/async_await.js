@@ -75,3 +75,20 @@ async function operation(url) {
 }
 
 operation('https://jsonplaceholder.typicode.com/todos/1');
+
+
+//3.Delay Execution
+
+async function delayedLog(message,delay) {
+    return new Promise((resolve, reject) =>
+    setTimeout(() => {
+        resolve(message);
+    }, delay))
+}
+async function test(message,delay) {
+  const result= await delayedLog('Hello after 2 seconds', 2000);
+console.log(result);
+}
+
+test();
+
