@@ -118,3 +118,31 @@ async function getUserInfo(userId) {
 }
 getUserInfo(1);
 getUserInfo(-1);
+
+
+
+//5.Fetch & Process API Data
+
+async function  fetchToDo(url) {
+
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTPS Error Status ${response.status}`)
+        } else {
+            const data = await response.json();
+            return data.title;
+        }
+    }
+    
+async function getTodo(url) {
+    try {
+        const result = await fetchToDo(url);
+    console.log("Todo Title:",result);
+    } catch (error) {
+        console.log("Error: ",error.message);
+    }
+}
+
+getTodo("https://jsonplaceholder.typicode.com/todos/1");
+getTodo('https://jsonplaceholder.typicode.com/todos/2');
+getTodo('https://jsonplaceholder.typicode.com/todos/-1');
