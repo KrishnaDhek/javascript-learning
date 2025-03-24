@@ -92,3 +92,19 @@ console.log(result);
 
 test();
 
+
+
+//4.Simulating a Delayed API Response
+async function fetchUserData(userId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({id:userId, name:"John Doe"})
+        }, 1500);
+    })
+}
+
+async function getUserInfo(userId) {
+    const result = await fetchUserData(userId);
+    console.log(result);
+}
+getUserInfo(1);
