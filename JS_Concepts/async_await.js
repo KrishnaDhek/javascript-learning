@@ -128,10 +128,10 @@ async function  fetchToDo(url) {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTPS Error Status ${response.status}`)
-        } else {
+        } 
             const data = await response.json();
             return data.title;
-        }
+        
     }
     
 async function getTodo(url) {
