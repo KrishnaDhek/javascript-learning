@@ -98,13 +98,23 @@ test();
 async function fetchUserData(userId) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve({id:userId, name:"John Doe"})
+            if (userId <= 0) {
+                reject(new Error("Invalid user"));
+            } else {
+                resolve({userId, name:"John Doe"})
+            }
         }, 1500);
+            
     })
 }
 
 async function getUserInfo(userId) {
-    const result = await fetchUserData(userId);
+    try {
+        const result = await fetchUserData(userId);
     console.log(result);
+    } catch (error) {
+        console.log("Error: ",error.message);
+   }
 }
 getUserInfo(1);
+getUserInfo(-1);
