@@ -147,3 +147,37 @@ getTodo("https://jsonplaceholder.typicode.com/todos/1");
 getTodo('https://jsonplaceholder.typicode.com/todos/2');
 getTodo('https://jsonplaceholder.typicode.com/todos/-1');
 
+
+
+//6.Fetch Todo #1 from  https://jsonplaceholder.typicode.com/todos/1
+
+// Once it's fetched, fetch Todo #2 from https://jsonplaceholder.typicode.com/todos/2
+
+// Print their titles in order.
+
+async function fetchDataToDo(url) {
+    console.log('Fetching Todo');
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTPs Error ${response.status}`)
+        }
+    
+    const data = await response.json();
+    return data;
+}
+
+async function  getDataTodo(url1,url2) {
+    try {
+        const result = await fetchDataToDo(url1);
+        console.log("Todo:", result.title);
+        const result1 = await fetchDataToDo(url2)
+        console.log('Todo:', result1.title);
+    } catch (error) {
+        console.log("Error:",error.message);
+        }
+    }
+
+getDataTodo(
+  'https://jsonplaceholder.typicode.com/todos/1',
+  'https://jsonplaceholder.typicode.com/todos/2'
+);
