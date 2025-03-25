@@ -181,3 +181,39 @@ getDataTodo(
   'https://jsonplaceholder.typicode.com/todos/1',
   'https://jsonplaceholder.typicode.com/todos/2'
 );
+
+
+//6.1 Fetch Todo #1 from  https://jsonplaceholder.typicode.com/todos/1
+
+// Once it's fetched, fetch Todo #2 from https://jsonplaceholder.typicode.com/todos/2
+
+//Using Promise.all();
+
+
+async function  fetchDataToDo(url) {
+    console.log(`Fetching Todo from ${url}`);
+ 
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTPs Error ${response.ok}`)
+        }
+        return await response.json();
+        
+}
+
+async function getDataTodo(url1,url2) {
+    try {
+        const [result1, result2] = await Promise.all([fetchDataToDo(url1), fetchDataToDo(url2)]);
+        console.log("Todo 1:", result1.title);
+        console.log("Todo 2:", result2.title);
+    }catch(error){
+        console.log("Error:", error.message);
+    }
+    
+}
+getDataTodo(
+  'https://jsonplaceholder.typicode.com/todos/1',
+  'https://jsonplaceholder.typicode.com/todos/2'
+);
+
+
