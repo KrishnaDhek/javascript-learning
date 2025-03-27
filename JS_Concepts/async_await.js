@@ -208,7 +208,6 @@ async function getDataTodo(url1,url2) {
     }catch(error){
         console.log("Error:", error.message);
     }
-    
 }
 getDataTodo(
   'https://jsonplaceholder.typicode.com/todos/1',
