@@ -184,9 +184,7 @@ getDataTodo(
 
 
 //6.1 Fetch Todo #1 from  https://jsonplaceholder.typicode.com/todos/1
-
 // Once it's fetched, fetch Todo #2 from https://jsonplaceholder.typicode.com/todos/2
-
 //Using Promise.all();
 
 async function  fetchDataToDo(url) {
