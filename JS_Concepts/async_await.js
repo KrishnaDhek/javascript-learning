@@ -189,7 +189,6 @@ getDataTodo(
 
 //Using Promise.all();
 
-
 async function  fetchDataToDo(url) {
     console.log(`Fetching Todo from ${url}`);
  
