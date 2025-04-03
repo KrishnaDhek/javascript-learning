@@ -1,67 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RainCheck</title>
-    <meta name="title" content="RainCheck" />
-    <meta name="description" content="RainCheck is an weather prediction application" />
-    <link rel="shortcut icon" href="./images/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style/style.css">
-  </head>
-  <body>
-    <script src="./script/app.js" type="module"></script>
-    <script src="./script/route.js" type="module"></script>
+    <link rel="shortcut icon" href="./images/l.png">
+    <link rel="stylesheet" href="style/style.css">
 
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="./images/RainCheck.png" width="164" height="58" alt="logo">
-            </a>
-
-            <div class="search-view" data-search-view>
-                <div class="search-wrapper">
-                    <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
-                    <span class="m-icon">search</span>
-                        <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggle>
-                    <span class="m-icon">arrow_back</span>
-                </button>
-                </div>
-
-                <div class="search-result" data-search-result>
-                    <ul class="view-list" data-search-list>
-                        <li class="view-item">
-                            <span class="m-icon">location_on</span>
-
-                            <div>
-                                <p class="item-title">London</p>
-                                <p class="label-2 item-subtitle">GB</p>
-                            </div>
-                            <a href="#" class="item-link has-state" data-search-toggle></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="header-action">
-                <button  class="icon-btn has-state" aria-label="open search" data-search-toggle>
-                <span class="m-icon icon">search</span>
-                </button>
-                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
-                    <span class="m-icon">my_location</span>
-                    <span class="span">Current Location</span>
-                </a>
-            </div>
-
-            
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" spellcheck="false" placeholder="Search city...">
+            <button>
+                <img src="./images/search.png" >
+            </button>
         </div>
-    </header>
 
-  </body>
+        <div class="weather">
+            <img src="./images/drizzle.png" class="weather-icon" alt="drizzle">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">Lohaghat</h2>
+            <div class="details">
+                <div class="col"><img src="./images/humidity.png">
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col"><img src="./images/wind.png">
+                <div>
+                    <p class="wind">15 km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
 </html>
