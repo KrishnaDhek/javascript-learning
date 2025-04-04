@@ -18,7 +18,7 @@ async function checkWeather(city) {
     }
 
     const data = await response.json();
-    console.log('Weather Data:', data); // Debugging
+    console.log('Weather Data:', data);
 
     // Hide error message on success
     errorDiv.style.display = 'none';
@@ -30,10 +30,10 @@ async function checkWeather(city) {
     document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
     document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
-    console.log('Weather Condition:', data.weather[0].main); // Debugging
+    console.log('Weather Condition:', data.weather[0].main);
 
     // Update weather icon based on condition
-    const weatherCondition = data.weather[0].main.toLowerCase(); // Convert to lowercase for consistency
+    const weatherCondition = data.weather[0].main.toLowerCase();
     if (weatherCondition.includes('cloud')) {
       weatherIcon.src = './images/clouds.png';
     } else if (weatherCondition.includes('clear')) {
@@ -50,24 +50,32 @@ async function checkWeather(city) {
     } else if (weatherCondition.includes('rain')) {
       weatherIcon.src = './images/rain.png';
     } else {
-      weatherIcon.src = './images/default.png'; // Fallback image
+      weatherIcon.src = './images/default.png';
     }
   } catch (error) {
     console.error('Error fetching weather data:', error);
-
-    // Show error message when the city is not found
     errorDiv.style.display = 'block';
     weatherDiv.style.display = 'none';
   }
 }
 
-// Event Listener for Search Button
-searchBtn.addEventListener('click', () => {
-  const city = searchBox.value.trim(); // Remove extra spaces
+// Function to handle search
+function handleSearch() {
+  const city = searchBox.value.trim();
   if (city) {
     checkWeather(city);
   } else {
     errorDiv.style.display = 'block';
     weatherDiv.style.display = 'none';
+  }
+}
+
+// Event Listener for Search Button Click
+searchBtn.addEventListener('click', handleSearch);
+
+// 🎯 Event Listener for Enter Key Press
+searchBox.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    handleSearch();
   }
 });
