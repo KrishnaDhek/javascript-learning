@@ -73,7 +73,7 @@ function handleSearch() {
 // Event Listener for Search Button Click
 searchBtn.addEventListener('click', handleSearch);
 
-// 🎯 Event Listener for Enter Key Press
+// Event Listener for Enter Key Press
 searchBox.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     handleSearch();
