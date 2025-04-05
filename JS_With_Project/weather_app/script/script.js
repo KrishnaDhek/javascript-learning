@@ -18,8 +18,7 @@ async function checkWeather(city) {
     }
 
     const data = await response.json();
-    console.log('Weather Data:', data);
-
+    
     // Hide error message on success
     errorDiv.style.display = 'none';
     weatherDiv.style.display = 'block';
