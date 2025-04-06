@@ -94,5 +94,3 @@ const formattedDates = dates.map((date) => {
 
 
 console.log(formattedDates);
-
-
