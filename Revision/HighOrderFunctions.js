@@ -92,4 +92,5 @@ const formattedDates = dates.map((date) => {
     return `Date: ${day}/${month}/${year}`;
 })
 
+
 console.log(formattedDates);
