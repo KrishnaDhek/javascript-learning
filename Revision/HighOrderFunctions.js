@@ -130,3 +130,19 @@ const answer = users.map((user,index) => {
 console.log(answer);
 
 
+
+
+//Extract only completed task titles from mixed todos
+const todos = [
+  { id: 1, title: 'Buy Milk', completed: false },
+  { id: 2, title: 'Learn JS', completed: true },
+  { id: 3, title: 'Gym', completed: true }
+];
+// Expected: ['Learn JS', 'Gym']
+
+function getCompletedTodos(todos) {
+  return todos.filter((todo)=>todo.completed===true).map((todo)=>todo.title)
+    
+}
+
+console.log(getCompletedTodos(todos));
