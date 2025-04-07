@@ -146,3 +146,19 @@ function getCompletedTodos(todos) {
 }
 
 console.log(getCompletedTodos(todos));
+
+
+//Add a prefix to each name
+const names = ['krishna', 'ravi', 'priya'];
+// Expected: ['Mr. Krishna', 'Mr. Ravi', 'Mr. Priya']
+
+const prefidNames = names.map((name) => {
+    const result = name.charAt(0).toUpperCase() + name.slice(1);
+    return `Mr. ${result}`;
+
+})
+
+console.log(prefidNames);
+
+
+// Reformat data
