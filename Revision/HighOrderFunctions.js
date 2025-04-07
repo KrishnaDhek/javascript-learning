@@ -174,6 +174,4 @@ function reformatData(people) {
 console.log(reformatData(people));
 
 
-
-
 //Practice filter() questions
