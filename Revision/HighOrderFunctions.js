@@ -201,3 +201,12 @@ const users = [
 
 const activeUser = users.filter((user) => user.active === true);
 console.log(activeUser);
+
+
+
+//Extract words starting with a vowel
+const words = ['apple', 'banana', 'orange', 'grape', 'umbrella'];
+// Expected: ['apple', 'orange', 'umbrella']
+const vowel = ['a', 'e', 'i', 'o', 'u'];
+const vowelLetterStart = words.filter((word) => vowel.includes(word.charAt(0).toLowerCase()));
+console.log(vowelLetterStart);
