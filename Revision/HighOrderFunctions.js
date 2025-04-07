@@ -162,3 +162,13 @@ console.log(prefidNames);
 
 
 // Reformat data
+const people = [
+  { firstName: 'John', lastName: 'Doe' },
+  { firstName: 'Jane', lastName: 'Smith' }
+];
+// Expected: ['John Doe', 'Jane Smith']
+
+function reformatData(people) {
+    return people.map((p)=> p.firstName +" "+ p.lastName)
+}
+console.log(reformatData(people));
