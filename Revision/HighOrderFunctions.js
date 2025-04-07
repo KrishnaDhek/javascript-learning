@@ -172,3 +172,8 @@ function reformatData(people) {
     return people.map((p)=> p.firstName +" "+ p.lastName)
 }
 console.log(reformatData(people));
+
+
+
+
+//Practice filter() questions
