@@ -95,5 +95,17 @@ const formattedDates = dates.map((date) => {
 
 console.log(formattedDates);
 
+//Capitalize every word in a sentence
+const sentence = "welcome to javascript mastery";
+// Expected Output: "Welcome To Javascript Mastery"
 
+function capitalize(s) {
+    const newStr = s.split(" ");
+   const ans= newStr.map((str) => {
+       return str.charAt(0).toUpperCase() + str.slice(1);
+    })
+    return ans.join(" ");
 
+}
+const result = capitalize(sentence);
+console.log(result);
