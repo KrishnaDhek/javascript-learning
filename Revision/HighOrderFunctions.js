@@ -109,3 +109,24 @@ function capitalize(s) {
 }
 const result = capitalize(sentence);
 console.log(result);
+
+
+//Add a unique ID to each object
+const users = [
+    { name: 'Krishna' },
+    { name: 'Ravi' },
+    { name: 'Priya' }
+];
+
+
+const answer = users.map((user,index) => {
+    
+    return {
+        ...user,
+        id: index + 1
+    };
+})
+
+console.log(answer);
+
+
