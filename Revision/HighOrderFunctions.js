@@ -210,3 +210,34 @@ const words = ['apple', 'banana', 'orange', 'grape', 'umbrella'];
 const vowel = ['a', 'e', 'i', 'o', 'u'];
 const vowelLetterStart = words.filter((word) => vowel.includes(word.charAt(0).toLowerCase()));
 console.log(vowelLetterStart);
+
+
+//Filter products below ₹500
+const products = [
+  { name: 'Shirt', price: 400 },
+  { name: 'Shoes', price: 1200 },
+  { name: 'Cap', price: 200 },
+];
+// Expected: [{ name: 'Shirt', price: 400 }, { name: 'Cap', price: 200 }]
+const filteredItemsOnPrice = products.filter((product) => product.price < 500);
+console.log(filteredItemsOnPrice);
+
+
+
+
+//Filter users whose age is between 18 and 30 (inclusive)
+const users = [
+  { name: 'Krishna', age: 28 },
+  { name: 'Ravi', age: 17 },
+  { name: 'Priya', age: 30 },
+  { name: 'Meera', age: 31 },
+];
+// Expected: Krishna, Priya
+
+function ageGroup(users){
+  return users
+    .filter((user) => user.age >= 18 && user.age <= 30)
+    .map((r) => r.name);
+}
+
+console.log(ageGroup(users));
