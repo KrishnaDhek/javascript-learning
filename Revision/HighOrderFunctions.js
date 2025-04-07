@@ -175,6 +175,7 @@ console.log(reformatData(people));
 
 
 //Practice filter() questions
+
 const numbers = [1, 2, 3, 4, 5, 6];
 // Expected: [2, 4, 6]
 
@@ -188,3 +189,15 @@ const names = ['Ram', 'Krishna', 'Radha', 'Om', 'Shiva'];
 
 const result = names.filter((name) => name.length > 4);
 console.log(result);
+
+
+//Filter active users
+const users = [
+  { name: 'Krishna', active: true },
+  { name: 'Ravi', active: false },
+  { name: 'Priya', active: true }
+];
+// Expected: only users where active is true
+
+const activeUser = users.filter((user) => user.active === true);
+console.log(activeUser);
