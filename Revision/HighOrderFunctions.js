@@ -263,5 +263,5 @@ const values = [0, "hello", false, null, 42, undefined, "", "world"];
 // Expected: ['hello', 42, 'world']
 
 
-const result = values.filter((v) => v !== false);
+const result = values.filter(Boolean);
 console.log(result);
