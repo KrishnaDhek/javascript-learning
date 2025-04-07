@@ -224,7 +224,6 @@ console.log(filteredItemsOnPrice);
 
 
 
-
 //Filter users whose age is between 18 and 30 (inclusive)
 const users = [
   { name: 'Krishna', age: 28 },
