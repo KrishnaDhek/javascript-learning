@@ -240,3 +240,28 @@ function ageGroup(users){
 }
 
 console.log(ageGroup(users));
+
+
+
+//Filter blog posts with title length less than 20 and published
+const posts = [
+  { title: 'Intro to JS', published: true },
+  { title: 'Complete React Guide for Beginners', published: false },
+  { title: 'Async Await Explained', published: true }
+];
+// Expected: only posts where `published` is true and title is short (< 20 chars)
+
+function blogTitleLength(posts) {
+    return posts.filter((post) =>(post.title.length < 20 && post.published === true)
+        )
+}
+console.log(blogTitleLength(posts));
+
+
+//Remove falsy values
+const values = [0, "hello", false, null, 42, undefined, "", "world"];
+// Expected: ['hello', 42, 'world']
+
+
+const result = values.filter((v) => v !== false);
+console.log(result);
