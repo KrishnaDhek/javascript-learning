@@ -180,3 +180,11 @@ const numbers = [1, 2, 3, 4, 5, 6];
 
 const result = numbers.filter((num) => num % 2 === 0);
 console.log(result);
+
+
+//Get names longer than 4 characters
+const names = ['Ram', 'Krishna', 'Radha', 'Om', 'Shiva'];
+// Expected: ['Krishna', 'Radha', 'Shiva']
+
+const result = names.filter((name) => name.length > 4);
+console.log(result);
