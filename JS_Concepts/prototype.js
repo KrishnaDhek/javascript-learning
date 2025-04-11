@@ -97,3 +97,4 @@ String.prototype.boop = function () {
 let cat = "meow";
 
 console.log(cat.boop());
+console.log(Object.getOwnPropertyNames(cat.__proto__));
