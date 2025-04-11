@@ -88,3 +88,12 @@ Dog.prototype.bark = function () {
 const dog1 = new Dog("Rocky");
 console.log(dog1.speak());
 console.log(dog1.bark());
+
+
+String.prototype.boop = function () {
+    return `Boop!`
+}
+
+let cat = "meow";
+
+console.log(cat.boop());
