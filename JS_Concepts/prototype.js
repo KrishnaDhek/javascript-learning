@@ -13,3 +13,19 @@ function Person(name) {
 
 const p = new Person("Krishna");
 console.log(p.name); // should print "Krishna"
+
+
+//Add a shared method using .prototype
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function () {
+    return `Hello, my name is ${this.name}`
+}
+
+const p = new Person("Krishna");
+console.log(p.greet()); // should print "Krishna"
+
+const p1 = new Person("Radhe")
+console.log(p1.greet());
