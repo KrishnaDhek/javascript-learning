@@ -103,3 +103,17 @@ console.log(Object.getOwnPropertyNames(cat.__proto__));
 console.log(Object.getOwnPropertyNames(Object.prototype));
 console.log(Object.getOwnPropertyNames(Array.prototype));
 console.log(Object.getOwnPropertyNames(Array.prototype.__proto__));
+
+
+const fakeArray = {
+    0: "zero",
+    1: "One",
+    2: "two",
+    length: 3,
+}
+
+fakeArray.__proto__ = Array.prototype;
+
+const result = fakeArray.map((f) => {
+    console.log(f);
+})
