@@ -150,6 +150,8 @@ console.log(ans);
 console.log(myStore.__proto__);
 
 
+
+
 function Person(name) {
     this.name = name;
 }
