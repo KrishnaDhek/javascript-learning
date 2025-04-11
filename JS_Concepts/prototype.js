@@ -63,3 +63,28 @@ const book2 = new Book("Mother", "Vinita");
 
 console.log(book1.getSummary());
 console.log(book2.getSummary());
+
+
+//Create Inheritance between Constructors
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.speak = function () {
+    return `My name is ${this.name}.`;
+}
+
+function Dog(name) {
+   Animal.call(this, name)
+}
+Dog.prototype = Object.create(Animal.prototype);
+
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function () {
+    return `Woof! I am ${this.name}`;
+}
+
+const dog1 = new Dog("Rocky");
+console.log(dog1.speak());
+console.log(dog1.bark());
