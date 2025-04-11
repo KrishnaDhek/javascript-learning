@@ -117,3 +117,34 @@ fakeArray.__proto__ = Array.prototype;
 const result = fakeArray.map((f) => {
     console.log(f);
 })
+
+
+const store = {
+  name: null,
+  stock: [
+    {
+      name: 'Candy',
+      quantity: 100,
+    },
+    {
+      name: 'fruit',
+      quantity: 10,
+    },
+    {
+      name: 'toys',
+      quantity: 30,
+    },
+  ]
+};
+
+const myStore = {};
+myStore.name = "MyWonderfullStore";
+myStore.__proto__ = store;
+
+const yourStore = {};
+yourStore.name = "NotMyWondefullStore";
+yourStore.__proto__ = store;
+let ans=myStore.stock[1].quantity = 300;
+
+console.log(ans);
+console.log(myStore.__proto__);
