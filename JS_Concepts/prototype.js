@@ -31,7 +31,7 @@ const p1 = new Person("Radhe")
 console.log(p1.greet());
 
 
-
+//Create a constructor and add a shared method
 function car(brand, model) {
     this.brand = brand;
     this.model = model;
@@ -46,3 +46,20 @@ const car1 = new car("audi", 'Q8');
 const car2 = new car("tata", 'safari');
 console.log(car1.getDetails());
 console.log(car2.getDetails());
+
+
+//Create a constructor and add a shared method
+function Book(title, author) {
+    this.title = title;
+    this.author = author;
+}
+
+Book.prototype.getSummary = function () {
+    return `The book ${this.title} is written by ${this.author}.`;
+};
+
+const book1 = new Book("JS to know", "Krishna");
+const book2 = new Book("Mother", "Vinita");
+
+console.log(book1.getSummary());
+console.log(book2.getSummary());
