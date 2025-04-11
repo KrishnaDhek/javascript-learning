@@ -158,6 +158,6 @@ function Person(name) {
 const person = Person("Carl");
 const person1 = new Person("Tim");
 // console.log(Object.getOwnPropertyNames(person));
-console.log(Object.getOwnPropertyNames(person1.__proto__));
-console.log(Object.getOwnPropertyNames(person1));
+console.log(Object.getOwnPropertyNames(person1.__proto__.__proto__));
+console.log(person1.name);
 
