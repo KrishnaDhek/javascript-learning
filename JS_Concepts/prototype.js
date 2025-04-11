@@ -148,3 +148,12 @@ let ans=myStore.stock[1].quantity = 300;
 
 console.log(ans);
 console.log(myStore.__proto__);
+
+
+function Person(name) {
+    this.name = name;
+}
+const person = Person("Carl");
+const person1 = new Person("Tim");
+// console.log(Object.getOwnPropertyNames(person));
+console.log(Object.getOwnPropertyNames(person1));
