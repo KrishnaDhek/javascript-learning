@@ -160,3 +160,4 @@ const person1 = new Person("Tim");
 // console.log(Object.getOwnPropertyNames(person));
 console.log(Object.getOwnPropertyNames(person1.__proto__));
 console.log(Object.getOwnPropertyNames(person1));
+
