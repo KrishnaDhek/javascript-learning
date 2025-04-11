@@ -29,3 +29,20 @@ console.log(p.greet()); // should print "Krishna"
 
 const p1 = new Person("Radhe")
 console.log(p1.greet());
+
+
+
+function car(brand, model) {
+    this.brand = brand;
+    this.model = model;
+
+}
+
+car.prototype.getDetails = function () {
+    return `Brand ${this.brand}, Model ${this.model}`
+};
+
+const car1 = new car("audi", 'Q8');
+const car2 = new car("tata", 'safari');
+console.log(car1.getDetails());
+console.log(car2.getDetails());
