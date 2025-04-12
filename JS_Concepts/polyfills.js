@@ -86,3 +86,24 @@ const items = [20, 3, 4, 55, 108];
 items.myForEach((i) => {
     console.log(i);
 })
+
+
+//polyfill for find()
+
+Array.prototype.myFind = function (callBack) {
+    if (typeof callBack !== "function") {
+        throw new Error("Callback must be a function")
+    }
+    for (let i = 0; i < this.length; i++){
+        if ( i in this && callBack(this[i], i, this)) {
+           return this[i];
+       }
+    }
+    return undefined
+}
+
+const items = [35, 2, 250, 190];
+let ans =items.myFind((i) => {
+    return i > 35;
+})
+console.log(ans);
