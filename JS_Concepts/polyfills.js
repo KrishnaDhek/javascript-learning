@@ -69,3 +69,20 @@ const newArray = nums.testreduce((acc, currVal) => {
 console.log(newArray);
 
 
+//pollyfill for forEach
+
+Array.prototype.myForEach = function (callBack) {
+    if (typeof callBack !== "function") {
+        throw new Error("Callback must be a function");
+    }
+    for (let i = 0; i < this.length; i++){
+        if (i in this) {
+            callBack(this[i], i, this);
+        }
+    }
+}
+
+const items = [20, 3, 4, 55, 108];
+items.myForEach((i) => {
+    console.log(i);
+})
