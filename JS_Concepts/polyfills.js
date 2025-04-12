@@ -3,7 +3,8 @@
 
 Array.prototype.testMap = function (callBack) {
     if (typeof callBack !== "function") {
-        throw new TypeError('Callback must be a function');
+      //edge case
+      throw new TypeError('Callback must be a function');
     }
     const result = [];
     for (let i = 0; i < this.length; i++){
@@ -25,6 +26,7 @@ console.log(newArray);
 
 Array.prototype.testfilter = function (callBack) {
     if (typeof callBack !== 'function') {
+      //edge case
       throw new TypeError('Callback must be a function');
     }
   const result = [];
@@ -47,7 +49,7 @@ console.log(newArray);
 //polyfill for reduce
 
 Array.prototype.testreduce = function (callBack, currVal) {
-    if (typeof callBack !== "function") {
+    if (typeof callBack !== "function") { //edge case
         throw new TypeError("Callback must be a function");
     }
     let acc = currVal !== undefined ? currVal : this[0];
