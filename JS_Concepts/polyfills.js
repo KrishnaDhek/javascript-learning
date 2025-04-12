@@ -108,3 +108,25 @@ let ans =items.myFind((i) => {
 })
 console.log(ans);
 
+
+
+//polyfill for some()
+
+Array.prototype.mySome = function (callBack) {
+    if (typeof callBack !== "function") {
+        throw new Error("Callback must be function");
+    }
+
+    for (let i = 0; i < this.length; i++){
+        if (i in this && callBack(this[i], i, this)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+const nums = [3, 4, 68, 32, 11, 51];
+const ans = nums.mySome((n) => {
+    return n % 4==0;
+})
+console.log(ans);
