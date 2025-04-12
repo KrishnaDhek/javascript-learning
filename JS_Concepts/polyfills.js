@@ -130,3 +130,5 @@ const ans = nums.mySome((n) => {
     return n % 4==0;
 })
 console.log(ans);
+
+
