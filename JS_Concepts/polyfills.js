@@ -107,3 +107,4 @@ let ans =items.myFind((i) => {
     return i > 35;
 })
 console.log(ans);
+
