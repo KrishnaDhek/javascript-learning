@@ -1,51 +1,52 @@
-//Map
 
-Array.prototype.testingMap = function (callBack) {
-    const newArray = [];
+//polyfill for map
+
+Array.prototype.testMap = function (callBack) {
+    const result = [];
     for (let i = 0; i < this.length; i++){
-        newArray.push(callBack(this[i], i, this));
+        result.push(callBack(this[i], i, this));
     }
-    return newArray;
+    return result;
 }
 
-const arr = [8, 3, 5, 6, 10];
-const result = arr.testingMap((a, i, arr) => {
-    return a * 5;
+const nums = [45, 2, 39, 60, 10, 19, 345];
+const newArray =nums.testMap((n, i, nums) => {
+    return n * 2;
 })
-console.log(result);
+console.log(newArray);
 
 
-//filter
+//polyfill for filter
 
-Array.prototype.myfilter = function (callBack) {
-    const newArr = [];
-    for (let i = 0; i < this.length; i++){
-        if (callBack(this[i], i, this)) {
-            newArr.push(this[i])
-        }
-    }
-    return newArr;
-}
+Array.prototype.testfilter = function (callBack) {
+  const result = [];
+  for (let i = 0; i < this.length; i++) {
+      if (callBack(this[i], i, this))
+          result.push(this[i]);
+  }
+  return result;
+};
 
-const arr = [33, 12, 44, 55, 645454, 11];
-const result = arr.myfilter((a, i, arr) => {
-    return a % 11 == 0;
-})
-console.log(result);
+const nums = [45, 2, 39, 60, 10, 19, 345];
+const newArray = nums.testfilter((n, i, nums) => {
+  return n %5==0;
+});
+console.log(newArray);
 
 
-//Reduce
-Array.prototype.myReduce = function (callBack,currVal) {
+//polyfill for reduce
+
+Array.prototype.testreduce = function (callBack, currVal) {
     let acc = currVal !== undefined ? currVal : this[0];
     let index = currVal !== undefined ? 0 : 1;
-    for (let i = index; i < this.length; i++){
-        acc = callBack(acc,this[i], i, this);
-    }
-    return acc;
-}
+  for (let i = index; i < this.length; i++) {
+   acc = callBack(acc, this[i], i, this);
+  }
+  return acc;
+};
 
-const arr = [33, 12, 44, 55, 645454, 11];
-const result = arr.myReduce((acc, currVal) => {
-    return acc+currVal;
+const nums = [45, 2, 39, 60, 10, 19, 345];
+const newArray = nums.testreduce((acc, currVal) => {
+  return acc+currVal;
 });
-console.log(result);
+console.log(newArray);
