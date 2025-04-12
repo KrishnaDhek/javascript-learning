@@ -67,3 +67,5 @@ const newArray = nums.testreduce((acc, currVal) => {
   return acc+currVal;
 });
 console.log(newArray);
+
+
