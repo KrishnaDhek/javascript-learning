@@ -2,6 +2,9 @@
 //polyfill for map
 
 Array.prototype.testMap = function (callBack) {
+    if (typeof callBack !== "function") {
+        throw new TypeError('Callback must be a function');
+    }
     const result = [];
     for (let i = 0; i < this.length; i++){
         result.push(callBack(this[i], i, this));
@@ -10,7 +13,9 @@ Array.prototype.testMap = function (callBack) {
 }
 
 const nums = [45, 2, 39, 60, 10, 19, 345];
-const newArray =nums.testMap((n, i, nums) => {
+const nums1 = [1, 2, 3, 4, 5, 19, 345];
+nums1.testMap();
+const newArray =nums.testMap((n) => {
     return n * 2;
 })
 console.log(newArray);
@@ -19,6 +24,9 @@ console.log(newArray);
 //polyfill for filter
 
 Array.prototype.testfilter = function (callBack) {
+    if (typeof callBack !== 'function') {
+      throw new TypeError('Callback must be a function');
+    }
   const result = [];
   for (let i = 0; i < this.length; i++) {
       if (callBack(this[i], i, this))
@@ -28,7 +36,9 @@ Array.prototype.testfilter = function (callBack) {
 };
 
 const nums = [45, 2, 39, 60, 10, 19, 345];
-const newArray = nums.testfilter((n, i, nums) => {
+const nums1 = [1, 2, 3, 4, 5, 19, 345];
+nums1.testfilter();
+const newArray = nums.testfilter((n) => {
   return n %5==0;
 });
 console.log(newArray);
@@ -37,6 +47,9 @@ console.log(newArray);
 //polyfill for reduce
 
 Array.prototype.testreduce = function (callBack, currVal) {
+    if (typeof callBack !== "function") {
+        throw new TypeError("Callback must be a function");
+    }
     let acc = currVal !== undefined ? currVal : this[0];
     let index = currVal !== undefined ? 0 : 1;
   for (let i = index; i < this.length; i++) {
@@ -46,6 +59,8 @@ Array.prototype.testreduce = function (callBack, currVal) {
 };
 
 const nums = [45, 2, 39, 60, 10, 19, 345];
+const nums1 = [1, 2, 3, 4, 5, 19, 345];
+nums1.testreduce();
 const newArray = nums.testreduce((acc, currVal) => {
   return acc+currVal;
 });
