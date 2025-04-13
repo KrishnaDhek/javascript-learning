@@ -131,3 +131,26 @@ const ans = nums.mySome((n) => {
 })
 
 console.log(ans);
+
+
+//polyfill for every()
+
+Array.prototype.myEvery = function (callBack) {
+    if (typeof callBack !== "function") {
+        throw new Error("Callback must be a function");
+    }
+
+    for (let i = 0; i < this.length; i++){
+        if (i in this && !callBack(this[i], i, this)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const nums = [24, 2, 6, 18, 40, 60];
+const ans = nums.myEvery((i) => {
+    return i % 3 === 0;
+})
+console.log(ans);
