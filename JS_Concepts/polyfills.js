@@ -132,5 +132,3 @@ const ans = nums.mySome((n) => {
 console.log(ans);
 
 
-
-
