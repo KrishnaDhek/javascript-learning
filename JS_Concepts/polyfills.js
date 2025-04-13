@@ -129,6 +129,7 @@ const nums = [3, 4, 68, 32, 11, 51];
 const ans = nums.mySome((n) => {
     return n % 4==0;
 })
+
 console.log(ans);
 
 
