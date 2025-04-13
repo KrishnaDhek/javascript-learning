@@ -154,3 +154,27 @@ const ans = nums.myEvery((i) => {
     return i % 3 === 0;
 })
 console.log(ans);
+
+
+//polyfill for call()
+
+Function.prototype.myCall = function (context, ...args) {
+    if (typeof this !== "function") {
+        throw new Error(`${this} must be a function`);
+    }
+    const tempFn = Symbol();
+    context[tempFn] = this;
+    context[tempFn](...args);
+    delete context[tempFn];
+
+
+}
+
+const obj1 = {
+    fName: "Krishna",
+    lName :"Dhek"
+}
+function testMessage(place) {
+    console.log(`Hello ${this.fName} ${this.lName} from ${place} `);
+}
+testMessage.myCall(obj1, 'Bangalore');
