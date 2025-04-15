@@ -50,3 +50,23 @@ const ans = nums.myFilter((n) => {
   return n>50;
 });
 console.log(ans);
+
+
+//polyfill for find()
+
+Array.prototype.myFind =function(cb) {
+    
+    for (let i = 0; i < this.length; i++){
+        if ( i in this && cb(this[i], i, this)) {
+            return this[i];
+        }
+    }
+    return undefined;
+}
+
+
+const nums = [34, 2, 55, 75, 87, 91, 32];
+const ans = nums.myFind((n) => {
+  return n<50;
+});
+console.log(ans);
