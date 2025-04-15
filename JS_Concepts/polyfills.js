@@ -166,8 +166,6 @@ Function.prototype.myCall = function (context, ...args) {
     context[tempFn] = this;
     context[tempFn](...args);
     delete context[tempFn];
-
-
 }
 
 const obj1 = {
