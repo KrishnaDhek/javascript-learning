@@ -176,7 +176,7 @@ const obj1 = {
 const obj2 = {
   fName: 'Kr',
   lName: 'D',
-};
+}
 
 function testMessage(place) {
     console.log(`Hello ${this.fName} ${this.lName} from ${place} `);
