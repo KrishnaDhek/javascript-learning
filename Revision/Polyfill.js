@@ -34,4 +34,19 @@ const ans = nums.myReduce((acc,val) => {
 })
 console.log(ans);
 
-//po
+//polyfill for filter()
+
+Array.prototype.myFilter = function (cb) {
+    const arr = []; 
+    for (let i = 0; i < this.length; i++){
+        if (cb(this[i], i, this)) {
+            arr.push(this[i]);
+        }
+    }
+    return arr;
+}
+const nums = [34, 2, 55, 75, 87, 91, 32];
+const ans = nums.myFilter((n) => {
+  return n>50;
+});
+console.log(ans);
