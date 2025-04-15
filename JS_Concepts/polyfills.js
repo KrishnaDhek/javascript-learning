@@ -173,7 +173,6 @@ const obj1 = {
     lName :"Dhek"
 }
 
-
 const obj2 = {
   fName: 'Kr',
   lName: 'D',
