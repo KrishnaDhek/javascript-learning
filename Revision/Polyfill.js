@@ -16,3 +16,22 @@ const ans = nums.myMap((i) => {
 })
 console.log(ans);
 
+//polyfill for reduce()
+
+Array.prototype.myReduce = function (cb,cVal) {
+    let acc = cVal !== undefined ? cVal : this[0];
+    let index = cVal !== undefined ? 0 : 1;
+    for (let i = index; i < this.length; i++){
+        acc = cb(acc, this[i], i, this);
+    }
+    return acc;
+}
+
+const nums = [34, 2, 55, 75, 87, 91, 32];
+const ans = nums.myReduce((acc,val) => {
+    return acc +val ;
+
+})
+console.log(ans);
+
+//po
