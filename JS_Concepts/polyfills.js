@@ -181,5 +181,6 @@ const obj2 = {
 function testMessage(place) {
     console.log(`Hello ${this.fName} ${this.lName} from ${place} `);
 }
+
 testMessage.myCall(obj1, 'Bangalore');
 testMessage.myCall(obj2, 'Lgt');
