@@ -28,10 +28,9 @@ Array.prototype.myReduce = function (cb,cVal) {
 }
 
 const nums = [34, 2, 55, 75, 87, 91, 32];
-const ans = nums.myReduce((acc,val) => {
-    return acc +val ;
-
-})
+const ans = nums.myReduce((acc, val) => {
+  return acc + val;
+}, 6);
 console.log(ans);
 
 //polyfill for filter()
@@ -57,7 +56,7 @@ console.log(ans);
 Array.prototype.myFind =function(cb) {
     
     for (let i = 0; i < this.length; i++){
-        if ( i in this && cb(this[i], i, this)) {
+        if (cb(this[i], i, this)) {
             return this[i];
         }
     }
@@ -90,4 +89,24 @@ const ans = nums.mySome((n) => {
 console.log(ans);
 
 
-//p
+//polyfill for every()
+
+Array.prototype.myEvery = function (cb) {
+    for (let i = 0; i < this.length; i++){
+        if (i in this && !cb(this[i], i, this)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+const nums = [34, , , ,  2, 55, 75, 87, 91, 32];
+const ans = nums.myEvery((n) => {
+  return n >10;
+});
+console.log(ans);
+
+
+
+//
