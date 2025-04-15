@@ -171,7 +171,7 @@ Function.prototype.myCall = function (context, ...args) {
 const obj1 = {
     fName: "Krishna",
     lName: "Dhek"
-};
+}
 
 const obj2 = {
   fName: 'Kr',
