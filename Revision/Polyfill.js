@@ -109,4 +109,33 @@ console.log(ans);
 
 
 
-//
+//polyfill for call()
+Function.prototype.myCall = function (item, ...args) {
+    if (typeof this !== 'function') {
+        throw new Error(`${this} must be a function`);
+    }
+
+    const val = Symbol();
+    item[val] = this;
+    item[val](...args);
+    delete item[val];
+
+}
+
+
+const obj1 = {
+  fName: 'Krishna',
+  lName: 'Dhek',
+};
+
+const obj2 = {
+  fName: 'Kr',
+  lName: 'D',
+};
+
+function testMessage(place) {
+  console.log(`Hello ${this.fName} ${this.lName} from ${place} `);
+}
+
+testMessage.myCall(obj1, 'Bangalore');
+testMessage.myCall(obj2, 'Lgt');
