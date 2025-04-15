@@ -170,13 +170,14 @@ Function.prototype.myCall = function (context, ...args) {
 
 const obj1 = {
     fName: "Krishna",
-    lName :"Dhek"
-}
+    lName: "Dhek"
+};
 
 const obj2 = {
   fName: 'Kr',
   lName: 'D',
 };
+
 function testMessage(place) {
     console.log(`Hello ${this.fName} ${this.lName} from ${place} `);
 }
