@@ -156,7 +156,6 @@ const ans = nums.myEvery((i) => {
 console.log(ans);
 
 
-
 //polyfill for call()
 
 Function.prototype.myCall = function (context, ...args) {
