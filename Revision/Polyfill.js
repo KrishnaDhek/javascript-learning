@@ -109,6 +109,7 @@ console.log(ans);
 
 
 
+
 //polyfill for call()
 Function.prototype.myCall = function (item, ...args) {
     if (typeof this !== 'function') {
