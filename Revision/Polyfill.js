@@ -64,6 +64,7 @@ Array.prototype.myFind =function(cb) {
 }
 
 
+
 const nums = [34, 2, 55, 75, 87, 91, 32];
 const ans = nums.myFind((n) => {
   return n<50;
