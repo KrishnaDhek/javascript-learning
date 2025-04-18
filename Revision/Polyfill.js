@@ -143,5 +143,3 @@ testMessage.myCall(obj2, 'Lgt');
 
 
 
-
-
