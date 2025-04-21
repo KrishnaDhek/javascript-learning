@@ -321,3 +321,23 @@ mexico["neighbour"].push("Honduras");
 console.log(mexico);
 delete mexico.neighbour;
 console.log(mexico);
+
+
+
+const myPet = {
+    name: "Sudo",
+    type: "dog",
+    breed: "Poodle",
+    age: 7,
+    friend: ["Bit", "Byte", "Data"],
+
+}
+console.log(myPet);
+myPet.color = "black";
+console.log(myPet);
+myPet.breed = "Beagle";
+console.log(myPet);
+myPet.friend.pop();
+console.log(myPet);
+myPet.friend.push("Chip");
+console.log(myPet);
