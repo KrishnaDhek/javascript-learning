@@ -341,3 +341,39 @@ myPet.friend.pop();
 console.log(myPet);
 myPet.friend.push("Chip");
 console.log(myPet);
+
+
+
+const banana = {
+    name: "banana",
+    quant: 1,
+    price:1.95
+}
+const apple = {
+  name: 'apple',
+  quant: 1,
+  price: 1.45,
+};
+const candy = {
+  name: 'candy',
+  quant: 1,
+  price: 3.05,
+};
+
+const store = {
+    storeNumber: 5,
+    locationCity: 'Milan',
+    locationCountry: "Italy",
+    product:[banana,apple,candy]
+  
+};
+console.log(store);
+console.log(store.product);
+console.log(store.product[2]);
+store.product[0].price = 1.75;
+console.log(store.product[0].price);
+console.log(store);
+console.log(banana);
+candy.price = 4.99;
+console.log(store);
+console.log(candy);
