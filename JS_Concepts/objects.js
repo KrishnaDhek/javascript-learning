@@ -306,3 +306,16 @@ delete user[keys[1]];
 delete user[keys[2]];
 console.log(user);
 // If a key's value is missing, use "Unknown" as the default value
+
+
+
+const mexico = {
+    id: 24,
+    name: "Mexico",
+    capital: "Maxico City",
+    neighbour :["USA","Guatemala","Belize"]
+}
+console.log(mexico);
+mexico.id = 25;
+mexico["neighbour"].push("Honduras");
+console.log(mexico);
