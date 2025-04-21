@@ -319,3 +319,5 @@ console.log(mexico);
 mexico.id = 25;
 mexico["neighbour"].push("Honduras");
 console.log(mexico);
+delete mexico.neighbour;
+console.log(mexico);
