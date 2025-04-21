@@ -57,3 +57,24 @@ console.log(personNew);
 console.log(personNew[keyItem]);
 console.log(personNew["level"]);
 console.log(personNew.level);
+
+/**
+ * Create an object with dynamic properties that represent different user attributes (e.g., age, country). Then, create a method that takes a key and returns the value of the dynamic property based on that key.
+ */
+
+const userAge = "age";
+const userCountry = "country";
+
+const userDetails = {
+    name: "Fred",
+    [userAge]: 20,
+    [userCountry]: "LA",
+    getUserInfo(key) {
+        return `User ${key}: ${this[key]}`
+    }
+}
+
+console.log(userDetails.getUserInfo("age"));
+console.log(userDetails.getUserInfo("country"));
+console.log(userDetails.getUserInfo(userDetails.age));
+console.log(userDetails.getUserInfo(userDetails.country));
