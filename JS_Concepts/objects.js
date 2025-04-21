@@ -117,3 +117,17 @@ console.log('Before:', player);
 player.updateStat('score', 75);
 
 console.log('After:', player);
+
+let key = "age";
+
+const example = {
+    name: "Abc",
+    [key]: 28,
+    key:"xcv",
+}
+console.log(example.age); //28
+console.log(example[key]);//28
+console.log(example["age"]);//28
+console.log(example[key]);//28
+console.log(example.key);//xcv
+console.log(example["key"]);//xcv
