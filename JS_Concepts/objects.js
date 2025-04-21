@@ -131,3 +131,14 @@ console.log(example["age"]);//28
 console.log(example[key]);//28
 console.log(example.key);//xcv
 console.log(example["key"]);//xcv
+
+
+const x = "role";
+const user = {
+  [x]: "admin",
+  x: "not admin"
+};
+
+console.log(user.role);   // ?admin accessing role directly as key is known
+console.log(user[x]);     // ? look for the value inside the variable x and then print its value which is admin
+console.log(user["x"]);   // ? look for a literal key x and print its value which is not admin
