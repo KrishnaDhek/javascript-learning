@@ -172,3 +172,26 @@ console.log(gamer.level);     // ? 3
 console.log(gamer[key]);      // ?3
 console.log(gamer["level"]);  // ?3
 console.log(gamer["key"]);    // ?undefined
+
+
+
+const keys = ["score", "rank", "level"];
+
+const player = {
+  name: "Max",
+  [keys[0]]: 10,
+  [keys[1]]: "Silver",
+  [keys[2]]: 1
+};
+
+// ✅ Task: If a key's value is a number, increase it by 5.
+
+for (let key of keys) {
+  if (typeof player[key] === "number") {
+    player[key] += 5;
+  }
+}
+
+console.log(player.score);   // ? 15
+console.log(player.rank);    // ?silver
+console.log(player.level);   // ?6
