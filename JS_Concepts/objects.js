@@ -78,3 +78,22 @@ console.log(userDetails.getUserInfo("age"));
 console.log(userDetails.getUserInfo("country"));
 console.log(userDetails.getUserInfo(userDetails.age));
 console.log(userDetails.getUserInfo(userDetails.country));
+
+
+//Dynamic Keys in Loops
+/**
+ * You are given an object with dynamic keys and need to iterate over the keys and values, logging them to the console.
+ */
+
+const dynamicKeys = ["score", "rank", "achievement"];
+
+const player = {
+  name: "Leo",
+  [dynamicKeys[0]]: 100,
+  [dynamicKeys[1]]: "Gold",
+  [dynamicKeys[2]]: "First Place"
+};
+
+for (key in player) {
+    console.log(` ${key} : ${player[key]}`);
+}
