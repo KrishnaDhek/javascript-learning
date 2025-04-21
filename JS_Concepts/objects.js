@@ -142,3 +142,17 @@ const user = {
 console.log(user.role);   // ?admin accessing role directly as key is known
 console.log(user[x]);     // ? look for the value inside the variable x and then print its value which is admin
 console.log(user["x"]);   // ? look for a literal key x and print its value which is not admin
+
+
+//Output based
+const dynamicKey = "score";
+
+const player = {
+  name: "Alex",
+  [dynamicKey]: 42,
+  dynamicKey: "Not a score"
+};
+
+console.log(player.score);        // ? 42
+console.log(player[dynamicKey]);  // ?42
+console.log(player["dynamicKey"]); // ?not a score
