@@ -213,3 +213,41 @@ for (let i = 0; i < keys.length;i++) {
 console.log(obj);
 
 //Conditional Logic while Building an Object
+
+/**
+ * You’re given two arrays: one of keys and another of values. But here’s the twist:
+
+If a value is undefined, we will assign a default value (e.g., "Unknown").
+
+If the value is a number and greater than 50, we’ll label it "High".
+
+Task: Build the object using this conditional logic.
+
+ */
+
+const keys = ["name", "age", "country"];
+const values = ["John", 65, undefined];
+
+const user = {};
+
+for (let i = 0; i < keys.length; i++){
+    if (values[i] === undefined) {
+        user[keys[i]] = "Unknown";
+    }
+    else if (typeof values[i] === 'number' && values[i] >50) {
+      user[keys[i]] = 'High';
+    } else {
+        user[keys[i]] = values[i];
+    }
+}
+
+
+console.log(user);
+
+
+
+
+
+
+
+
