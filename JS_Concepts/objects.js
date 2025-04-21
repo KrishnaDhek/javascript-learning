@@ -156,3 +156,19 @@ const player = {
 console.log(player.score);        // ? 42
 console.log(player[dynamicKey]);  // ?42
 console.log(player["dynamicKey"]); // ?not a score
+
+
+
+const key = "level";
+
+const gamer = {
+  name: "Sam",
+  [key]: 1,
+};
+
+gamer[key] += 2; // update the dynamic key
+
+console.log(gamer.level);     // ? 3
+console.log(gamer[key]);      // ?3
+console.log(gamer["level"]);  // ?3
+console.log(gamer["key"]);    // ?undefined
