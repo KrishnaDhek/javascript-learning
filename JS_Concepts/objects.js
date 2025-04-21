@@ -302,5 +302,7 @@ for (let i = 0; i < keys.length; i++){
 }
 user[newKey] = "active";
 console.log(user);
-
+delete user[keys[1]];
+delete user[keys[2]];
+console.log(user);
 // If a key's value is missing, use "Unknown" as the default value
