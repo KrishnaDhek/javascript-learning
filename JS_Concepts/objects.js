@@ -97,3 +97,23 @@ const player = {
 for (key in player) {
     console.log(` ${key} : ${player[key]}`);
 }
+
+
+//Updating a Dynamic Property
+
+const updateKey = 'score';
+
+const player = {
+  name: 'Alex',
+  [updateKey]: 50,
+  updateStat(statKey, value) {
+    this[statKey] = value;
+  },
+};
+
+console.log('Before:', player); 
+
+// 🔧 Update the dynamic key
+player.updateStat('score', 75);
+
+console.log('After:', player);
