@@ -244,10 +244,33 @@ for (let i = 0; i < keys.length; i++){
 
 console.log(user);
 
+//Nested Object with Dynamic Keys and Default Values
+/**
+ * You have two arrays:
 
+keys (with dynamic property names).
 
+values (with corresponding property values).
 
+You need to:
 
+Add these properties to an object.
 
+If any key is missing, assign a default value ("Unknown").
 
+If a value is a nested object, add that object as is.
+ */
+const keys = ['name', 'details', 'country'];
+const values = ['Sara', { age: 30, profession: 'Engineer' }, 'UK'];
 
+const user = {};
+for (let i = 0; i < keys.length; i++){
+    if (values[i] === undefined) {
+        user[keys[i]] = "Unknown";
+    } else if (typeof values[i] === 'object') {
+        user[keys[i]] = values[i];
+    } else {
+        user[keys[i]] = values[i]
+    }
+}
+console.log(user);
