@@ -40,3 +40,20 @@ const player = {
 console.log(player['score']); //100
 console.log(player[dynamicKey]); //100
 console.log(player.getDetails()); //Leo is 27 years old and has a score of 100
+
+
+//Modifying Dynamic Keys
+
+let keyItem = "level";
+const personNew = {
+    name: "John",
+    age: 28,
+    [keyItem]: 2,
+    update() {
+        this[keyItem] += 1;
+    }
+}
+console.log(personNew);
+console.log(personNew[keyItem]);
+console.log(personNew["level"]);
+console.log(personNew.level);
