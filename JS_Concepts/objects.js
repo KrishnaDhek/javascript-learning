@@ -195,3 +195,19 @@ for (let key of keys) {
 console.log(player.score);   // ? 15
 console.log(player.rank);    // ?silver
 console.log(player.level);   // ?6
+
+
+//Build Object with Dynamic Keys from Arrays
+/**
+ * You’re given two arrays: one of keys and another of values. Use a loop to build a new object where each key gets the corresponding value.
+
+ */
+
+const keys = ['name', 'age', 'country'];
+const values = ['Nina', 22, 'Canada'];
+
+const obj = {};
+for (let i = 0; i < keys.length;i++) {
+    obj[keys[i]] = values[i];
+}
+console.log(obj);
