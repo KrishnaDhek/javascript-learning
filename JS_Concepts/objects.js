@@ -274,3 +274,33 @@ for (let i = 0; i < keys.length; i++){
     }
 }
 console.log(user);
+
+
+//Complex Object with Nested Updates
+const keys = ["name", "location", "skills"];
+const values = ["Alice", "New York", { languages: ["English", "Spanish"], yearsOfExperience: 5 }];
+
+const user = {};
+
+let newKey = 'status';
+// Use a loop to dynamically build the object and handle updates
+for (let i = 0; i < keys.length; i++){
+    // If the value is an object, check if it has the "yearsOfExperience" property and update it if needed
+    if (typeof values[i] === 'object') {
+       
+         if (values[i].yearsOfExperience < 10) {
+           values[i].yearsOfExperience += 1;
+         }
+        
+         user[keys[i]] = values[i];
+        
+    } else if (values[i] === undefined) {
+        user[keys[i]] ="Unknown"
+    } else {
+        user[keys[i]] = values[i];
+    }
+}
+user[newKey] = "active";
+console.log(user);
+
+// If a key's value is missing, use "Unknown" as the default value
