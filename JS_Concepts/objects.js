@@ -441,3 +441,80 @@ function sumProperty(salaries){
     return sum;
 }
 console.log(sumProperty(salaries));
+
+/**
+ * Multiply numeric property values by 2
+Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+ */
+
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === 'number') {
+            obj[key] *= 2;
+        }
+    }
+}
+let menu = {
+  width: 200,
+  height: 300,
+  title: 'My menu',
+};
+
+multiplyNumeric(menu);
+console.log(menu);
+menu["new data"] = "test";
+console.log(menu);
+console.log(menu["new data"]);
+
+
+const someKey = "test";
+const o = {
+    [someKey]: 4,
+}
+console.log(o[someKey]);
+/**so give me all the important points that i should know about obejct, the way of creation, there most common methods, object reference, dynamic key  */
+
+//Convert an array of key-value pairs into an object.
+const input = [
+  ['name', 'Alice'],
+  ['age', 25],
+  ['role', 'admin'],
+];
+
+
+let output = {};
+output = Object.fromEntries(input);
+console.log(output);
+
+
+//Add a user-defined key and value to an object.
+
+// Let user input be:
+const key = "location";
+const value = "Delhi";
+
+// Start with:
+const obj = { name: "Bob" };
+obj[key] = value;
+console.log(obj);
+
+
+//You have a list of users. Group them by role.
+const users = [
+  { name: 'Alice', role: 'admin' },
+  { name: 'Bob', role: 'user' },
+  { name: 'Charlie', role: 'admin' },
+  { name: 'David', role: 'user' },
+];
+
+const group = {};
+for (let i = 0; i < users.length;i++) {
+    let role = users[i].role;
+    let name = users[i].name;
+
+    if (!group[role]) {
+        group[role] = [];
+    }
+    group[role].push(name);
+}
+console.log(group);
