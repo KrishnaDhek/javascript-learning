@@ -361,20 +361,21 @@ function addEmployee(department, employee) {
 }
 addEmployee("admin","j")
 
+//Section 5: Edge Cases and Predictions
 
-// const obj = { a: 1, b: 2 };
-// obj["c"] = 3;
-// console.log(obj);//{ a: 1, b: 2,c:3 };
+const obj = { a: 1, b: 2 };
+obj["c"] = 3;
+console.log(obj);//{ a: 1, b: 2,c:3 };
 
-// const obj1 = { name: "Alice" };
-// const obj2 = obj1;
-// obj2.name = "Bob";
-// console.log(obj1);//{name: "Bob"}
+const obj1 = { name: "Alice" };
+const obj2 = obj1;
+obj2.name = "Bob";
+console.log(obj1);//{name: "Bob"}
 
-// const map = new Map();
-// map.set("key", "value");
-// map.set({}, "another value");
-// console.log(map);// {key => value, {}=>another value}
+const map = new Map();
+map.set("key", "value");
+map.set({}, "another value");
+console.log(map);// {key => value, {}=>another value}
 
 
 /**
