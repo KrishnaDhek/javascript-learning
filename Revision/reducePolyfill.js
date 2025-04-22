@@ -15,5 +15,12 @@ Array.prototype.myReduce = function (callback, currentVal) {
 const arr = [3, 4, 5, 6, 7, 8];
 const result = arr.myReduce((acc, cVal) => {
   return acc + cVal;
-});
+},0);
 console.log(result);
+
+
+const expenses = [1200, 750, 340, 2100, 650];
+const totalExpenses = expenses.myReduce((acc, cVal) => {
+    return acc + cVal
+}, 0);
+console.log(`the total expendeture is : ${totalExpenses}`);
