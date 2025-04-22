@@ -518,3 +518,29 @@ for (let i = 0; i < users.length;i++) {
     group[role].push(name);
 }
 console.log(group);
+
+//Count how many users belong to each role
+const users = [
+  { name: 'Alice', role: 'admin' },
+  { name: 'Bob', role: 'user' },
+  { name: 'Charlie', role: 'admin' },
+  { name: 'David', role: 'user' },
+  { name: 'Eve', role: 'user' },
+];
+
+let roleCount = {};
+for (let i = 0; i < users.length; i++){
+    let role = users[i].role;
+    let count = 1;
+    if (!roleCount[role]) {
+        roleCount[role] = 1;
+    }
+    else {
+        
+    
+        roleCount[role] += 1;
+    }
+
+
+}
+console.log(roleCount);
