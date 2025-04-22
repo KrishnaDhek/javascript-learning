@@ -498,6 +498,7 @@ obj[key] = value;
 console.log(obj);
 
 
+
 //You have a list of users. Group them by role.
 const users = [
   { name: 'Alice', role: 'admin' },
