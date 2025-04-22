@@ -49,3 +49,17 @@ console.log(newObj);
 const person = { name: "John" };
 person.name = "Jane";
 console.log(person);  // ?{ name: "Jane" };
+
+
+
+const a = {};
+const b = a;
+b.name = 'Zara';
+console.log(a.name);
+
+
+
+let obj = { a: 1 };
+delete obj.a;
+delete obj.b;
+console.log(obj);
