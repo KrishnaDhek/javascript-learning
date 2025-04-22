@@ -386,3 +386,47 @@ How does JavaScript handle object references when they are assigned to another v
 
 How do you add a dynamic key-value pair to an existing object? Give an example where the key is provided by the user.
  */
+
+
+
+//Access & Update Deeply Nested Properties
+
+const school = {
+  name: 'Greenwood High',
+  address: {
+    city: 'Pune',
+    pin: 411001,
+  },
+  students: [
+    {
+      id: 1,
+      name: 'Amit',
+      scores: {
+        math: 90,
+        science: 85,
+      },
+    },
+    {
+      id: 2,
+      name: 'Sara',
+      scores: {
+        math: 80,
+        science: 88,
+      },
+    },
+  ],
+};
+
+//Print the pin code.
+console.log(school.address.pin);
+
+//Print Sara’s science score.
+console.log(school.students[1].scores.science);
+
+//Update Amit’s math score to 95.
+school.students[0].scores.math = 95;
+console.log(school.students[0].scores.math);
+
+//Add a new subject english with a score of 89 for Sara.
+school.students[1].scores.english = 89;
+console.log(school.students[1]);
