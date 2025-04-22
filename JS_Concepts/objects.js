@@ -488,7 +488,6 @@ console.log(output);
 
 
 //Add a user-defined key and value to an object.
-
 // Let user input be:
 const key = "location";
 const value = "Delhi";
