@@ -20,3 +20,14 @@ const result = arr.myFilter((item, index, self) => {
     return item % 2 !== 0;
 });
 console.log(result);
+
+const nestedArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [10, 11, 12],
+];
+const ans = nestedArray.myFilter((i) => {
+    return i.myFilter((j) => j > 4).length>0;
+})
+console.log(ans);
