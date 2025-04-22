@@ -271,3 +271,117 @@ const objCart = {
     
 }
 console.log(objCart.calculatePrice());
+
+
+
+//Section 4.Advanced Object Manipulation
+//Object Assignment and Copying
+/**
+ * Create an object original with properties name and age. Use Object.assign() to copy this object to a new object copy. Change the age in copy and log both original and copy.
+ */
+
+const original = {
+    name: "Krishna",
+    age:27
+}
+
+const copy = Object.assign({}, original);
+console.log("original: ",original);
+console.log("copy",copy);
+copy.age = 29;
+console.log("original: ",original);
+console.log("copy: ", copy);
+
+
+//Use the spread operator (...) to copy an object original to a new object newObj. Modify the newObj and log both objects.
+
+const newCopy = { ...original };
+console.log(newCopy);
+newCopy.age = 20;
+console.log("orignal in spear operation: ", original);
+console.log('newCopy in spear operation: ', newCopy);
+
+
+
+/**
+ * Use Object.keys(), Object.values(), and Object.entries() on the person object and log the results of each method.
+ */
+
+
+const person = {
+  name: 'Krishna',
+  greet: () => {
+    return `Hello ${this.name}!`; //this points to the global object or windows object in case of arrow function as name is not present in the global thus it returns undefined
+  },
+};
+console.log(person.greet());
+
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));
+
+//Nested Objects and Iteration
+
+/**
+ * Create a nested object student with properties name, age, and a sub-object grades. Iterate through the grades object and log the subject names and scores.
+ */
+
+const student = {
+  name: 'krishna',
+  age: 25,
+    grades: { grade1: 'A', grade2: 'A', grade3: 'B' },
+  
+};
+
+for (let key in student.grades) {
+    console.log(student.grades[key]);
+}
+
+
+
+/**
+ * Create a nested object representing a company with employees and departments. Write a function that adds a new employee to the correct department.
+ */
+
+const company = {
+    department: { admin:{employee:{emp1:"krishna",emp2:"Vinita"}}, member:{employee:{emp1:"eva"}}}
+};
+
+function addEmployee(department, employee) {
+    if (company.department[department]) {
+        const empKey = "emp" + (Object.keys(company.department[department].employee).length + 1);
+        company.department[department].employee[empKey] = employee;
+        console.log(
+          `Added ${employee} as ${empKey} to ${department} department`
+        );
+    } else {
+        console.log(`${department} not found`);
+    }
+    
+}
+addEmployee("admin","j")
+
+
+// const obj = { a: 1, b: 2 };
+// obj["c"] = 3;
+// console.log(obj);//{ a: 1, b: 2,c:3 };
+
+// const obj1 = { name: "Alice" };
+// const obj2 = obj1;
+// obj2.name = "Bob";
+// console.log(obj1);//{name: "Bob"}
+
+// const map = new Map();
+// map.set("key", "value");
+// map.set({}, "another value");
+// console.log(map);// {key => value, {}=>another value}
+
+
+/**
+ * 5.2 Conceptual Questions
+What is the difference between using Object.prototype and Map.prototype when working with JavaScript objects and Maps?
+
+How does JavaScript handle object references when they are assigned to another variable? Explain with an example.
+
+How do you add a dynamic key-value pair to an existing object? Give an example where the key is provided by the user.
+ */
