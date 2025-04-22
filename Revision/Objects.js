@@ -144,4 +144,25 @@ console.log(map.get(key));
 
 
 
-//
+//2.2 Objects as Map Keys
+const map = new Map();
+const obj3 = {};
+const obj4 = {};
+
+map.set(obj3, "first");
+map.set(obj4, "second");
+console.log(map.get(obj3));
+console.log(map.get(obj4));
+console.log(map);
+
+/**
+ * Explain the difference between using objects as keys in a Map versus using objects as keys in a plain object. Try an example where you use an object as a key in both a Map and a regular object. What do you observe?
+ */
+
+/**
+ * when using object as key in map we are passing the reference induvidually this will not overdie the actual objects propert till they point to different objects, but in plain old js object when we try to use object as key js internally converts them to string as ["object Object"] thus overriding the values, as in the above example we can see the map has two objects as key and when there values is retrived we get unique values, but when dealing with regular objects that time we see an override of the values
+ */
+
+
+
+//Advanced Map Operations
