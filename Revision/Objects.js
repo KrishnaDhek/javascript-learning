@@ -201,3 +201,73 @@ console.log(newMap.has(key1));
 //Section 3: Objects and Functions
 
 //Object with Methods
+/**
+ * Create an object calculator with methods add, subtract, and multiply that perform basic arithmetic operations. Log the results of the methods with different inputs.
+ */
+const calculator = {
+  add: function (a, b) {
+    console.log(a + b);
+  },
+  subtract: function (a, b) {
+    console.log(Math.abs(a - b));
+  },
+  multiply: function (a, b) {
+    console.log(a * b);
+  },
+};
+
+calculator.add(3, 5);
+calculator.subtract(13, 15);
+calculator.multiply(2, 5);
+
+
+//Create an object person with a method greet() that returns a greeting using the name property of the object. Call this method and log the result.
+
+const person = {
+    name:"Krishna",
+    greet :function()  {
+        return `Hello ${this.name}!`;
+    }
+}
+console.log(person.greet());
+
+
+//Create an object car with properties make and model and a method getDescription that returns a description of the car (e.g., "Toyota Corolla"). Log the result of calling getDescription().
+
+const car = {
+    make: "Toyota",
+    model: "Corolla",
+    getDescription: function () {
+        return `${this.make} ${this.model}`;
+    }
+}
+console.log(car.getDescription());
+
+
+//Arrow Functions and this
+
+//Modify the greet method in the person object to be an arrow function. Call the method and explain why this.name returns undefined.
+
+const person = {
+  name: 'Krishna',
+  greet:  () => {
+    return `Hello ${this.name}!`; //this points to the global object or windows object in case of arrow function as name is not present in the global thus it returns undefined
+  },
+};
+console.log(person.greet());
+
+
+/**
+ * Create a function calculatePrice that returns the sum of two arguments. Then, add this function to an object cart. Try calling this function both as a method of the cart object and standalone. What happens to the value of this?
+ */
+const calculatePrice = function(a,b) {
+  return this.price + this.tax;
+};
+const objCart = {
+    price: 200,
+    tax:10,
+    calculatePrice: calculatePrice
+        
+    
+}
+console.log(objCart.calculatePrice());
