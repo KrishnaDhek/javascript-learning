@@ -138,9 +138,9 @@ console.log(map);
 console.log(map.get(key));
 //Add a new entry to the Map with another object key ({ id: 2 }) and log the entire Map.
 let key1 = { id: 2 };
-map.set(key, 'check');
+map.set(key1, 'check');
 console.log(map);
-console.log(map.get(key));
+console.log(map.get(key1));
 
 
 
@@ -166,3 +166,38 @@ console.log(map);
 
 
 //Advanced Map Operations
+
+/**
+ * Create a Map and add a key1 (an object) and a key2 (another object) with values "val1" and "val2". Modify the properties of key1 and key2 after they’ve been added to the Map. Log the values using the Map’s get() method.
+ */
+const newMap = new Map();
+let key1 = {};
+let key2 = {};
+
+newMap.set(key1, "val1");
+newMap.set(key2, 'val2');
+
+console.log("Before update: ", newMap);
+console.log(newMap.set(key1, "new val1"));
+console.log(newMap.set(key2, 'new val2'));
+console.log("After update:", newMap);
+
+//Create a Map with multiple key-value pairs and use the has() method to check if certain keys exist in the Map.
+
+
+const newMap = new Map();
+let key1 = {name:"L", age:2};
+let key2 = { name: 'C', age: 12 };
+let key3 = { name: 'v', age: 28 };
+
+newMap.set(key1, 'val1');
+newMap.set(key2, 'val2');
+newMap.set(key3, 'val3');
+
+console.log(newMap.has(key1));
+
+
+
+//Section 3: Objects and Functions
+
+//Object with Methods
