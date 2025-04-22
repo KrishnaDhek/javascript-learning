@@ -420,3 +420,24 @@ function isEmpty(obj) {
 
 const obj = {name:"K"};
 console.log(isEmpty(obj));
+
+/**
+ * Sum object properties
+We have an object storing salaries of our team:
+ */
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+
+
+function sumProperty(salaries){
+    let sum = 0;
+    for (let key in salaries) {
+        sum += salaries[key];
+    }
+    return sum;
+}
+console.log(sumProperty(salaries));
