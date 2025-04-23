@@ -16,6 +16,48 @@ Array.prototype.myMap = function (callback) {
 
 const arr = [5, 6, 7, 8, 9];
 const result = arr.myMap((i, index, self) => {
-  return `the item is ${i*2} present at index ${index} for the array ${self}`
+  return i*4
 })
 console.log(result);
+
+
+//forEach()
+Array.prototype.myForEach = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function. Received ${callback}`);
+  }
+  for (let i = 0; i < this.length; i++){
+    callback(this[i], i, this);
+  }
+}
+
+const a = [3, 4, 5, 6];
+a.myForEach((i, index, self) => {
+  console.log(`the item is ${i} at index ${index} in the array ${self}`);
+})
+
+//call()
+Function.prototype.myCall = function (currentContext, ...args) {
+  if (typeof this!== 'function') {
+    throw new Error(`Callback must be a function. Received ${this}`);
+  }
+  currentContext.funC = this;
+  currentContext.funC(...args);
+  delete currentContext.funC;
+}
+
+const obj1 = {
+  name: "krishna",
+  getDetails: getDetails,
+}
+
+const obj2 = {
+  name:"Vinita"
+}
+
+function getDetails(age, status) {
+  console.log(`Hello ${this.name} your age is ${age} and your status is ${status}`);
+}
+
+getDetails.myCall(obj1, 28, "active");
+getDetails.myCall(obj2, 58, "active");
