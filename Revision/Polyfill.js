@@ -203,3 +203,32 @@ function getDetails(age,place) {
 }
 
 getDetails.myApply(obj, [28, "lohaghat"]);
+
+
+
+
+//bind()
+
+Function.prototype.myBind = function (currentContext, ...args) {
+  if (typeof this !== 'function') {
+    throw new Error(`${this} must be a function`);
+  }
+ 
+  currentContext.func = this;
+  return function (...otherArgs) {
+    currentContext.func(...args, ...otherArgs);
+  }
+}
+
+const person = {
+  name: "Krishna",
+  active:"true",
+}
+
+function printDetails(age, place,married ) {
+  console.log(`Hello ${this.name} your age is  ${age} you belong from ${place} and is active?  ${this.active} are you married? ${married}`);
+}
+
+let result = printDetails.myBind(person, 28, "Bangalore");
+
+result('no');
