@@ -103,3 +103,27 @@ const ans =Aitems.mySome((i) => {
   return i % 2 !== 0;
 })
 console.log(ans);
+
+//every()
+Array.prototype.myEvery = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function, Received ${callback}`);
+  }
+
+  for (let i = 0; i < this.length; i++){
+    if (this.hasOwnProperty(i)) {
+      if (!callback(this[i], i, this)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+
+const A_items = [34, 56, 78, 12, 92];
+const ans1 =A_items.myEvery((i) => {
+  return i % 2 == 0;
+})
+console.log(ans1);
+
