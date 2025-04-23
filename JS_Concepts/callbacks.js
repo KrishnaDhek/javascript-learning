@@ -284,121 +284,160 @@
 //CallBack Hell Exmaple
 //Pyramid of Doom
 
+// let stocks = {
+//   Fruits: ['mango', 'apple', 'strawberry', 'pineapple', 'lyche', 'jackfruit'],
+//   Flavour: ['chocolate', 'vanila', 'butterscotch', 'blueberry'],
+//   Holder: ['cone', 'cup'],
+//   Topping: ['sprinkle', 'raw-fruit'],
+// };
+// let order = (stocks, callProduction) => {
+//   setTimeout(() => {
+//     console.log('Taking Order');
+//     callProduction(stocks);
+//   }, 2000);
+// };
+
+// let production = (stocks) => {
+//   let fruitName = stocks.Fruits[2];
+//   let flavour = stocks.Flavour[2];
+//   let holder = stocks.Holder[0];
+//   let topping = stocks.Topping[1];
+//   setTimeout(() => {
+//     console.log('production has been started');
+//     setTimeout(() => {
+//       console.log(`${fruitName} was selected with the flavour ${flavour}`);
+//       setTimeout(() => {
+//         console.log('Add water and ice');
+//         setTimeout(() => {
+//           console.log('Start Machine');
+//           setTimeout(() => {
+//             console.log(`The holder selected is ${holder}`);
+
+//             setTimeout(() => {
+//               console.log(`Ice-cream topping is ${topping}`);
+//               setTimeout(() => {
+//                 console.log('Ice-cream is ready to serve');
+//               }, 2000);
+//             }, 3000);
+//           }, 2000);
+//         }, 1000);
+//       }, 1000);
+//     }, 2000);
+//   }, 0);
+// };
+
+// order(stocks, production);
+
+// let products = {
+//   vegetables: [
+//     'potato',
+//     'tomato',
+//     'onion',
+//     'pepper',
+//     'garlic',
+//     'gingert',
+//     'cabbage',
+//     'pumkin',
+//   ],
+//   fruits: ['apple', 'mango', 'banana'],
+//   dairy: ['milk', 'curd', 'bread', 'egg'],
+//   nonVeg: ['meat', 'chicken', 'fish'],
+// };
+
+// const orderList = (products, shopping) => {
+//   setTimeout(() => {
+//     console.log('Order Received');
+//     shopping(products);
+//   }, 2000);
+// };
+
+// const shopping = (products) => {
+//   let veg = [
+//     products.vegetables[0],
+//     products.vegetables[3],
+//     products.vegetables[4],
+//   ];
+
+//   let fruit = [products.fruits[0]];
+//   let dairy = [products.dairy[0], products.dairy[1], products.dairy[3]];
+//   let nonVeg = [products.nonVeg[1], products.nonVeg[2]];
+//   setTimeout(() => {
+//     console.log('Shopping Started');
+//     setTimeout(() => {
+//       console.log(
+//         `the cart has items: ${[...veg, ...fruit, ...dairy, ...nonVeg].join(', ')}`);
+//       setTimeout(() => {
+//         console.log('Billing started');
+//         setTimeout(() => {
+//           console.log('Looking for delivery Partner');
+//           setTimeout(() => {
+//             console.log('delivery partner assigned');
+//             setTimeout(() => {
+//               console.log('order out for delivery');
+//               setTimeout(() => {
+//                 console.log('Order Deliverd!');
+//               }, 1000);
+//             }, 4000);
+//           }, 2000);
+//         }, 5000);
+//       }, 2000);
+//     }, 3000);
+//   }, 0);
+// };
+
+
+// orderList(products, shopping)
+
+
+// //Implement a function multiplyWithCallback that takes an array of numbers and a callback function. The function should multiply each element of the array by 2 and pass the result to the callback.
+
+// function multiplyWithCallback(nums, callBack) {
+//   let result = nums.map((nums) => nums*2 )
+//   callBack(result);
+// }
+
+// function callBack(result) {
+//   console.log(result);
+// }
+
+// multiplyWithCallback([2, 3, 4, 5], callBack)
+
+
+
+//callback - a callback is a function that is passed as an argument to another function to be executed later
 let stocks = {
-  Fruits: ['mango', 'apple', 'strawberry', 'pineapple', 'lyche', 'jackfruit'],
-  Flavour: ['chocolate', 'vanila', 'butterscotch', 'blueberry'],
-  Holder: ['cone', 'cup'],
-  Topping: ['sprinkle', 'raw-fruit'],
-};
-let order = (stocks, callProduction) => {
+  grocery: ["rice", "toor-daal", "noodles", "spices"],
+  appliances: ["cooker", "mixer", "toster"],
+  vegetables: ['potato', 'jackfruit', 'tomato'],
+  fruits:['mango','banana']
+}
+
+let order = (stocks, addToCart) => {
   setTimeout(() => {
-    console.log('Taking Order');
-    callProduction(stocks);
+    console.log(`Order received`);
+    addToCart(stocks);
   }, 2000);
-};
+}
 
-let production = (stocks) => {
-  let fruitName = stocks.Fruits[2];
-  let flavour = stocks.Flavour[2];
-  let holder = stocks.Holder[0];
-  let topping = stocks.Topping[1];
+let addToCart = (stocks) => {
+  let [item1, item2] = stocks.grocery;
+  let [appliance] = stocks.appliances;
+
   setTimeout(() => {
-    console.log('production has been started');
+    console.log("Shopping Started");
     setTimeout(() => {
-      console.log(`${fruitName} was selected with the flavour ${flavour}`);
+      console.log(`Your order is placed for items: ${item1}, ${item2} ,${appliance}`);
       setTimeout(() => {
-        console.log('Add water and ice');
+        console.log("Billing Started");
         setTimeout(() => {
-          console.log('Start Machine');
+          console.log("Order out for delivery");
           setTimeout(() => {
-            console.log(`The holder selected is ${holder}`);
-
-            setTimeout(() => {
-              console.log(`Ice-cream topping is ${topping}`);
-              setTimeout(() => {
-                console.log('Ice-cream is ready to serve');
-              }, 2000);
-            }, 3000);
-          }, 2000);
-        }, 1000);
-      }, 1000);
-    }, 2000);
-  }, 0);
-};
-
-order(stocks, production);
-
-let products = {
-  vegetables: [
-    'potato',
-    'tomato',
-    'onion',
-    'pepper',
-    'garlic',
-    'gingert',
-    'cabbage',
-    'pumkin',
-  ],
-  fruits: ['apple', 'mango', 'banana'],
-  dairy: ['milk', 'curd', 'bread', 'egg'],
-  nonVeg: ['meat', 'chicken', 'fish'],
-};
-
-const orderList = (products, shopping) => {
-  setTimeout(() => {
-    console.log('Order Received');
-    shopping(products);
-  }, 2000);
-};
-
-const shopping = (products) => {
-  let veg = [
-    products.vegetables[0],
-    products.vegetables[3],
-    products.vegetables[4],
-  ];
-
-  let fruit = [products.fruits[0]];
-  let dairy = [products.dairy[0], products.dairy[1], products.dairy[3]];
-  let nonVeg = [products.nonVeg[1], products.nonVeg[2]];
-  setTimeout(() => {
-    console.log('Shopping Started');
-    setTimeout(() => {
-      console.log(
-        `the cart has items: ${[...veg, ...fruit, ...dairy, ...nonVeg].join(', ')}`);
-      setTimeout(() => {
-        console.log('Billing started');
-        setTimeout(() => {
-          console.log('Looking for delivery Partner');
-          setTimeout(() => {
-            console.log('delivery partner assigned');
-            setTimeout(() => {
-              console.log('order out for delivery');
-              setTimeout(() => {
-                console.log('Order Deliverd!');
-              }, 1000);
-            }, 4000);
-          }, 2000);
-        }, 5000);
+            console.log("Item Deliverd");
+          }, 1000);
+        }, 3000);
       }, 2000);
-    }, 3000);
-  }, 0);
-};
-
-
-orderList(products, shopping)
-
-
-//Implement a function multiplyWithCallback that takes an array of numbers and a callback function. The function should multiply each element of the array by 2 and pass the result to the callback.
-
-function multiplyWithCallback(nums, callBack) {
-  let result = nums.map((nums) => nums*2 )
-  callBack(result);
+    }, 1500);
+  }, 2000);
 }
 
-function callBack(result) {
-  console.log(result);
-}
-
-multiplyWithCallback([2, 3, 4, 5], callBack)
-
+order(stocks,addToCart)
