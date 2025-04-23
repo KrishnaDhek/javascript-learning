@@ -127,3 +127,28 @@ const ans1 =A_items.myEvery((i) => {
 })
 console.log(ans1);
 
+
+
+
+//reduce()
+
+Array.prototype.myReduce = function (callback, cVal) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function, Received ${callback}`);
+  }
+
+  let acc = cVal !== undefined ? cVal : this[0];
+  let index = cVal !== undefined ? 0 : 1;
+  for (let i = index; i < this.length; i++){
+    if (this.hasOwnProperty(i)) {
+      acc = callback(acc, this[i], i, this);
+    }
+  }
+  return acc;
+}
+
+const elements = [34, 5, 1, 2, 50];
+const result1 = elements.myReduce((acc, cVal) => {
+  return acc + cVal;
+}, 0);
+console.log(result1);
