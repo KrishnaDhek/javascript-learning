@@ -440,4 +440,33 @@ let addToCart = (stocks) => {
   }, 2000);
 }
 
-order(stocks,addToCart)
+order(stocks, addToCart);
+
+
+//CallBack and callback hell
+
+// function callOne(callSecond) {
+//   setTimeout(() => {
+//     console.log("Inside callOne function");
+//     callSecond();
+//   }, 1000);
+// }
+
+// function callSecond() {
+  setTimeout(() => {
+    console.log("Inside callSecond function");
+    setTimeout(() => {
+      console.log("task 1");
+      setTimeout(() => {
+        console.log("Task 2");
+        setTimeout(() => {
+          console.log("Task 3");
+          setTimeout(() => {
+            console.log("Task 4");
+          }, 1000);
+        }, 1500);
+      }, 1000);
+    }, 1500);
+  }, 2000);
+
+// callOne(callSecond);
