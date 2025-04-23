@@ -61,3 +61,24 @@ function getDetails(age, status) {
 
 getDetails.myCall(obj1, 28, "active");
 getDetails.myCall(obj2, 58, "active");
+
+
+//find()
+Array.prototype.myFind = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function, Received ${callback}`);
+  }
+  for (let i = 0; i < this.length; i++){
+    if (this.hasOwnProperty(i)) {
+      if (callback(this[i], i, this)) {
+        return this[i];
+      }
+    }
+  }
+  return undefined;
+}
+const arrayItem = [12, 32, 45, 6, 78, 9];
+const item = arrayItem.myFind((i) => {
+  return i % 4 != 0;
+})
+console.log(item);
