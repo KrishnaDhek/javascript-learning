@@ -82,3 +82,24 @@ const item = arrayItem.myFind((i) => {
   return i % 4 != 0;
 })
 console.log(item);
+
+
+//some()
+Array.prototype.mySome = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function, Received ${callback}`);
+  }
+  for (let i = 0; i < this.length; i++){
+    if (this.hasOwnProperty(i)) { //checking if i is an actual element in the array not an empty item
+      if (callback(this[i], i, this)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+const Aitems = [34, 56, 78, 12, 9];
+const ans =Aitems.mySome((i) => {
+  return i % 2 !== 0;
+})
+console.log(ans);
