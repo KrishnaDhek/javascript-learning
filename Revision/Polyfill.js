@@ -177,3 +177,29 @@ const result2 = elements1.myFilter((i) => {
   return i>40;
 });
 console.log(result2);
+
+
+//apply()
+
+Function.prototype.myApply = function (currentContext, arg) {
+  if (typeof this !== 'function') {
+    throw new Error(`${this} must be a function`);
+  }
+
+  if (arg !== null && !Array.isArray(arg)) {
+    throw new Error(`${arg} must be a array or undefined`);
+  }
+  currentContext.func = this;
+  currentContext.func(...arg);
+  delete currentContext.funC;
+}
+
+const obj = {
+  name:"krishna"
+}
+
+function getDetails(age,place) {
+  console.log(`Hello ${this.name} your age is ${age} and place is ${place}`);
+}
+
+getDetails.myApply(obj, [28, "lohaghat"]);
