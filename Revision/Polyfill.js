@@ -152,3 +152,28 @@ const result1 = elements.myReduce((acc, cVal) => {
   return acc + cVal;
 }, 0);
 console.log(result1);
+
+
+
+//filter()
+
+Array.prototype.myFilter = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new Error(`Callback must be a function, Received ${callback}`);
+  }
+  let result = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this.hasOwnProperty(i)) {
+      if (callback(this[i], i, this)) {
+        result.push(this[i]);
+      }
+    }
+  }
+  return result;
+};
+
+const elements1 = [34, 95, 101, 2, 50];
+const result2 = elements1.myFilter((i) => {
+  return i>40;
+});
+console.log(result2);
