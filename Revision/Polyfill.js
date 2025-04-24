@@ -21,3 +21,25 @@ let arrResult = myArr.myMap((item, index, self) => {
   return item*2;
 })
 console.log(arrResult);
+
+
+//Polyfill for call() - call() is a method of function instance that is used to call a function with current context and number of arguments
+Function.prototype.myCall = function (currentContext, ...args) {
+  if (typeof this !== 'function') {
+    throw new TypeError(`${this} must be a function`);
+  }
+  currentContext.newFun = this;
+  currentContext.newFun(...args);
+  delete currentContext.newFun;
+}
+
+const obj = {
+  name: "Krishna",
+  profession:"Engineer"
+}
+function printDetails(age) {
+  console.log(`Hello ${this.name} your age is ${age} and you are a ${this.profession}`);
+}
+printDetails.myCall(obj, 28);
+
+
