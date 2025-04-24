@@ -118,3 +118,23 @@ const result1 = myArr1.myFilter((i) => {
   return i % 11 != 0;
 })
 console.log(result1);
+
+
+//reduce()
+Array.prototype.myReduce = function (callBack, cVal) {
+  if (typeof callBack !== 'function') {
+    throw new TypeError(`Callback must be a function,Received ${callBack} `)
+  }
+  let acc = cVal !== undefined ? cVal : this[0];
+  let index = cVal !== undefined ? 0 : 1;
+  for (let i = index; i < this.length; i++){
+    acc = callBack(acc, this[i], i, this);
+  }
+
+  return acc;
+}
+const myArr2 = [78, 54, 66, 78, 33, 55];
+const result2 = myArr2.myReduce((acc,cVal) => {
+  return acc + cVal;
+},0);
+console.log(result2);
