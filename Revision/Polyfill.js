@@ -69,3 +69,29 @@ function printDetails(age, noChild) {
 
 printDetails.myApply(obj1, [58, 3]);
 
+
+//Polyfill for bind() -  bind() is a method that takes two arguments the current context for which it is called and number of argumnets, this returns a function that is called to invoke the function
+
+Function.prototype.myBind = function (currentContext, ...args) {
+  if (typeof this !== 'function') {
+    throw new TypeError(`${this} must be a function`)
+  }
+
+  const originalFun = this;
+  
+  return function(...otherArg) {
+    
+   return originalFun.myApply(currentContext,[...args,...otherArg]);
+    
+  }
+}
+
+const obj2 = {
+  name: "Eva",
+}
+function printDetails(message ,lastName,age) {
+  console.log(`${message}: Hello ${this.name} your last name is ${lastName} and age is ${age}`);
+}
+
+const returnFun = printDetails.myBind(obj2, "Details" )
+returnFun('Mehra', 5);
