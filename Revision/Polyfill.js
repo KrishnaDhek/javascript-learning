@@ -42,4 +42,30 @@ function printDetails(age) {
 }
 printDetails.myCall(obj, 28);
 
+//Pollyfill for apply() - apply() is a method that takes the current context and array of arguments or undefined
+Function.prototype.myApply = function (currentContext, args) {
+  if (typeof this !== 'function') {
+    throw new TypeError(`${this} must be a function`);
+  }
+
+  if (args !== null && !Array.isArray(args)) {
+    throw new TypeError(`Second argument must be array or undefined`);
+  }
+
+  currentContext.newFun = this;
+  currentContext.newFun(...args);
+  delete currentContext.newFun;
+}
+
+
+const obj1 = {
+  firstName: "Vinita",
+  lastName:"Dhek"
+}
+
+function printDetails(age, noChild) {
+  console.log(`Hello ${this.firstName} ${this.lastName} your age is ${age} and you have ${noChild} childrens`);
+}
+
+printDetails.myApply(obj1, [58, 3]);
 
