@@ -95,3 +95,26 @@ function printDetails(message ,lastName,age) {
 
 const returnFun = printDetails.myBind(obj2, "Details" )
 returnFun('Mehra', 5);
+
+
+//filter()
+
+Array.prototype.myFilter = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new TypeError(`Callback must be a function, received ${callback}`);
+  }
+
+  let arr = [];
+  for (let i = 0; i < this.length; i++){
+    if (callback(this[i], i, this)) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
+}
+
+const myArr1 = [78, 54, 66, 78, 33, 55];
+const result1 = myArr1.myFilter((i) => {
+  return i % 11 != 0;
+})
+console.log(result1);
