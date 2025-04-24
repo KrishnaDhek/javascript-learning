@@ -404,69 +404,193 @@
 
 
 
-//callback - a callback is a function that is passed as an argument to another function to be executed later
-let stocks = {
-  grocery: ["rice", "toor-daal", "noodles", "spices"],
-  appliances: ["cooker", "mixer", "toster"],
-  vegetables: ['potato', 'jackfruit', 'tomato'],
-  fruits:['mango','banana']
-}
-
-let order = (stocks, addToCart) => {
-  setTimeout(() => {
-    console.log(`Order received`);
-    addToCart(stocks);
-  }, 2000);
-}
-
-let addToCart = (stocks) => {
-  let [item1, item2] = stocks.grocery;
-  let [appliance] = stocks.appliances;
-
-  setTimeout(() => {
-    console.log("Shopping Started");
-    setTimeout(() => {
-      console.log(`Your order is placed for items: ${item1}, ${item2} ,${appliance}`);
-      setTimeout(() => {
-        console.log("Billing Started");
-        setTimeout(() => {
-          console.log("Order out for delivery");
-          setTimeout(() => {
-            console.log("Item Deliverd");
-          }, 1000);
-        }, 3000);
-      }, 2000);
-    }, 1500);
-  }, 2000);
-}
-
-order(stocks, addToCart);
-
-
-//CallBack and callback hell
-
-// function callOne(callSecond) {
-//   setTimeout(() => {
-//     console.log("Inside callOne function");
-//     callSecond();
-//   }, 1000);
+// //callback - a callback is a function that is passed as an argument to another function to be executed later
+// let stocks = {
+//   grocery: ["rice", "toor-daal", "noodles", "spices"],
+//   appliances: ["cooker", "mixer", "toster"],
+//   vegetables: ['potato', 'jackfruit', 'tomato'],
+//   fruits:['mango','banana']
 // }
 
-// function callSecond() {
-  setTimeout(() => {
-    console.log("Inside callSecond function");
-    setTimeout(() => {
-      console.log("task 1");
-      setTimeout(() => {
-        console.log("Task 2");
-        setTimeout(() => {
-          console.log("Task 3");
-          setTimeout(() => {
-            console.log("Task 4");
-          }, 1000);
-        }, 1500);
-      }, 1000);
-    }, 1500);
-  }, 2000);
+// let order = (stocks, addToCart) => {
+//   setTimeout(() => {
+//     console.log(`Order received`);
+//     addToCart(stocks);
+//   }, 2000);
+// }
 
-// callOne(callSecond);
+// let addToCart = (stocks) => {
+//   let [item1, item2] = stocks.grocery;
+//   let [appliance] = stocks.appliances;
+
+//   setTimeout(() => {
+//     console.log("Shopping Started");
+//     setTimeout(() => {
+//       console.log(`Your order is placed for items: ${item1}, ${item2} ,${appliance}`);
+//       setTimeout(() => {
+//         console.log("Billing Started");
+//         setTimeout(() => {
+//           console.log("Order out for delivery");
+//           setTimeout(() => {
+//             console.log("Item Deliverd");
+//           }, 1000);
+//         }, 3000);
+//       }, 2000);
+//     }, 1500);
+//   }, 2000);
+// }
+
+// order(stocks, addToCart);
+
+
+// //CallBack and callback hell
+
+// // function callOne(callSecond) {
+// //   setTimeout(() => {
+// //     console.log("Inside callOne function");
+// //     callSecond();
+// //   }, 1000);
+// // }
+
+// // function callSecond() {
+//   setTimeout(() => {
+//     console.log("Inside callSecond function");
+//     setTimeout(() => {
+//       console.log("task 1");
+//       setTimeout(() => {
+//         console.log("Task 2");
+//         setTimeout(() => {
+//           console.log("Task 3");
+//           setTimeout(() => {
+//             console.log("Task 4");
+//           }, 1000);
+//         }, 1500);
+//       }, 1000);
+//     }, 1500);
+//   }, 2000);
+
+// // callOne(callSecond);
+
+
+// function foo() {
+//   console.log(this);
+// }
+
+// foo();
+
+
+// const arr = [1, 2, 3, 4];
+// const obj = {
+//   factor: 2,
+//   multiply: function () {
+//     return arr.map(function (num) {
+//       return num * this.factor;
+//     });
+//   },
+// };
+
+// console.log(obj.multiply());
+
+
+
+
+// function outer() {
+//   let count = 0;
+
+//   function inner() {
+//     count++;
+//     console.log(count);
+//   }
+
+//   return inner;
+// }
+
+// const counter = outer();
+// counter();
+// counter();
+// counter();
+
+
+
+//Basic Callback Execution
+//Problem: Write a function greetUser(name, callback) that greets a user and then executes the callback.
+
+function greetUser(name, callBack) {
+  console.log(`Hello ${name}`);
+  callBack();
+}
+
+function callBack() {
+  console.log(`Callback function executed`);
+}
+
+greetUser("Alice", callBack)
+
+//Simulating Asynchronous Behavior with Callbacks
+//Problem: Write a function fetchData(callback) that simulates an API call using setTimeout and calls a callback with the data.
+
+function fetchData(callBack) {
+  setTimeout(() => {
+    const data = {
+      name: 'Tim',
+      age: 27,
+    };
+    callBack(data);
+  }, 2000);
+  
+}
+
+function getData(data) {
+  console.log(`Received: {user :${data.name}, age:${data.age}}`);
+}
+fetchData(getData);
+
+
+
+//Callback Hell Simulation
+// Problem: Simulate the following tasks using nested callbacks:
+
+// Register a user (1 second)
+
+// Login the user (1 second)
+
+// Fetch user data (1 second)
+
+// Display user data
+
+function registerUser(callBack) {
+  setTimeout(() => {
+    console.log("Register a User");
+    callBack();
+  }, 1000);
+}
+
+function loginUser(callBack) {
+  setTimeout(() => {
+    console.log("Login the user");
+    callBack();
+  }, 1000);
+}
+
+function fetchUserData(callback) {
+  setTimeout(() => {
+    console.log("Fetching user data");
+    const data = {
+      name: "John",
+      email: "john@abc.com"
+    };
+    callBack(data)
+  }, 1000);
+}
+
+function displayData(data) {
+  console.log("User data: ",data);
+}
+
+registerUser(() => {
+  loginUser(() => {
+    fetchData((data) => {
+      displayData(data);
+    })
+  })
+})
