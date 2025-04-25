@@ -138,3 +138,21 @@ const result2 = myArr2.myReduce((acc,cVal) => {
   return acc + cVal;
 },0);
 console.log(result2);
+
+
+//find()
+Array.prototype.myFind = function (callBack) {
+  if (typeof callBack !== 'function') {
+    throw new TypeError(`Callback must be a function`);
+  }
+  for (let i = 0; i < this.length; i++){
+    if (callBack(this[i], i, this)) {
+      return this[i];
+    }
+  }
+}
+const arr1 = [34, 55, 61, 9, 0];
+const result2 = arr1.myFind((i) => {
+  return i == 55;
+})
+console.log(result2);
