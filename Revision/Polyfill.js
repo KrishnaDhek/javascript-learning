@@ -155,14 +155,13 @@ const result2 = arr1.myFind((i) => {
 });
 console.log(result2);
 
-
 //some()
 Array.prototype.mySome = function (callBack) {
-  if(typeof callBack !== 'function') {
+  if (typeof callBack !== 'function') {
     throw new TypeError(`Callback must be a function`);
   }
   for (let i = 0; i < this.length; i++) {
-    if(callBack(this[i], i, this)) {
+    if (callBack(this[i], i, this)) {
       return true;
     }
   }
@@ -170,6 +169,25 @@ Array.prototype.mySome = function (callBack) {
 };
 const arr1 = [34, 55, 61, 9, 0];
 const result3 = arr1.mySome((i) => {
-  return i%2==0;
+  return i % 2 == 0;
+});
+console.log(result3);
+
+//every()
+Array.prototype.myEvery = function (callBack) {
+  if (typeof callBack !== 'function') {
+    throw new Error(`Callback must be a function`);
+  }
+  for (let i = 0; i < this.length; i++) {
+    if (!callBack(this[i], i, this)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const arr1 = [34, 55, 61, 9, 0];
+const result3 = arr1.myEvery((i) => {
+  return i % 2 == 0;
 });
 console.log(result3);
