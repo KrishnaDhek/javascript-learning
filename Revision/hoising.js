@@ -43,3 +43,25 @@ function outer() {
 }
 var inFun = outer(); 
 inFun();
+
+
+
+
+function createCounter() {
+  let count = 0;
+  return {
+    increment: function() {
+      count++;
+      console.log(count);
+    },
+    decrement: function() {
+      count--;
+      console.log(count);
+    }
+  };
+}
+
+const counter1 = createCounter();
+counter1.increment(); // 1
+counter1.increment(); // 2
+counter1.decrement(); // 1
