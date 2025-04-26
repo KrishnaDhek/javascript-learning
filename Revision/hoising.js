@@ -79,3 +79,26 @@ const multiplyBy3 = makeMultiplier(3);
 
 multiplyBy2(5); // ?
 multiplyBy3(5); // ?
+
+function createCounter() {
+  let count = 0;
+  return {
+    increment: function() {
+      count++;
+      console.log(count);
+    },
+    decrement: function() {
+      count--;
+      console.log(count);
+    }
+  };
+}
+
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+counter1.increment(); // ?1
+counter1.increment(); // ?2
+counter2.increment(); // ?1
+counter1.decrement(); // ?1
+counter2.decrement(); // ?0
