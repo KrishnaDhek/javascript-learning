@@ -102,3 +102,18 @@ counter1.increment(); // ?2
 counter2.increment(); // ?1
 counter1.decrement(); // ?1
 counter2.decrement(); // ?0
+
+
+
+function greetingGenerator(name) {
+  return function(greet) {
+    console.log(`${greet}, ${name}!`);
+  };
+}
+
+const greetJohn = greetingGenerator("John");
+const greetJane = greetingGenerator("Jane");
+
+greetJohn("Hello");    // ?
+greetJane("Hi");       // ?
+greetJohn("Goodbye");  // ?
