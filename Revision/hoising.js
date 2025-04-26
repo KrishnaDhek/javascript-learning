@@ -117,3 +117,20 @@ const greetJane = greetingGenerator("Jane");
 greetJohn("Hello");    // ?
 greetJane("Hi");       // ?
 greetJohn("Goodbye");  // ?
+
+
+
+
+console.log(counter); // ? undefined, because of here it is an function expression which is hoisted based on the type of keyword used, var is hoisted an initialized with undefined
+var counter = createCounter();
+
+function createCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);//1,2 
+  };
+}
+
+counter();
+counter();
