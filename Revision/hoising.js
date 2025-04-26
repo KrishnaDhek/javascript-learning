@@ -131,3 +131,20 @@ var counter = outer(); // here counter is pointing to inner as outer is returnin
 
 counter();
 console.log(a); //error, here a is not defined as var is functional and global scoped
+
+
+
+var a = 10; //gloabl
+
+function outer() {
+  var a = 20;
+  return function inner() {
+    var a = 30;
+    console.log(a); //30, var is local to inner thus need not look in the lexical scope
+  };
+}
+
+var counter = outer(); 
+
+counter();
+console.log(a); // a is global thus 10;
