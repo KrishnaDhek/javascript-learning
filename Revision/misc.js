@@ -1,13 +1,111 @@
-//var,let, const
+// //var,let, const
 
-let a = 50;
-function test() {
-  var a = 10; 
-  let b = 50;
-  if (true) {
-    let a = 40;
-    var b = 60; //A variable declared with let cannot be redeclared with var in the same scope — doing so causes a SyntaxError.
-    console.log(b);
+// let a = 50;
+// function test() {
+//   var a = 10;
+//   let b = 50;
+//   if (true) {
+//     let a = 40;
+//     var b = 60; //A variable declared with let cannot be redeclared with var in the same scope — doing so causes a SyntaxError.
+//     console.log(b);
+//   }
+// }
+// test();
+
+//map() polyfill, 
+/**
+ * It takes a callback function and returns a new array where each element is the result of applying the callback to the original elements.
+
+It does not modify the original array.
+
+In my polyfill, I looped through the array, applied the callback to each element, and pushed the result into a new array.
+
+I also handled an edge case where the input must be a function.} callBack 
+ *
+ */
+
+//making our custom map function to be available and usable method
+Array.prototype.myMap = function (callBack) {
+  //edge case
+  if (typeof callBack !== 'function') {
+    throw new TypeError(`Callback must be a function, received ${callBack}`);
   }
-}
-test();
+  //new array
+  const newArr = [];
+
+  for (let i = 0; i < this.length; i++) {
+    newArr.push(callBack(this[i], i, this));
+  }
+  return newArr;
+};
+const arr = [34, 1, 25, 67, 9];
+const result = arr.myMap((i, index, self) => {
+  return i / 2;
+});
+console.log(result);
+
+//filter() - filter is an high order array method that takes an callback fuction returns a new array for those who satisfy the filter criteria
+/**
+ * filter is a high-order method that creates a new array including only those elements that pass a condition specified by the callback function.
+
+It also does not mutate the original array.
+
+In my polyfill, I looped through the array, checked if the callback returns true for the element, and if yes, I pushed it to the new array.
+
+I also made sure to skip missing array slots using hasOwnProperty.
+ */
+
+Array.prototype.myFilter = function (callback) {
+  if (typeof callback !== 'function') {
+    throw new TypeError(`Callback must be a function`);
+  }
+  let newArr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this.hasOwnProperty(i)) {
+      if (callback(this[i], i, this)) {
+        newArr.push(this[i]);
+      }
+    }
+  }
+  return newArr;
+};
+
+const arr1 = [34, 1, 25, 67, 9];
+const result2 = arr1.myFilter((i, index, self) => {
+  return i % 5 !== 0;
+});
+console.log(result2);
+
+//reduce() reduce is an high order array method that takes two arguments a callback function and initial value, it accumulates the results we can also providea an initial value to the accumulator and returns its result
+
+/**
+ * reduce is a high-order method that reduces an array to a single value by applying a callback function that carries an accumulator.
+
+It takes two arguments: a callback and an optional initial value.
+
+In my polyfill, I initialized the accumulator either with the provided initial value or the first element of the array.
+
+Then, I looped through the array, updating the accumulator based on the callback output.
+
+I also handled the case where no initial value is passed.
+ */
+Array.prototype.myReduce = function (callback, cVal) {
+  if (typeof callback !== 'function') {
+    throw new TypeError(`Callback must be a function`);
+  }
+
+  let acc = cVal !== undefined ? cVal : this[0];
+  let index = cVal !== undefined ? 0 : 1;
+  for (let i = index; i < this.length; i++) {
+    if (this.hasOwnProperty(i)) {
+      acc = callback(acc, this[i], i, this);
+    }
+  }
+  return acc;
+};
+
+const arr2 = [34, 1, 25, 67, 9];
+const result3 = arr2.myReduce((acc, cVal) => {
+  return acc + cVal;
+}, 0);
+console.log(result3);
