@@ -14,3 +14,19 @@ function foo() {
   return 'Hello!';
 }
 
+
+
+function outer() {
+  var count = 0;
+
+  function inner() {
+    return count++;
+  }
+
+  return inner;
+}
+
+var counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
