@@ -8,3 +8,9 @@ function foo(){
 foo()
 
 
+console.log(foo()); // What will this print? hello, here foo is being called and its returned value is being printed whoch is in this case "Hello"
+
+function foo() {
+  return 'Hello!';
+}
+
