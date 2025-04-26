@@ -65,3 +65,17 @@ const counter1 = createCounter();
 counter1.increment(); // 1
 counter1.increment(); // 2
 counter1.decrement(); // 1
+
+
+
+function makeMultiplier(x) {
+  return function(y) {
+    console.log(x * y);
+  };
+}
+
+const multiplyBy2 = makeMultiplier(2);
+const multiplyBy3 = makeMultiplier(3);
+
+multiplyBy2(5); // ?
+multiplyBy3(5); // ?
