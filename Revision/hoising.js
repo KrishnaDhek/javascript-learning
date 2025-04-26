@@ -30,3 +30,16 @@ var counter = outer();
 console.log(counter());
 console.log(counter());
 console.log(counter());
+
+
+
+function outer() {
+    var a = 10;
+    function inner() {
+        console.log(a); //20
+    }
+    a = 20;
+    return inner;
+}
+var inFun = outer(); 
+inFun();
