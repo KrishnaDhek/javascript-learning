@@ -21,3 +21,5 @@ console.log("1" + 1 + 1); // ?12
 console.log(1 + 1 + "1"); // ?21
 console.log("3" + 3 * 3); // ?39
 console.log(5 + "10" / 2); // ?10
+
+
