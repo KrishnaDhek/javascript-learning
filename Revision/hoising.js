@@ -171,3 +171,21 @@ function outer() {
 }
 
 outer();
+
+
+
+function outer() {
+  var a = 10;
+
+  setTimeout(function () {
+    console.log(a); // 20
+    setTimeout(function () {
+      console.log(a); //20
+    }, 0);
+  }, 1000);
+
+  a = 20;
+}
+
+outer();
+
