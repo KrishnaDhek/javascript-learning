@@ -12,7 +12,7 @@
 // }
 // test();
 
-//map() polyfill, 
+//map() polyfill,
 /**
  * It takes a callback function and returns a new array where each element is the result of applying the callback to the original elements.
 
@@ -109,3 +109,9 @@ const result3 = arr2.myReduce((acc, cVal) => {
   return acc + cVal;
 }, 0);
 console.log(result3);
+
+const words = ['apple', 'banana', 'cherry'];
+const newWords = words.map((i) => {
+  return i.charAt(0).toUpperCase()+i.slice(1);
+});
+console.log(newWords);
