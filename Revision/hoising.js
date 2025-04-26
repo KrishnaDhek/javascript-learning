@@ -132,8 +132,6 @@ var counter = outer(); // here counter is pointing to inner as outer is returnin
 counter();
 console.log(a); //error, here a is not defined as var is functional and global scoped
 
-
-
 var a = 10; //gloabl
 
 function outer() {
@@ -144,19 +142,30 @@ function outer() {
   };
 }
 
-var counter = outer(); 
+var counter = outer();
 
 counter();
 console.log(a); // a is global thus 10;
 
+function outer() {
+  var a = 10;
+
+  setTimeout(function () {
+    console.log(a); //20, after 1sec, by the time this function is executed the value of a was updated to 20
+  }, 1000);
+
+  a = 20;
+}
+
+outer();
 
 
 function outer() {
   var a = 10;
 
   setTimeout(function () {
-    console.log(a); //20, after 1sec, by the time this function is executed the value of a was updated to 20 
-  }, 1000);
+    console.log(a); //20, as for 0 second the function was moved out by the time it enter the queue the value of a was updated to 20
+  }, 0);
 
   a = 20;
 }
