@@ -148,3 +148,17 @@ var counter = outer();
 
 counter();
 console.log(a); // a is global thus 10;
+
+
+
+function outer() {
+  var a = 10;
+
+  setTimeout(function () {
+    console.log(a); //20, after 1sec, by the time this function is executed the value of a was updated to 20 
+  }, 1000);
+
+  a = 20;
+}
+
+outer();
