@@ -20,7 +20,7 @@
 
 // In my polyfill, I looped through the array, applied the callback to each element, and pushed the result into a new array.
 
-// I also handled an edge case where the input must be a function.} callBack 
+// I also handled an edge case where the input must be a function.} callBack
 //  *
 //  */
 
@@ -131,8 +131,6 @@
 // console.log({} + []);
 // console.log({} + {});
 
-
-
 // console.log(true + true + false + 1 + '1' + 0);
 // // true =1 therefore true + true => 1+1 =2
 // //2+false => 2+0 =2
@@ -140,23 +138,19 @@
 // //3+'1' => "31"
 // //"31"+0 => 310
 
-
 // console.log([] + {} + [] + '1' - 1); //NaN
 // //[] => "" string
 // // ""+{} => [object Object]
 // //[object Object] +"1" = "[object Object]1"
 // // "[object Object]1" -1 =>her the string will be converted to number since [object Object] cant be converted therefore NaN
 
-
-
 console.log(([] == ![]) == [] + []);
 
 //([] == ![]) => true
 //true == "" => 1 == 0 false
-//false + [] => 0 +"" => 0 
+//false + [] => 0 +"" => 0
 
 console.log(Boolean([]));
-
 
 const obj = {
   name: 'Alice',
@@ -168,3 +162,15 @@ const obj = {
 };
 
 obj.greet();
+
+function greet(name, callback) {
+  console.log('Hello, ' + name);
+  callback();
+}
+
+function farewell() {
+  console.log('Goodbye!');
+}
+
+greet('Alice', farewell);
+
