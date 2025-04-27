@@ -139,3 +139,11 @@ console.log(true + true + false + 1 + '1' + 0);
 //2+1 => 3
 //3+'1' => "31"
 //"31"+0 => 310
+
+
+console.log([] + {} + [] + '1' - 1); //NaN
+//[] => "" string
+// ""+{} => [object Object]
+//[object Object] +"1" = "[object Object]1"
+// "[object Object]1" -1 =>her the string will be converted to number since [object Object] cant be converted therefore NaN
+
