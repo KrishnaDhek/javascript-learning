@@ -174,3 +174,13 @@ function farewell() {
 
 greet('Alice', farewell);
 
+function greet() {
+  console.log(this);
+}
+
+const obj = {
+  name: 'Alice',
+  greet: greet,
+};
+
+obj.greet();
