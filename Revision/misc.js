@@ -112,6 +112,24 @@ console.log(result3);
 
 const words = ['apple', 'banana', 'cherry'];
 const newWords = words.map((i) => {
-  return i.charAt(0).toUpperCase()+i.slice(1);
+  return i.charAt(0).toUpperCase() + i.slice(1);
 });
 console.log(newWords);
+
+const arr = [1, 'apple', true, 'banana', 42, 'cherry', false];
+const arrString = arr
+  .filter((i) => typeof i === 'string')
+  .map((i) => i.toUpperCase());
+console.log(arrString);
+
+const arr = [1, 2, 3];
+const result = arr.map((x) => [x, x * 2]);
+console.log(result);
+
+console.log([] + []);
+console.log([] + {});
+console.log({} + []);
+console.log({} + {});
+
+
+
