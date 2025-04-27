@@ -133,3 +133,9 @@ console.log({} + {});
 
 
 
+console.log(true + true + false + 1 + '1' + 0);
+// true =1 therefore true + true => 1+1 =2
+//2+false => 2+0 =2
+//2+1 => 3
+//3+'1' => "31"
+//"31"+0 => 310
