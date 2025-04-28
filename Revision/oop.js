@@ -113,3 +113,51 @@ class Spaceship extends Vehical {
 const spaceship = new Spaceship('Example', 40000, 2);
 console.log(spaceship.getMAxSpeed());
 console.log(spaceship.numRocketEngines);
+
+
+
+
+
+class Shape{
+    constructor(color ="Transparent") {
+        this.color = color;
+        this.type = "Shape";
+
+    }
+    describe() {
+        console.log(`A ${this.color} ${this.type}`);
+    }
+}
+
+class Square extends Shape{
+    constructor(color, sideLength) {
+        super(color);
+        this.sideLength = sideLength;
+         this.type = 'Square';
+    }
+    area() {
+        return this.sideLength * this.sideLength;
+    }
+}
+
+
+class Rectangle extends Shape {
+  constructor(color, width,hight) {
+      super(color);
+      this.width = width;
+      this.hight = hight;
+      this.type ="Rectangle"
+  }
+  area() {
+    return this.hight * this.width;
+  }
+}
+
+const square = new Square("Blue", 4);
+const rectangle = new Rectangle("Black", 2, 4);
+console.log(square.area());
+console.log(rectangle.area());
+
+for (let i of [square, rectangle]) {
+    i.describe();
+}
