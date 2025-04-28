@@ -198,3 +198,27 @@ const start = counter();
 start();
 start();
 start();
+
+
+//bind()
+
+Function.prototype.myBind = function (currentContext, ...args) {
+  if (typeof this !== 'function') {
+    throw new TypeError(`${this} must be a function`);
+  }
+
+  const original = this;
+
+  return function (...otherArg) {
+    return original.apply(currentContext,[...args,...otherArg])
+  }
+}
+
+function getDetails(profession,age) {
+  console.log(`Hello ${this.name} you are a ${profession} and your age is ${age}`);
+}
+const obj1 = {
+  name:"Krishna"
+}
+const result = getDetails.myBind(obj1,"engineer");
+result(28);
