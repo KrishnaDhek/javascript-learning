@@ -406,3 +406,38 @@ function Student(name, age, school) {
 
 const student1 = new Student('Krishna', 28, 'OPS');
 console.log(student1);
+
+
+//1 using constructor
+function Car(name, modal) {
+  this.name = name;
+  this.modal = modal;
+  this.getDetails = function () {
+    return `the name is ${this.name} and modal is ${this.modal}`
+  }
+}
+const car1 = new Car("TATA", "ABC");
+console.log(car1.getDetails());
+
+//2. using object literal 
+const carLiteral = {
+  name: "Tata",
+  modal: "AVC",
+  getDetails: function () {
+    return `the name is ${this.name} and modal is ${this.modal}`;
+  }
+}
+console.log(carLiteral.getDetails());
+
+
+//3. using create()
+
+const carProto = {
+  start: function () {
+    return `${this.name} Car is starting`;
+  }
+}
+
+const car3 = Object.create(carProto);
+car3.name = "BMW";
+console.log(car3.start());
