@@ -222,3 +222,9 @@ const obj1 = {
 }
 const result = getDetails.myBind(obj1,"engineer");
 result(28);
+
+
+function a() {
+  console.log(this);
+}
+a();
