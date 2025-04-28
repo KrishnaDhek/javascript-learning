@@ -153,11 +153,29 @@ class Rectangle extends Shape {
   }
 }
 
+
+class Circle extends Shape{
+    constructor(color, radius) {
+        super(color);
+        this.radius = radius
+        this.type ="Circle"
+    }
+    area() {
+        return Math.PI * this.radius * this.radius;
+    }
+    describe() {
+        console.log(`A round and awesome ${this.color} ${this.type}`);
+    }
+}
+
 const square = new Square("Blue", 4);
 const rectangle = new Rectangle("Black", 2, 4);
+const circel = new Circle("Pink", 2);
+
 console.log(square.area());
 console.log(rectangle.area());
+console.log(circel.area());
 
-for (let i of [square, rectangle]) {
+for (let i of [square, rectangle, circel]) {
     i.describe();
 }
