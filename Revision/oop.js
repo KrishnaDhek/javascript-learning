@@ -52,7 +52,7 @@ class Bookstore {
 
   listBook() {
     for (let book of this.books) {
-        book.display();
+      book.display();
     }
   }
 }
@@ -62,9 +62,9 @@ class Book {
     this.name = name;
     this.author = author;
   }
-    display() {
-        console.log(`${this.name} by ${this.author}`);
-    }
+  display() {
+    console.log(`${this.name} by ${this.author}`);
+  }
 }
 
 const book1 = new Book('book1', 'abc');
@@ -74,20 +74,42 @@ console.log(book1);
 const bookStore = new Bookstore([book1, book2]);
 bookStore.listBook();
 
-
-
-class EnemyFactory{
-    generateFlyingAnimal(name) {
-        return {
-            name,
-            fly() {
-                console.log(`${this.name} can fly`);
-            }
-      }
-    }
+class EnemyFactory {
+  generateFlyingAnimal(name) {
+    return {
+      name,
+      fly() {
+        console.log(`${this.name} can fly`);
+      },
+    };
+  }
 }
 
 const factory = new EnemyFactory();
-const flying = factory.generateFlyingAnimal("bat");
+const flying = factory.generateFlyingAnimal('bat');
 console.log(flying);
 flying.fly();
+
+//Inheritance
+
+class Vehical {
+  constructor(name, maxSpeed) {
+    this.name = name;
+    this.maxSpeed = maxSpeed;
+  }
+
+  getMAxSpeed() {
+    return this.maxSpeed;
+  }
+}
+
+class Spaceship extends Vehical {
+  constructor(name, maxSpeed, numRocketEngines) {
+    super(name, maxSpeed);
+    this.numRocketEngines = numRocketEngines;
+  }
+}
+
+const spaceship = new Spaceship('Example', 40000, 2);
+console.log(spaceship.getMAxSpeed());
+console.log(spaceship.numRocketEngines);
