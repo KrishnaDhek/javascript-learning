@@ -186,3 +186,15 @@ const obj = {
 obj.greet();
 
 
+// Create a simple counter using Closure.
+function counter(){
+let count=0;
+ return function counterInner(){
+count++;
+    console.log(count);
+  }
+}
+const start = counter();
+start();
+start();
+start();
