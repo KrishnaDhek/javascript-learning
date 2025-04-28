@@ -74,3 +74,20 @@ console.log(book1);
 const bookStore = new Bookstore([book1, book2]);
 bookStore.listBook();
 
+
+
+class EnemyFactory{
+    generateFlyingAnimal(name) {
+        return {
+            name,
+            fly() {
+                console.log(`${this.name} can fly`);
+            }
+      }
+    }
+}
+
+const factory = new EnemyFactory();
+const flying = factory.generateFlyingAnimal("bat");
+console.log(flying);
+flying.fly();
