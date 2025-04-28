@@ -52,7 +52,7 @@ class Bookstore {
 
   listBook() {
     for (let book of this.books) {
-      console.log(`${book.name} by ${book.author}`);
+        book.display();
     }
   }
 }
@@ -62,6 +62,9 @@ class Book {
     this.name = name;
     this.author = author;
   }
+    display() {
+        console.log(`${this.name} by ${this.author}`);
+    }
 }
 
 const book1 = new Book('book1', 'abc');
