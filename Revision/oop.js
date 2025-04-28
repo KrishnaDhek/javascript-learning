@@ -18,3 +18,32 @@ dog.name = 'Pete';
 console.log(dog);
 console.log(dog.sound('bark'));
 console.log(cat.sound('meow'));
+
+
+
+
+class Student{
+    constructor(name, major, grades) {
+        this.name = name;
+        this.major = major;
+        this.grades = grades;
+    }
+
+    addGrade(grade) {
+        this.grades.push(grade);
+    }
+
+    gpa() {
+        let avg = 0;
+        for (let i = 0; i < this.grades.length; i++) {
+            avg += (this.grades[i] / this.grades.length);
+        }
+        return avg;
+    }
+}
+
+const eva = new Student("Eva", "Arts", [89, 78, 99]);
+console.log(eva);
+console.log(eva.gpa());
+eva.addGrade(100);
+console.log(eva.gpa());
