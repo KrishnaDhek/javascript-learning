@@ -315,3 +315,38 @@ function demo() {
 let result = demo();
 result();
 result();
+
+
+//currying
+/**
+ * function add(a, b, c) {
+  return a + b + c;
+}
+ */
+
+function one(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    }
+  }
+}
+
+console.log(one(2)(3)(4));
+
+
+
+//Currying Practice Function, Write a function multiply such that:
+
+function funType(operation){
+  return function (a) {
+  return function (b) {
+    if (operation == "sum") return a + b;
+    else if (operation == "divide") return a / b;
+    else if (operation == "subtract") return a - b;
+    else if (operation == "multiply") return a * b;
+    else return "Invalid Operation";
+  }
+}}
+const op = funType("multiply");
+console.log(op(2)(3));
