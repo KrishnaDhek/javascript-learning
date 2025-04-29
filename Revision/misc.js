@@ -253,3 +253,19 @@ function test() {
 }
 
 test();
+
+
+
+
+function test() {
+  for (var i = 0; i < 3; i++) {
+    function inner(i){
+    setTimeout(() => {
+      console.log(i);
+    }, 1000);
+    }
+    inner(i);
+  }
+}
+
+test();
