@@ -228,3 +228,16 @@ function a() {
   console.log(this);
 }
 a();
+
+
+
+
+function test() {
+  for (var i = 0; i < 3; i++){
+    setTimeout(() => {
+      console.log(i); // var is function scoope so by the time settime is executed the current refernce to i is printed
+    }, 1000);
+  }
+}
+
+test();
