@@ -293,3 +293,25 @@ const ans = test();
 ans.increament(2);
 ans.increament(4);
 console.log(ans.display());
+
+
+
+//run once
+let msg;
+function demo() {
+
+  let count = 0;
+  return function () {
+    if (count > 0) {
+      console.log("Already called");
+    } else {
+      msg = 'Calling';
+      console.log(msg);
+      count++;
+    }
+  };
+
+}
+let result = demo();
+result();
+result();
