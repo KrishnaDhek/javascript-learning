@@ -269,3 +269,27 @@ function test() {
 }
 
 test();
+
+
+//private counter
+
+function test() {
+  let _counter = 0;
+  
+  function increament(num) {
+    _counter += num;
+  }
+
+  function display() {
+    return _counter;
+  }
+
+  return {
+    increament,
+    display
+  }
+}
+const ans = test();
+ans.increament(2);
+ans.increament(4);
+console.log(ans.display());
