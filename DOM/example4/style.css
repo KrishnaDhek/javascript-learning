@@ -3,6 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: background-color 0.5s ease;
     
 }
 #btn{
@@ -13,5 +14,10 @@ body{
     cursor: pointer;
     font-size: 16px;
     padding: 10px  20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
     
+}
+#btn:hover{
+    transform: scale(1.2);
 }
