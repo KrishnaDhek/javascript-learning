@@ -1,0 +1,41 @@
+[{
+    "name":"public",
+    "isFolder":true,
+    "childNode":[
+        {
+          "name": "dummy",
+          "isFolder": false
+        },
+        {
+            "name":"file.txt",
+            "isFolder":false
+        },
+        {
+            "name":"private",
+            "isFolder":true,
+            "childNode":[]
+        }
+    ]
+
+},
+{
+  "name": "src",
+  "isFolder": true,
+  "childNode": [
+    {
+      "name": "data",
+      "isFolder": true,
+      "childNode":[
+        {
+            "name":"data.json",
+            "isFolder":false
+        }
+      ]
+    },
+    {
+      "name": "file.txt",
+      "isFolder": false
+    }
+  ]
+}
+]
