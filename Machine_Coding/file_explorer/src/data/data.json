@@ -1,41 +1,55 @@
 [{
+    "id":"1",
     "name":"public",
     "isFolder":true,
     "childNode":[
         {
+          "id": "2",
           "name": "dummy",
           "isFolder": false
         },
         {
-            "name":"file.txt",
-            "isFolder":false
+          "id": "3",
+          "name": "file.txt",
+          "isFolder": false
         },
         {
-            "name":"private",
-            "isFolder":true,
-            "childNode":[]
+          "id": "4",
+          "name": "private",
+          "isFolder": true,
+          "childNode": []
         }
     ]
 
 },
 {
+  "id": "5",
   "name": "src",
   "isFolder": true,
   "childNode": [
     {
+      "id": "6",
       "name": "data",
       "isFolder": true,
-      "childNode":[
+      "childNode": [
         {
-            "name":"data.json",
-            "isFolder":false
+          "id": "7",
+          "name": "data.json",
+          "isFolder": false
         }
       ]
     },
     {
+      "id": "8",
       "name": "file.txt",
       "isFolder": false
     }
   ]
+},
+{
+    "id":"9",
+    "name":"package.json",
+    "isFolder":false
+
 }
 ]
