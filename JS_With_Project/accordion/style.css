@@ -1,0 +1,31 @@
+body{
+    background-color: bisque;
+    padding: 40px;
+    font-family: sans-serif;
+    line-height: 1.6rem;
+}
+
+.accordion{
+    background-color: white;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+}
+
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.accordion.active .answer{
+    display: block;
+   
+}
+.answer{
+    display: none;
+    color: #666;
+}
