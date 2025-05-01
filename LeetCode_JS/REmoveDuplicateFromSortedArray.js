@@ -1,6 +1,5 @@
 const nums = [0, 0, 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6];
-
-let removeDup = function(nums) {
+function removeDup(nums) {
     let i = 0;
     let j = 1;
     while (j < nums.length) {
@@ -13,5 +12,4 @@ let removeDup = function(nums) {
     return i + 1;
 }
 
-let answer = removeDup(nums);
-console.log(answer);
+console.log(removeDup(nums));
