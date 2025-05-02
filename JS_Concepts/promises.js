@@ -963,3 +963,31 @@ async function placeOrder() {
 }
 
 placeOrder();
+
+
+
+function delayedMessage() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hello after 2 second");
+    }, 2000);
+  })
+}
+
+delayedMessage().then((msg) => console.log(msg));
+
+
+function randomCheck() {
+  return new Promise((resolve, reject) => {
+    const num = Math.random();
+    if (num > 0.5) {
+      resolve(`Success: Number is ${num}`);
+    } else {
+      reject(`Failure: Number is ${num}`)
+    }
+  })
+}
+
+randomCheck()
+  .then((msg) => { console.log(msg); })
+  .catch((err) => console.log(err))
