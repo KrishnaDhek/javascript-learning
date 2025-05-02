@@ -1,16 +1,20 @@
-const accordion = document.querySelectorAll('.accordion');
+const container = document.querySelectorAll('.container');
 
-accordion.forEach(accordion => {
-    const question = accordion.querySelector('.question');
-    const toggle = accordion.querySelector('.toggle');
-    question.addEventListener('click', () => {
-        accordion.classList.toggle('active');
+container.forEach((container) => {
+    const ques = container.querySelector('.question');
+    const ans = container.querySelector('.answer');
+    const toggle = container.querySelector('.toggle');
 
-        if (accordion.classList.contains('active')) {
+    ques.addEventListener('click', () => {
+        container.classList.toggle('active');
+
+        if (container.classList.contains('active')) {
             toggle.textContent = '-';
+            ans.style.display = 'block';
         } else {
             toggle.textContent = '+';
+            ans.style.display = 'none';
         }
-    })
 
+    })
 })
