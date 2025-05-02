@@ -991,3 +991,33 @@ function randomCheck() {
 randomCheck()
   .then((msg) => { console.log(msg); })
   .catch((err) => console.log(err))
+
+
+function stepByStep() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Step 1 completed');
+    }, 1000);
+  })
+}
+stepByStep()
+  .then((msg) => {
+    console.log(msg);
+    return new Promise((resolve) => {
+     setTimeout(() => {
+       resolve(`Step 2 completed`);
+     }, 1000);
+    })
+  })
+  .then((msg) => {
+    console.log(msg);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+         resolve(`Step 2 completed`);
+      }, 1000);
+    })
+  })
+  .then((msg) => {
+    console.log(msg);
+  })
+   
