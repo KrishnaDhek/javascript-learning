@@ -1036,4 +1036,85 @@ function login(username, password) {
   
 login("person", "1234")
   .then((msg) => console.log(msg))
-.catch((err)=>console.log(err))
+  .catch((err) => console.log(err))
+
+
+
+function tasks1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Task 1 Done")
+    }, 1000);
+  })
+}
+function tasks2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Task 2 Done');
+    }, 1000);
+  });
+}
+
+function tasks3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Task 3 Done');
+    }, 1000);
+  });
+}
+
+Promise.all([tasks1(), tasks2(), tasks3()])
+  .then((result) => {
+  console.log(result);
+  })
+  .catch((err) => {
+  console.log(err);
+  })
+
+
+
+const item = {
+  electronics: ["mobile", "laptop", "mixer"],
+  vegetables:["potato",'tomato','jackfruit','onion']
+}
+
+function addToCart(item) {
+  return new Promise((resolve, reject) => {
+    if (item) {
+      resolve("Item added to cart")
+    } else {
+      setTimeout(() => {
+        reject("Cart is empty");
+      }, 1000);
+    }
+  })
+}
+
+function placeOrder(item) {
+  return new Promise((resolve, reject) => {
+    const orderID = Math.ceil(Math.random());
+    setTimeout(() => {
+      resolve("Order Placed" + orderID)
+    }, 1000);
+  })
+}
+
+function proceedToPayment(orderID) {
+  return new Promise((resolve, reject) => {
+    if (orderID){
+      setTimeout(() => {
+      resolve("Payment received")
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        reject('Payment failure');
+      }, 1500);
+    }
+  })
+}
+
+addToCart()
+  .then(()=>placeOrder(item))
+  .then((orderID) => proceedToPayment(orderID))
+  .then((paymentStatus) => console.log(paymentStatus))
+  .catch((err)=>console.log(err))
