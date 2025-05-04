@@ -1118,3 +1118,5 @@ addToCart()
   .then((orderID) => proceedToPayment(orderID))
   .then((paymentStatus) => console.log(paymentStatus))
   .catch((err)=>console.log(err))
+
+
