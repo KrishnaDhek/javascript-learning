@@ -1,27 +1,28 @@
 .App{
-  text-align: center;
   font-family: sans-serif;
+  text-align: center;
 }
 
 .container{
-  width: 80%;
   height: 30px;
-  border:  2px solid black;
+  width: 80%;
+  border: 2px solid black;
+  margin: 20px auto;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
 }
 
 .progressContainer{
-  height: 100%;
   background-color: green;
-}
-
-span{
-  height: 100%;
   width: 100%;
+  height: 100%;
+}
+span{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   position: absolute;
 }

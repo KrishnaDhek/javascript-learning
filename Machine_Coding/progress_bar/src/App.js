@@ -1,12 +1,12 @@
 import React, { use, useEffect, useState } from "react";
 import "./App.css"
 
-const ProgressBar = ({ progress }) => {
-  const halfFilled = progress>=50?"white":"black"
+const ProgessBar = ({ progress }) => {
+  const textColor = progress >= 50 ? "white" : "black";
   return (
     <div className="container">
-      <div className="progressContainer" style={{width: `${progress}%`}}>
-        <span style={{color: halfFilled}}>{progress}%</span>
+      <div className="progressContainer" style={{ width: `${progress}%` }}>
+        <span style={{color:textColor}}>{progress}%</span>
       </div>
     </div>
   )
@@ -25,12 +25,12 @@ export default function App() {
         return prev + 1;
       })
     }, 100)
-   return () => clearInterval(interval);
+    return () => clearInterval(interval);
   },[])
   return (
     <div className="App">
       <h1>Progress Bar</h1>
-      <ProgressBar progress={progress}/>
+      < ProgessBar progress={progress}/>
     </div>
   )
 }
