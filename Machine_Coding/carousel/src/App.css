@@ -1,0 +1,40 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img{
+  max-width: 100%;
+  width: 400px;
+  height: 400px;
+
+
+}
+.container{
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.leftBtn,
+.rightBtn{
+position: absolute;
+color: white;
+font-size: 30px;
+top: 50%;
+background-color: black;
+padding: .5rem;
+border-radius: 10px;
+cursor: pointer;
+
+}
+.leftBtn{
+  left: 1rem;
+}
+.rightBtn{
+  right: 1rem;
+}
