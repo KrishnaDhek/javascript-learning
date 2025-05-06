@@ -1,12 +1,10 @@
 .App{
-  font-family: sans-serif;
   text-align: center;
+  font-size: 28px;
 }
 
 .starRating{
-  font-size: 42px;
-  cursor: pointer;
-  color: gray;
+  font-size: 48px;
 }
 
 .star{
