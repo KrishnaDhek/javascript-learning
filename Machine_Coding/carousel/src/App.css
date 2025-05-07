@@ -1,4 +1,5 @@
 .App{
+  font-family: serif;
   text-align: center;
 }
 
@@ -7,22 +8,19 @@
   width: 100%;
   position: relative;
 }
-
 img{
   width: 500px;
   height: 500px;
-  display: block;
-  margin: 0 auto;
 }
 
-.leftBtn, .rightBtn{
+.leftBtn,.rightBtn{
   position: absolute;
   top: 50%;
   padding: 10px;
-  font-size: 1.5rem;
-  color: white;
   background-color: black;
+  font-size: 20px;
   border-radius: 10px;
+  color: white;
 }
 
 .leftBtn{
@@ -34,11 +32,12 @@ img{
 }
 
 .dotContainer{
-  margin-top: 10px;
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
+
 }
 
 .dot{

@@ -1,8 +1,8 @@
-import React, { useState,useRef, useEffect} from "react"
-import data from "./data/imageData.json"
+import React, { useEffect, useRef, useState } from "react"
 import "./App.css"
+import data from "./data/imageData.json"
 
-const Carousel = () => {
+const Carousel = () =>{
   const [index, setIndex] = useState(0);
   const dataLength = data.length;
   const ref = useRef(null);
@@ -31,34 +31,26 @@ const Carousel = () => {
     ref.current = setInterval(handleNext, 1000);
     return ()=>clearInterval(ref.current)
   },[])
-
-  return (
-    <div
-      onMouseEnter={() => clearInterval(ref.current)}
-      onMouseLeave={()=>{ref.current = setInterval(handleNext, 1000)}}
-      className="container">
-      <div onClick={handlePrev} className="leftBtn">
-        {'<'}
-      </div>
+  return(
+    <div onMouseEnter={() => { clearInterval(ref.current) }}
+      onMouseLeave={()=>{ref.current= setInterval(handleNext,1000)}}
+      className="contianer">
+      <div onClick={handlePrev} className="leftBtn">{"<"}</div>
       <img src={data[index].download_url}></img>
-      <div onClick={handleNext} className="rightBtn">
-        {'>'}
-      </div>
-      <div className="dotContainer">
-        {data.map((_, dotIndex) => {
+      <div  className="rightBtn">{">"}</div>
+      <div onClick={handleNext} className="rightBtn">{">"}</div>
+      <div  className="dotContainer">
+        {data.map((_, dotIndex) =>
+        {
           return (
-            <span
-              key={dotIndex}
-              className={`dot ${index === dotIndex ? 'active' : ''}`}
-              onClick={() => setIndex(dotIndex)}
-            >
-              &#x2022;
-            </span>
-          );
+            <span key={dotIndex}
+            className={`dot ${index===dotIndex?"active" :" "}`}
+            >&#x2022;</span>
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
 export default function App() {
   return (
