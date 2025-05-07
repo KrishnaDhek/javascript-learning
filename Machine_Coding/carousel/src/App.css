@@ -1,36 +1,53 @@
-*{
-  margin: 0;
-  padding: 0;
+.App{
+  text-align: center;
 }
 
 .container{
-  width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  width: 100%;
   position: relative;
 }
 
+img{
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
 .leftBtn, .rightBtn{
-  top: 50%;
-  background-color: black;
   position: absolute;
+  top: 50%;
   padding: 10px;
   font-size: 1.5rem;
   color: white;
+  background-color: black;
   border-radius: 10px;
 }
 
 .leftBtn{
-  left:1rem;
+  left: 1rem;
 }
 
 .rightBtn{
   right: 1rem;
 }
 
-img{
-  width: 500px;
-  height: 500px;
-  
+.dotContainer{
+  margin-top: 10px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot{
+  color: gray;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.active{
+  color: black;
 }
