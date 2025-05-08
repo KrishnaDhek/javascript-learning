@@ -4,40 +4,45 @@ import "./App.css"
 
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [isOpen, setIsOpen] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setOpenIndex(prev =>(prev===index?null:index))
+  const toggle = (index) => {
+    setIsOpen(prev => (prev === index ? null : index));
   }
+
   return (
     <div className="container">
-      <h1>FAQs</h1>
+      <h1>FAQ</h1>
       {accordionData.map((obj, index) => {
-        return <Accordion key={index} index={index} isOpen={openIndex === index}
-          toggleAccordion={toggleAccordion}
-          qna={obj} />;
+       return (<Accordion
+          key={index}
+          index={index}
+          isOpen={isOpen === index}
+          toggle={toggle}
+          qna={obj}
+        />)
       })}
     </div>
-  );
+  )
 }
 
-const Accordion = ({ qna,index,isOpen,toggleAccordion }) => {
-  const [show, setShow] = useState(false);
+
+const Accordion = ({ qna, index, isOpen, toggle }) => {
   return (
     <div className="qna">
-      <div className="question" onClick={() => toggleAccordion(index)}>
+      <div className="question" onClick={() => toggle(index)}>
         <h3>{qna.question}</h3>
-        <span>{ isOpen?"-":"+"}</span>
+        <span>{isOpen ? '-' : '+'}</span>
       </div>
-      {isOpen ? <p className="answer">{qna.answer}</p>: ""}
+      {isOpen && <p className="answer">{qna.answer}</p>}
     </div>
   );
-}
+};
+
 export default function App() {
   return (
     <div className="App">
       <FAQ/>
-      
     </div>
   )
 }
