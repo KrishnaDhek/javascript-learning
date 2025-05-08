@@ -2,36 +2,34 @@
   text-align: center;
 }
 
-.container{
+.faqContainer{
+  align-items: center;
   width: 60%;
   margin: auto;
 }
 
-.qna{
-  border: 1px solid black;
-  margin: 10px 0;
-  padding: 0.5rem;
+.container{
+   border: 1px solid black;
+   margin: 0.5rem 0;
+   padding: 0.5rem;
 }
 
 .question{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+
+ 
 }
 
-.question h3 {
-  margin: 0;
-  font-size: 1.1rem;
+.question span{
+font-size: 1.5rem;
+font-weight: bold;
+
 }
 
-.question span {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.answer {
-  margin-top: 0.5rem;
+.answer{
   text-align: left;
-  color: #444;
+  font-size: 1.2rem;
+  
 }
