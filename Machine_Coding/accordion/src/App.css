@@ -1,0 +1,34 @@
+.App{
+  text-align: center;
+
+}
+
+.container{
+  width: 60%;
+  margin: auto;
+
+}
+.qna{
+  border: 2px solid black;
+  margin: 10px 0;
+  padding: .5rem;
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+}
+.question span{
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.answer {
+  margin-top: 0.5rem;
+  text-align: left;
+  color: #333;
+}

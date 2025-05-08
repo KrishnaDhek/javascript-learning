@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "question":"What is react?",
+        "answer":"It is a JS library"
+    },
+    {
+      "id": 2,
+      "question": "What is react?",
+      "answer": "It is a JS library"
+    },
+    {
+        "id":3,
+        "question":"What is js?",
+        "answer":"JS is a programming language"
+    },
+    {
+      "id": 4,
+      "question": "What is react?",
+      "answer": "It is a JS library"
+    },{
+      "id": 5,
+      "question": "What is programming?",
+      "answer": "It is a JS library"
+    }
+]
