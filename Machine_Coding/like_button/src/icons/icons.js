@@ -1,26 +1,3 @@
-import React, { useState } from "react"
-import "./App.css"
-
-
-
-
-export default function App() {
-  const [liked, setLiked] = useState(false);
-
-  const handleLikeUnlike = ()=>{
-    setLiked(!liked);
-  }
-  
-  return (
-    <div className="App">
-      <button className={`likeBtn ${liked?"liked":""}`} onClick={handleLikeUnlike}>
-        <HeartIcon />
-        {liked?"Liked":"Like"}
-      </button>
-    </div>
-  )
-}
-
 export function SpinnerIcon({ className }) {
   return (
     <svg
