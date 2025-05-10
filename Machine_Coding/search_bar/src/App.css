@@ -2,11 +2,15 @@
   text-align: center;
   width: 500px;
   margin: 20px auto;
+
 }
 
 .searchContainer input{
   padding: 10px;
   font-size: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
 }
 
 .autocomplete{
@@ -14,16 +18,17 @@
   margin-top: 10px;
   text-align: left;
   border-radius: 4px;
-  
+  max-height: 200px;
   background-color:#fff;
   overflow-y: auto;
+  
 }
 
 .autocomplete span{
-  width: 100%;
   display: block;
   padding: 8px 12px;
   cursor: pointer;
   background-color: transparent;
+  border: 1px solid #ccc;
 
 }
