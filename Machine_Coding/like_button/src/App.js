@@ -6,16 +6,21 @@ import "./App.css"
 
 export default function App() {
   const [liked, setLiked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleLikeUnlike = ()=>{
-    setLiked(!liked);
+    setLoading(true);
+    setTimeout(() => {
+      setLiked(prev => !prev);
+      setLoading(false)
+    }, 1000);
   }
   
   return (
     <div className="App">
       <button className={`likeBtn ${liked?"liked":""}`} onClick={handleLikeUnlike}>
-        <HeartIcon />
-        {liked?"Liked":"Like"}
+        {loading ? (<SpinnerIcon className="icon spinner" />) : (<HeartIcon className="icon" />)}
+        {loading?"Loading...":liked?"Liked":"Like"}
       </button>
     </div>
   )
