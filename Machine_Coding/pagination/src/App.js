@@ -64,14 +64,10 @@ export default function App() {
     setProducts(data.products);
    }
   };
-  console.log(products);
-
+  
   useEffect(() => {
     fetchData();
   }, [])
-  
-
-  
   
   return (
     <div className="App">
