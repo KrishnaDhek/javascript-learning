@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.containerFAQ{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerAccordion{
+ margin: 0.5rem 0;
+  border: 2px solid black;
+  text-align: center;
+  width: 70%;
+  padding: 0.5rem ;
+  cursor: pointer;
+  
+}
+.question{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.question span{
+  right: 2rem;
+  position: absolute;
+}
+
+.answer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size:large;
+}

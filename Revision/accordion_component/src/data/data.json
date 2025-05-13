@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "question":"What is React?",
+        "answer":"React is an JS Library"
+    },
+    {
+      "id": 2,
+      "question": "What is JS?",
+      "answer": "Js is an programming language"
+    },
+    {
+      "id": 3,
+      "question": "What is HTML?",
+      "answer": "HTML is an markup language"
+    }
+]
