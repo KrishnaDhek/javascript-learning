@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.container{
+  text-align: center;
+}
 .completed{
   text-decoration: line-through;
 }
