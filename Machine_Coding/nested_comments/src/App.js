@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const commentObj = {
+  id: 1,
+  item: []
+};
+
+const Comment = ({ commentsData }) => {
+  const [input, setInput] = useState("");
+
+  const onAddComment = () => {
+    
+  }
+    return (
+    <div>
+      <div className="contianer">
+        <input
+          type="text"
+          placeholder="type..."
+          className="inputContainer"
+          value={input}
+          onChange={(e)=>setInput(e.target.value)}
+          autoFocus
+        />
+        <div className="comment" onClick={onAddComment}>Comment</div>
+        </div>
+        <div className="commentBox">
+          <div className="commentActions">
+            <span>🔼 Reply</span>
+            <span>Edit</span>
+            <span>Delete</span>
+          </div>
+        </div>
     </div>
   );
 }
-
-export default App;
+export default function App() {
+  const [commentsData,setCommentsData] = useState(commentObj);
+  return (
+    <div className="App">
+      <h1>Nested Comment Component</h1>
+      <Comment comment={ commentsData} />
+    </div>
+  )
+}

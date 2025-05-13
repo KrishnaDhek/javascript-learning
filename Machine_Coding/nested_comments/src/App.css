@@ -1,38 +1,52 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contianer{
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputContainer{
+  width: 70%;
+padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.comment {
+  display: inline-block;
+  background-color: #2d8cff;
   color: white;
+  padding: 8px 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* Individual comment box */
+.commentBox {
+  background-color: #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative;
+  max-width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Comment actions */
+.commentActions {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Nested comments */
+.nested {
+  margin-left: 30px;
 }
