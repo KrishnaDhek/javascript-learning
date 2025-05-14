@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-
-export default function Accordion({ qna ,isOpen,index, toggle }) {
-   
+export default function Accordion({item,index,toggle, isOpen}) {
     return (
       <div className="containerAccordion">
-        <div className="question" onClick={()=>toggle(index)}>
+        <div className="question" onClick={() => toggle(index)}>
           <h1>
-            {qna.question}</h1>
-            <span>
-            { isOpen?"-":"+"}
-            
-              
-            </span>
-          
+            {item.question}
+            <span>{isOpen ? '-' : '+'}</span>
+          </h1>
         </div>
-
-        {isOpen ? <p className="answer">{qna.answer}</p> : ''}
+        {isOpen ? <p className="answer">{item.answer}</p> : ''}
       </div>
     );
 }
