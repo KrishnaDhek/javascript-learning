@@ -1,15 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import data from './data/data.json';
-import FAQ  from './component/FAQ';
+import React from "react";
+import FAQ from "./component/FAQ"
+import data from "./data/data.json"
+import "./App.css"
 
-function App() {
-
+export default function App() {
   return (
     <div className="App">
-      <FAQ data={ data} />
+      <FAQ data={data}/>
     </div>
-  );
+  )
 }
-
-export default App;
