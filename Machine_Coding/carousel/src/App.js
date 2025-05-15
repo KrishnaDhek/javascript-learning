@@ -30,7 +30,8 @@ const Carousel = () =>{
   useEffect(() => {
     ref.current = setInterval(handleNext, 1000);
     return ()=>clearInterval(ref.current)
-  },[])
+  }, [])
+  
   return(
     <div onMouseEnter={() => { clearInterval(ref.current) }}
       onMouseLeave={()=>{ref.current= setInterval(handleNext,1000)}}
