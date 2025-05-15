@@ -6,6 +6,7 @@ const starCount = 5;
 export default function App() {
   return (
     <div className="App">
+      <h1>Star Component</h1>
       <StarComponent starCount={starCount } />
     </div>
   )
