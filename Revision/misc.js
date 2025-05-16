@@ -350,3 +350,19 @@ function funType(operation){
 }}
 const op = funType("multiply");
 console.log(op(2)(3));
+
+
+function flatArray(arrList) {
+  let arr = [];
+
+  for (let i of arrList) {
+    if (Array.isArray(i)) {
+      arr.push(...flatArray(i));
+    } else {
+      arr.push(i);
+    }
+  }
+  return arr;
+}
+const arrList = [4, 5, 6, [67, 8, 9], 34, 56];
+console.log(flatArray(arrList));
