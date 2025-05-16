@@ -366,3 +366,5 @@ function flatArray(arrList) {
 }
 const arrList = [4, 5, 6, [67, 8, 9], 34, 56];
 console.log(flatArray(arrList));
+
+
