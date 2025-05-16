@@ -239,3 +239,4 @@ const newArrItem = arrItem.myFilter((item, index, arrItem) => {
   return item % 3 == 0;
 })
 console.log(newArrItem);
+
