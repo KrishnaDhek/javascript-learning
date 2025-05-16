@@ -192,7 +192,7 @@
 // });
 // console.log(result3);
 
-
+//Map Polyfill
 Array.prototype.myMap = function (callBack) {
   if (typeof callBack !== 'function') {
     throw new Error(`${callBack} is not a function`)
@@ -213,3 +213,29 @@ const answer = items.myMap((item, index, items) => {
   return item * 2;
 })
 console.log(answer);
+
+
+//Filter Polyfill
+Array.prototype.myFilter = function (callBack) {
+  if (typeof callBack !== 'function') {
+    throw new Error(`${callBack} is not a function`);
+  }
+
+  const result = [];
+
+  for (let i = 0; i < this.length; i++){
+    if (i in this) {
+      if (callBack(this[i], i, this)) {
+        result.push(this[i]);
+      }
+    }
+  }
+  return result;
+}
+
+const arrItem = [2, 3, 45, 9, 18];
+
+const newArrItem = arrItem.myFilter((item, index, arrItem) => {
+  return item % 3 == 0;
+})
+console.log(newArrItem);
