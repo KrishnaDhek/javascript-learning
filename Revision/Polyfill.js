@@ -240,3 +240,20 @@ const newArrItem = arrItem.myFilter((item, index, arrItem) => {
 })
 console.log(newArrItem);
 
+//Polyfill for reduce
+
+Array.prototype.myReduce = function (callBack, currVal) {
+  let acc = currVal !== undefined ? currVal : this[0];
+  let index = currVal !== undefined ? 0 : 1;
+
+  for (let i = index; i < this.length; i++){
+    acc = callBack(acc, this[i], i, this);
+  }
+  return acc;
+}
+
+const arrList = [45, 6, 7, 2, 34, 90];
+const arrListResult = arrList.myReduce((acc, cVal) => {
+  return acc + cVal;
+})
+console.log(arrListResult);
