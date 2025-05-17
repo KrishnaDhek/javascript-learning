@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function Accordion({item, isOpen, toggle, index}) {
+export default function Accordion({ item, index, isOpen,toggle }) {
+   
     return (
         <div className="accordion">
             <div className="question" onClick={()=>toggle(index)}>
@@ -8,7 +9,7 @@ export default function Accordion({item, isOpen, toggle, index}) {
                     <span>{isOpen?"-":"+" }</span>
                 </h1>
             </div>
-            {isOpen ? <p className="answer">{item.answer }</p>:""}
+            {isOpen ? <p className="answer">{ item.answer}</p>:""}
         </div>
     )
 }
