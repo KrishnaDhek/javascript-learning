@@ -13,8 +13,6 @@ export default function InfiniteScroll() {
         const data = await response.json();
         setItem((prev) => [...prev, ...data])
         
-
-        setLoading(false);
     }
 
     useEffect(() => {
