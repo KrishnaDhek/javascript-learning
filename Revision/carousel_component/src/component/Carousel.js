@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Carousel({ data }) {
     const [index, setIndex] = useState(0);
@@ -25,9 +25,14 @@ export default function Carousel({ data }) {
         })
     }
 
+    useEffect(() => {
+        ref.current = setInterval(handleNext, 1000);
+        return ()=> clearInterval(ref.current)
+    },[])
     
     return (
-        <div className="carousal">
+        <div className="carousal" onMouseLeave={() => ref.current = setInterval(handleNext, 1000)}
+         onMouseEnter={()=>clearInterval(ref.current)}>
             <div className="leftBtn" onClick={()=>handlePrev()}>{"<"}</div>
             <img src={data[index].url}></img>
             <div className="rightBtn" onClick={() => handleNext()}>{">"}</div>
