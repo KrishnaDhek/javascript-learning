@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import fileData from "./data/data.json";
+import FileExplorer from "./component/FileExplorer";
+import "./App.css"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>File Explorer</h1>
+      <FileExplorer fileData={fileData} />
     </div>
-  );
+  )
 }
-
-export default App;
