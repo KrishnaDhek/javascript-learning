@@ -49,6 +49,7 @@ const Carousel = () =>{
             >&#x2022;</span>
           )
         })}
+        
       </div>
     </div>
   )

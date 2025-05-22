@@ -12,6 +12,7 @@ const ProgessBar = ({ progress }) => {
   )
 }
 
+
 export default function App() {
   const [progress, setProgress] = useState(0);
 
