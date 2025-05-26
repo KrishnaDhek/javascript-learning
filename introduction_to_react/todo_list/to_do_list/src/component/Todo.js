@@ -332,6 +332,3 @@ export default function Todo() {
     </div>
   );
 }
-
-
-
