@@ -12,6 +12,7 @@ function nextGreaterEle(arr) {
         }
          stack.push(i);
     }
+    
     return arrResult;
 }
 
