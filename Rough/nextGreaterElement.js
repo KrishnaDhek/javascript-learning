@@ -23,6 +23,3 @@ console.log(nextGreaterEle(arr));
 
 
 
-
-
-
