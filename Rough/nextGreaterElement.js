@@ -25,5 +25,3 @@ console.log(nextGreaterEle(arr));
 
 
 
-
-
