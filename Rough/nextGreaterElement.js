@@ -19,3 +19,4 @@ function nextGreaterEle(arr) {
 
 const arr = [2, 1, 7, 5, 6, 11, 3];
 console.log(nextGreaterEle(arr));
+
