@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Greet from './components/Greet'; 
 
 //functional component
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <Greet/>
         </p>
         <a
           className="App-link"
