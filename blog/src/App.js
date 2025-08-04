@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Greet from './components/Greet'; 
+import Welcome from './components/Welcome';
 
 //functional component
 function App() {
@@ -9,7 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <Greet/>
+          <Greet />
+          <Welcome/>
         </p>
         <a
           className="App-link"
