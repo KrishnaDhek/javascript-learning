@@ -56,7 +56,6 @@
   transform: scale(0.97);
 }
 
-/* Disabled state (when timer is running) */
 .inputContainer input:disabled {
   background-color: #f2f2f2;
   color: #999;
