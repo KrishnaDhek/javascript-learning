@@ -34,7 +34,6 @@ const FAQ = () => {
   );
 }
 
-
 //Displays individual accordion item (question + answer)
 const Accordion = ({qna,isOpen,index, toggle}) => {
   return (
