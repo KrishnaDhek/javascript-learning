@@ -1,10 +1,63 @@
-.App {
-  text-align: center;
+/* Center everything on the page */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
 }
 
-input{
-  height: 1.5rem;
-  padding: 1.5rem;
-  width: 1.5rem;
-  margin: 1rem;
+/* Inputs layout */
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.inputContainer input {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputContainer input:focus {
+  border-color: #007bff;
+}
+
+/* Buttons layout */
+.buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.buttonContainer button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.buttonContainer button:hover {
+  background-color: #0056b3;
+}
+
+.buttonContainer button:active {
+  transform: scale(0.97);
+}
+
+/* Disabled state (when timer is running) */
+.inputContainer input:disabled {
+  background-color: #f2f2f2;
+  color: #999;
 }
