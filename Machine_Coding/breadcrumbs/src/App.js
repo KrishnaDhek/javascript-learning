@@ -5,8 +5,6 @@ import Home from "./pages/home";
 import ProductListing from "./pages/product-listing";
 import ProductDetails from "./pages/product-details";
 
-
-
 export default function App() {
   
   return (
