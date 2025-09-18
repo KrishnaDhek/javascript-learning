@@ -9,7 +9,7 @@ const Carousel = () =>{
 
   const handlePrev = () => {
     setIndex((prev) => {
-      if (prev == 0) {
+      if (prev === 0) {
         return dataLength - 1;
       } else {
         return prev - 1;
@@ -19,7 +19,7 @@ const Carousel = () =>{
 
   const handleNext = () => {
     setIndex((prev) => {
-      if (prev == dataLength - 1) {
+      if (prev === dataLength - 1) {
         return 0;
       } else {
         return prev + 1;
