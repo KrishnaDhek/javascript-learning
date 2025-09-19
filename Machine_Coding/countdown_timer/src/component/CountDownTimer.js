@@ -12,8 +12,6 @@ export default function CountDownTimer() {
 
     const handleChange = (e, field) => {
         const value = parseInt(e.target.value,10)||0;
-       
-
         const copyTime = { ...time };
         copyTime[field] = value;
         copyTime.minute += Math.floor(copyTime.second / 60);
@@ -80,6 +78,7 @@ if (
           :
           <input
             disabled={isRunning}
+
             value={time.minute}
             onChange={(e) => handleChange(e, 'minute')}
             type="text"
