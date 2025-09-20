@@ -4,17 +4,6 @@ export default function CountDownTimer() {
   const [time, setTime] = useState({
     hour: 0,
     minute: 0,
-    
-
-
-
-
-
-
-
-
-
-
     second: 0,
   });
 
@@ -77,7 +66,7 @@ export default function CountDownTimer() {
           }
 
           return { hour, minute, second };
-       });
+        });
       }, 1000);
     }
 
@@ -91,6 +80,15 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.hour}
           onChange={(e) => handleChange(e, 'hour')}
+          onFocus={(e) => {
+            if (e.target.value === '0') e.target.value = '';
+          }}
+          onBlur={(e) => {
+            if (e.target.value === '') {
+              e.target.value = 0;
+              handleChange(e, 'hour');
+            }
+          }}
           type="number"
           placeholder="HH"
         />
@@ -99,6 +97,15 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.minute}
           onChange={(e) => handleChange(e, 'minute')}
+          onFocus={(e) => {
+            if (e.target.value === '0') e.target.value = '';
+          }}
+          onBlur={(e) => {
+            if (e.target.value === '') {
+              e.target.value = 0;
+              handleChange(e, 'minute');
+            }
+          }}
           type="number"
           placeholder="MM"
         />
@@ -107,6 +114,15 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.second}
           onChange={(e) => handleChange(e, 'second')}
+          onFocus={(e) => {
+            if (e.target.value === '0') e.target.value = '';
+          }}
+          onBlur={(e) => {
+            if (e.target.value === '') {
+              e.target.value = 0;
+              handleChange(e, 'second');
+            }
+          }}
           type="number"
           placeholder="SS"
         />
