@@ -4,6 +4,17 @@ export default function CountDownTimer() {
   const [time, setTime] = useState({
     hour: 0,
     minute: 0,
+    
+
+
+
+
+
+
+
+
+
+
     second: 0,
   });
 
@@ -66,7 +77,7 @@ export default function CountDownTimer() {
           }
 
           return { hour, minute, second };
-        });
+       });
       }, 1000);
     }
 
