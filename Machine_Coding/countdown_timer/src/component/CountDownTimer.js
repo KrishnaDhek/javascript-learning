@@ -11,11 +11,17 @@ export default function CountDownTimer() {
   const intervalRef = useRef(null);
 
   const handleChange = (e, field) => {
-    const value = parseInt(e.target.value, 10) || 0;
+    let value = parseInt(e.target.value, 10);
+
+    // If invalid or negative → reset to 0
+    if (isNaN(value) || value < 0) {
+      value = 0;
+    }
+
     const copyTime = { ...time };
     copyTime[field] = value;
 
-    // Normalize values
+    // Normalize overflow values
     copyTime.minute += Math.floor(copyTime.second / 60);
     copyTime.second = copyTime.second % 60;
     copyTime.hour += Math.floor(copyTime.minute / 60);
@@ -80,15 +86,11 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.hour}
           onChange={(e) => handleChange(e, 'hour')}
-          onFocus={(e) => {
-            if (e.target.value === '0') e.target.value = '';
-          }}
-          onBlur={(e) => {
-            if (e.target.value === '') {
-              e.target.value = 0;
-              handleChange(e, 'hour');
-            }
-          }}
+          onFocus={(e) => e.target.value === '0' && (e.target.value = '')}
+          onBlur={(e) =>
+            e.target.value === '' &&
+            handleChange({ target: { value: 0 } }, 'hour')
+          }
           type="number"
           placeholder="HH"
         />
@@ -97,15 +99,11 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.minute}
           onChange={(e) => handleChange(e, 'minute')}
-          onFocus={(e) => {
-            if (e.target.value === '0') e.target.value = '';
-          }}
-          onBlur={(e) => {
-            if (e.target.value === '') {
-              e.target.value = 0;
-              handleChange(e, 'minute');
-            }
-          }}
+          onFocus={(e) => e.target.value === '0' && (e.target.value = '')}
+          onBlur={(e) =>
+            e.target.value === '' &&
+            handleChange({ target: { value: 0 } }, 'minute')
+          }
           type="number"
           placeholder="MM"
         />
@@ -114,15 +112,11 @@ export default function CountDownTimer() {
           disabled={isRunning}
           value={time.second}
           onChange={(e) => handleChange(e, 'second')}
-          onFocus={(e) => {
-            if (e.target.value === '0') e.target.value = '';
-          }}
-          onBlur={(e) => {
-            if (e.target.value === '') {
-              e.target.value = 0;
-              handleChange(e, 'second');
-            }
-          }}
+          onFocus={(e) => e.target.value === '0' && (e.target.value = '')}
+          onBlur={(e) =>
+            e.target.value === '' &&
+            handleChange({ target: { value: 0 } }, 'second')
+          }
           type="number"
           placeholder="SS"
         />
