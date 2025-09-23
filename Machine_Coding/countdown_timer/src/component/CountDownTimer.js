@@ -7,7 +7,6 @@ export default function CountDownTimer() {
     second: 0,
   });
 
-  
 
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(null);
