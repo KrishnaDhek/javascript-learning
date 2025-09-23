@@ -28,7 +28,6 @@ export default function CountDownTimer() {
     copyTime.second = copyTime.second % 60;
     copyTime.hour += Math.floor(copyTime.minute / 60);
     copyTime.minute = copyTime.minute % 60;
-
     setTime(copyTime);
   };
 
