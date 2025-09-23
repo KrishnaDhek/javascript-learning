@@ -19,7 +19,6 @@ export default function CountDownTimer() {
     if (isNaN(value) || value < 0) {
       value = 0;
     }
-
   
     const copyTime = { ...time };
     copyTime[field] = value;
