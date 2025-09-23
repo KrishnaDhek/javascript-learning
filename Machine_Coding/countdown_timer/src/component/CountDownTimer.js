@@ -20,7 +20,7 @@ export default function CountDownTimer() {
       value = 0;
     }
 
-    
+  
     const copyTime = { ...time };
     copyTime[field] = value;
 
