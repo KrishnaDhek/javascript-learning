@@ -31,7 +31,6 @@ export default function CountDownTimer() {
     setTime(copyTime);
   };
 
-  
   const handleStart = () => {
     if (time.hour === 0 && time.minute === 0 && time.second === 0) {
       return;
