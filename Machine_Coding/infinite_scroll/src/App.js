@@ -12,6 +12,7 @@ const PostData = ({ data, setPageNo }) => {
       },
       { threshold: 0.5 }
     );
+    
 
     const lastImage = document.querySelector('.image-post:last-child');
     if (!lastImage) {
