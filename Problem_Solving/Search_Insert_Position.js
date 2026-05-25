@@ -18,6 +18,7 @@ let index = function (num, target) {
             high = mid;
         }
     }
+    
     return low;
 }
 
